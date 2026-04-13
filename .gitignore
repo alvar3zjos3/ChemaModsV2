@@ -1,0 +1,64 @@
+# =============================================
+# ChemaModsV2 - .gitignore
+# =============================================
+
+# Visual Studio / CMake generated files
+out/
+build/
+.vs/
+CMakeFiles/
+CMakeCache.txt
+CMakeScripts/
+*.sln
+*.vcxproj*
+*.vcxproj.user
+*.vcxproj.filters
+
+# CMake temporary files
+cmake_install.cmake
+install_manifest.txt
+_compile_commands.json
+
+# Output directories
+*.dll
+*.exe
+*.pdb
+*.ilk
+*.obj
+*.log
+*.tlog
+
+# Precompiled headers
+*.pch
+*.ipch
+*.gch
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDEs
+.idea/
+*.swp
+*.swo
+
+# Logs from the menu
+cout.log
+ChemaModsV2.log
+
+# Dependencies downloaded by CMake
+_deps/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.orig
+
+# macOS / Linux junk
+.DS_Store
+Thumbs.db
+
+# Version info (optional)
+version.cpp
