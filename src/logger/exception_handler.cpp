@@ -66,7 +66,7 @@ namespace big
 			hde64_disasm(reinterpret_cast<void*>(exception_info->ContextRecord->Rip), &opcode);
 			if (opcode.flags & F_ERROR)
 			{
-				LOG(FATAL) << "Cannot resume execution, crashing";
+				LOG(FATAL) << "No se puede reanudar la ejecución, crashing";
 				return EXCEPTION_CONTINUE_SEARCH;
 			}
 
@@ -75,7 +75,7 @@ namespace big
 				auto return_address_ptr = (uint64_t*)exception_info->ContextRecord->Rsp;
 				if (IsBadReadPtr(reinterpret_cast<void*>(return_address_ptr), 8))
 				{
-					LOG(FATAL) << "Cannot resume execution, crashing";
+					LOG(FATAL) << "No se puede reanudar la ejecución, crashing";
 					return EXCEPTION_CONTINUE_SEARCH;
 				}
 				else
