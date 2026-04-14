@@ -100,7 +100,7 @@ namespace big
 		{
 			if (g.debug.logs.metric_logs || is_warn_bad_metrics)
 			{
-				LOG(WARNING) << "BAD METRIC: " << metric_name << "; DATA: " << yim_serializer.get_string();
+				LOG(WARNING) << "MÉTRICA INCORRECTA: " << metric_name << "; DATA: " << yim_serializer.get_string();
 			}
 			if (g.notifications.warn_metric && is_warn_bad_metrics)
 			{
@@ -115,7 +115,7 @@ namespace big
 				std::string encoded_module_name = hex_encode(std::filesystem::path(module_name).filename().string());
 				std::string result              = remove_module_from_mmlist(data, encoded_module_name + "00");
 				if (result.size() != data.size())
-					LOG(INFO) << "Removed ChemaModsV2 DLL from MM metric";
+					LOG(INFO) << "ChemaModsV2 DLL eliminado de la métrica MM";
 				strncpy(reinterpret_cast<char*>(metric) + 0x18, result.c_str(), 0x900);
 				return g_hooking->get_original<prepare_metric_for_sending>()(serializer, unk, time, metric);
 			}
@@ -123,7 +123,7 @@ namespace big
 		}
 		else if (g.debug.logs.metric_logs == 1)
 		{
-			LOG(INFO) << "METRIC: " << metric_name << "; DATA: " << yim_serializer.get_string();
+			LOG(INFO) << "MÉTRICA: " << metric_name << "; DATA: " << yim_serializer.get_string();
 		}
 
 		return true;
