@@ -40,7 +40,7 @@ namespace big
 			player->block_net_events   = true;
 			player->block_clone_sync   = true;
 			player->block_clone_create = true;
-			LOGF(WARNING, "{} has been timed out", player->get_name());
+			LOGF(WARNING, "{} ha sido desconectado", player->get_name());
 		}
 	}
 
@@ -54,7 +54,7 @@ namespace big
 
 		if (log)
 		{
-			LOGF(WARNING, "Received {} from {} ({})", m_event_name, player->get_name(), player->get_rockstar_id());
+			LOGF(WARNING, "Recibido {} de {} ({})", m_event_name, player->get_name(), player->get_rockstar_id());
 		}
 
 		if (announce_in_chat)
@@ -89,7 +89,7 @@ namespace big
 
 		if (log)
 		{
-			LOGF(WARNING, "Received {} from {} ({})", m_event_name, player->get_name(), player->get_rockstar_id());
+			LOGF(WARNING, "Recibido {} de {} ({})", m_event_name, player->get_name(), player->get_rockstar_id());
 		}
 
 		if (notify)
