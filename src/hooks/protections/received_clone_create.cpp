@@ -12,15 +12,15 @@ namespace big
 	{
 		if (object_type < eNetObjType::NET_OBJ_TYPE_AUTOMOBILE || object_type > eNetObjType::NET_OBJ_TYPE_TRAIN) [[unlikely]]
 		{
-			notify::crash_blocked(src, "out of bounds object type");
+			notify::crash_blocked(src, "tipo de objeto fuera de rango");
 			return;
 		}
 
 		// can delete objects here too
 		if (dst && dst->m_player_info && dst->m_player_info->m_ped && dst->m_player_info->m_ped->m_net_object
-		    && object_id == dst->m_player_info->m_ped->m_net_object->m_object_id) [[unlikely]]
+			&& object_id == dst->m_player_info->m_ped->m_net_object->m_object_id) [[unlikely]]
 		{
-			notify::crash_blocked(src, "player create");
+			notify::crash_blocked(src, "creación de jugador");
 			return;
 		}
 
@@ -43,7 +43,7 @@ namespace big
 				if (auto tgt = g_player_service->get_by_id(object->m_owner_id))
 					target = tgt->get_name();
 
-				LOGF(stream::net_sync, WARNING, "Rejecting clone create from {}, who is trying to delete {}'s player ped", src->get_name(), target);
+				LOGF(stream::net_sync, WARNING, "Rechazando creación de clon de {}, quien intenta eliminar el ped del jugador de {}", src->get_name(), target);
 				return;
 			}
 		}
@@ -61,7 +61,7 @@ namespace big
 			if ((*g_pointers->m_gta.m_vehicle_allocator)->m_size < 10) [[unlikely]]
 			{
 				// We don't have enough memory to handle this
-				g_notification_service.push_warning("Protections", "Low vehicle allocator size");
+				g_notification_service.push_warning("Protections", "Tamaño bajo del asignador de vehículos");
 				return;
 			}
 		}
