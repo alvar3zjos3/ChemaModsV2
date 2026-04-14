@@ -5,7 +5,7 @@ Menú personalizado para **GTA V Legacy**.
 ### Créditos
 
 - **YimMenu** → Proyecto original creado por [YimMenu Team](https://github.com/YimMenu)
-- **Mr-X-GTA** → Mantenimiento y fork para versión Legacy [](https://github.com/Mr-X-GTA/YimMenu)
+- **[Mr-X-GTA](https://github.com/Mr-X-GTA/YimMenu)** → Mantenimiento y fork para versión Legacy
 - Adaptación y personalización realizada por [@alvar3zjos3](https://github.com/alvar3zjos3)
 
 ### Características
