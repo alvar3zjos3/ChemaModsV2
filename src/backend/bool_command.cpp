@@ -21,14 +21,14 @@ namespace big
 				m_toggle = false;
 
 				if (m_show_notify)
-					ctx->report_output(std::format("{} has been disabled", g_translation_service.get_translation(m_label)));
+					ctx->report_output(std::format("{} ha sido deshabilitado", g_translation_service.get_translation(m_label)));
 			}
 			else
 			{
 				m_toggle = true;
 
 				if (m_show_notify)
-					ctx->report_output(std::format("{} has been enabled", g_translation_service.get_translation(m_label)));
+					ctx->report_output(std::format("{} ha sido habilitado", g_translation_service.get_translation(m_label)));
 			}
 		}
 		else
@@ -48,7 +48,7 @@ namespace big
 
 		if (args.size() > 1)
 		{
-			ctx->report_error(std::format("Too many arguments passed to command {}, Expected 1 or less, got {}", m_name, args.size()));
+			ctx->report_error(std::format("Demasiados argumentos pasados al comando {}, se esperaba 1 o ninguno, se recibieron {}", m_name, args.size()));
 			return std::nullopt;
 		}
 
@@ -64,7 +64,7 @@ namespace big
 			return result;
 		}
 
-		ctx->report_error(std::format("Cannot convert\"{}\" into a boolean in command {}", args[0], m_name));
+		ctx->report_error(std::format("No se puede convertir \"{}\" a booleano en el comando {}", args[0], m_name));
 		return std::nullopt;
 	}
 
