@@ -57,7 +57,7 @@ namespace big
 				}
 			}
 
-			ctx->report_error(std::format("Tried to execute command {}, but a player with index {} was not found", m_name, args.get<int>(0)));
+            ctx->report_error(std::format("Se intentó ejecutar el comando {}, pero no se encontró un jugador con índice {}", m_name, args.get<int>(0)));
 		});
 	}
 
@@ -87,13 +87,13 @@ namespace big
 
 			if (ctx->get_access_level() != CommandAccessLevel::ADMIN && (get_access_level() == CommandAccessLevel::TOXIC || get_access_level() == CommandAccessLevel::AGGRESSIVE) && plyr_id == self::id)
 			{
-				ctx->report_error("Permission denied, cannot call toxic commands on me");
+                ctx->report_error("Permiso denegado, no se pueden ejecutar comandos tóxicos sobre mí");
 				return std::nullopt;
 			}
 
 			if (plyr_id == -1)
 			{
-				ctx->report_error(std::format("Cannot find player with name {} in command {}", args[0], m_name));
+                ctx->report_error(std::format("No se puede encontrar al jugador con nombre {} en el comando {}", args[0], m_name));
 				return std::nullopt;
 			}
 
@@ -121,10 +121,10 @@ namespace big
 	{
 		if (m_num_args.has_value() && args.size() != (m_num_args.value() - 1))
 		{
-			ctx->report_error(std::format("Command {} called with the wrong number of arguments. Expected {}, got {}",
-			    m_name,
-			    m_num_args.value() - 1,
-			    args.size()));
+            ctx->report_error(std::format("El comando {} fue llamado con un número incorrecto de argumentos. Se esperaban {}, se recibieron {}",
+				m_name,
+				m_num_args.value() - 1,
+				args.size()));
 			return;
 		}
 
