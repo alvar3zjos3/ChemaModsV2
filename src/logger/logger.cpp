@@ -18,7 +18,7 @@ namespace big
 		m_file          = file;
 		if (is_proton())
 		{
-			LOG(VERBOSE) << "Using simple logger.";
+			LOG(VERBOSE) << "Usando registrador simple.";
 			m_console_logger = &logger::format_console_simple;
 		}
 
