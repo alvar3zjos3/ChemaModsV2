@@ -21,5 +21,5 @@ namespace big
 		}
 	};
 
-	force_into_mission g_force_into_mission("mission", "FORCE_INTO_MISSION", "FORCE_INTO_MISSION_DESC", 0);
+	force_into_mission g_force_into_mission("mission", "FORZAR_A_MISION", "FORZAR_A_MISION_DESC", 0);
 }

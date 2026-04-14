@@ -57,5 +57,5 @@ namespace big
 		}
 	};
 
-	kick_from_interior g_kick_from_interior("intkick", "KICK_FROM_INTERIOR", "KICK_FROM_INTERIOR_DESC", 0);
+	kick_from_interior g_kick_from_interior("intkick", "EXPULSAR_DE_INTERIOR", "EXPULSAR_DE_INTERIOR_DESC", 0);
 }

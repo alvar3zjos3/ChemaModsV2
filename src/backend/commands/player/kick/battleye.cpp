@@ -1,11 +1,10 @@
 #include "backend/player_command.hpp"
 #include "gta_util.hpp"
+#include "packet.hpp"
 #include "pointers.hpp"
 #include "services/battleye/battleye_service.hpp"
 
 #include <network/Network.hpp>
-
-#include "packet.hpp"
 #include <network/snSession.hpp>
 
 namespace big
@@ -75,7 +74,7 @@ namespace big
 		}
 	};
 
-	battleye_kick g_battleye_kick("battlekick", "BATTLEYE_KICK", "BATTLEYE_KICK_DESC", 0);
-	battleye_ban g_battleye_ban("battleban", "BATTLEYE_FAKE_BAN", "BATTLEYE_FAKE_BAN_DESC", 0);
-	battleye_update_kick g_battleye_update_kick("battleupdate", "BATTLEYE_UPDATE_KICK", "BATTLEYE_UPDATE_KICK_DESC", 0);
+	battleye_kick g_battleye_kick("battlekick", "EXPULSION_BATTLEYE", "EXPULSION_BATTLEYE_DESC", 0);
+	battleye_ban g_battleye_ban("battleban", "BAN_FALSO_BATTLEYE", "BAN_FALSO_BATTLEYE_DESC", 0);
+	battleye_update_kick g_battleye_update_kick("battleupdate", "EXPULSION_ACTUALIZACION_BATTLEYE", "EXPULSION_ACTUALIZACION_BATTLEYE_DESC", 0);
 }

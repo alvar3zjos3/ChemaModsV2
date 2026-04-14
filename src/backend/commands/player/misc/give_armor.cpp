@@ -18,5 +18,5 @@ namespace big
 		}
 	};
 
-	give_armor g_give_armor("givearmor", "GIVE_ARMOR", "GIVE_ARMOR_DESC", 0);
+	give_armor g_give_armor("givearmor", "DAR_ARMADURA", "DAR_ARMADURA_DESC", 0);
 }

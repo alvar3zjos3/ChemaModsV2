@@ -109,6 +109,6 @@ namespace big
 			g_squad_spawner_service.spawn_squad(squad, sender, false, {});
 		}
 	};
-
-	send_squad g_send_squad("squad", "SEND_SQUAD", "SEND_SQUAD_DESC", 1);
+	
+	send_squad g_send_squad("squad", "ENVIAR_ESCUADRON", "ENVIAR_ESCUADRON_DESC", 1);
 }

@@ -28,5 +28,5 @@ namespace big
 		}
 	};
 
-	send_sext g_send_sext("sext", "SEND_SEXT", "SEND_SEXT_DESC", 0);
+	send_sext g_send_sext("sext", "ENVIAR_SEXT", "ENVIAR_SEXT_DESC", 0);
 }

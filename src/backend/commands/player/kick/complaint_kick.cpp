@@ -28,5 +28,5 @@ namespace big
 		}
 	};
 
-	complaint_kick g_complaint_kick("desync", "COMPLAINT_KICK", "COMPLAINT_KICK_DESC", 0); // this is pretty much desync except we don't actually remove the player from CNetworkPlayerMgr
+	complaint_kick g_complaint_kick("desync", "EXPULSION_DESYNC", "EXPULSION_DESYNC_DESC", 0);
 }

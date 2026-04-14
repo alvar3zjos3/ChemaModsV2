@@ -14,7 +14,7 @@ namespace big
 
 			if (!PED::IS_PED_IN_ANY_VEHICLE(ped, true))
 			{
-				g_notification_service.push_warning("TOXIC"_T.data(), "ERROR_PLAYER_IS_NOT_IN_VEHICLE"_T.data());
+				g_notification_service.push_warning("TOXICO"_T.data(), "ERROR_PLAYER_IS_NOT_IN_VEHICLE"_T.data());
 			}
 			else
 			{
@@ -26,11 +26,11 @@ namespace big
 				}
 				else
 				{
-					g_notification_service.push_warning("TOXIC"_T.data(), "ERROR_FAILED_TO_TAKE_CONTROL"_T.data());
+					g_notification_service.push_warning("TOXICO"_T.data(), "ERROR_FAILED_TO_TAKE_CONTROL"_T.data());
 				}
 			}
 		}
 	};
 
-	close_doors g_close_doors("closedoors", "BACKEND_CLOSE_VEHICLE_DOORS", "BACKEND_CLOSE_VEHICLE_DOORS_DESC", 0);
+	close_doors g_close_doors("closedoors", "CERRAR_PUERTAS", "BACKEND_CLOSE_VEHICLE_DOORS_DESC", 0);
 }

@@ -15,7 +15,7 @@ namespace big
 		TOPDOWN
 	};
 
-	const std::map<eKamikazeType, std::string> kamikaze_types = {{eKamikazeType::REGULAR, "Regular"}, {eKamikazeType::SELF, "Self"}, {eKamikazeType::TOPDOWN, "Topdown"}};
+	const std::map<eKamikazeType, std::string> kamikaze_types = {{eKamikazeType::REGULAR, "Normal"}, {eKamikazeType::SELF, "Propio"}, {eKamikazeType::TOPDOWN, "Desde arriba"}};
 
 	class kamikaze : player_command
 	{
@@ -75,13 +75,13 @@ namespace big
 
 			if (!target)
 			{
-				g_notification_service.push_error("Teleport", "Invalid player name(s).");
+				g_notification_service.push_error("Teleport", "Nombre del jugador invalido.");
 				return std::nullopt;
 			}
 
 			if (type == (eKamikazeType)-1)
 			{
-				g_notification_service.push_error("Teleport", "Invalid type.");
+				g_notification_service.push_error("Teleport", "Tipo Invalido.");
 				return std::nullopt;
 			}
 

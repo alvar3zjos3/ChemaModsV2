@@ -13,7 +13,7 @@ namespace big
 			Ped ped = PLAYER::GET_PLAYER_PED_SCRIPT_INDEX(player->id());
 			if (!PED::IS_PED_IN_ANY_VEHICLE(ped, true))
 			{
-				g_notification_service.push_warning("TOXIC"_T.data(), "ERROR_PLAYER_IS_NOT_IN_VEHICLE"_T.data());
+				g_notification_service.push_warning("TOXICO"_T.data(), "ERROR_PLAYER_IS_NOT_IN_VEHICLE"_T.data());
 			}
 			else
 			{
@@ -25,11 +25,11 @@ namespace big
 				}
 				else
 				{
-					g_notification_service.push_warning("TOXIC"_T.data(), "ERROR_FAILED_TO_TAKE_CONTROL"_T.data());
+					g_notification_service.push_warning("TOXICO"_T.data(), "ERROR_FAILED_TO_TAKE_CONTROL"_T.data());
 				}
 			}
 		}
 	};
 
-	kill_engine g_kill_engine("killengine", "BACKEND_KILL_VEHICLE_ENGINE", "BACKEND_KILL_VEHICLE_ENGINE_DESC", 0);
+	kill_engine g_kill_engine("killengine", "MATAR_MOTOR_DEL_VEHICULO", "BACKEND_KILL_VEHICLE_ENGINE_DESC", 0);
 }

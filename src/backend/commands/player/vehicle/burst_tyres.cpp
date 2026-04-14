@@ -14,7 +14,7 @@ namespace big
 
 			if (!PED::IS_PED_IN_ANY_VEHICLE(ped, true))
 			{
-				g_notification_service.push_warning("TOXIC"_T.data(), "ERROR_PLAYER_IS_NOT_IN_VEHICLE"_T.data());
+				g_notification_service.push_warning("TOXICO"_T.data(), "ERROR_PLAYER_IS_NOT_IN_VEHICLE"_T.data());
 			}
 			else
 			{
@@ -32,5 +32,5 @@ namespace big
 		}
 	};
 
-	burst_tyres g_burst_tyres("burstwheels", "BACKEND_BURST_VEHICLE_TIRES", "BACKEND_BURST_VEHICLE_TIRES_DESC", 0);
+	burst_tyres g_burst_tyres("burstwheels", "REVENTAR_NEUMATICOS", "BACKEND_BURST_VEHICLE_TIRES_DESC", 0);
 }

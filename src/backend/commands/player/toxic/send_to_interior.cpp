@@ -39,5 +39,5 @@ namespace big
 		}
 	};
 
-	send_to_interior g_send_to_interior("interiortp", "TP_TO_INTERIOR", "TP_TO_INTERIOR_DESC", 1);
+	send_to_interior g_send_to_interior("interiortp", "TELETRANSPORTE_A_INTERIOR", "TELETRANSPORTE_A_INTERIOR_DESC", 1);
 }

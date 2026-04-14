@@ -50,7 +50,7 @@ namespace big
 			// Error handling for invalid or not found players
 			if ((first_proxy == std::nullopt && !sender) || (second_proxy == std::nullopt && !target))
 			{
-				g_notification_service.push_error(std::string("TELEPORT_PLAYER_TO_PLAYER"_T), std::string("INVALID_PLAYER_NAME_NOTIFICATION"_T));
+				g_notification_service.push_error(std::string("TELETRANSPORTE"_T), std::string("NOMBRE_DE_JUGADOR_INVALIDO"_T));
 				return std::nullopt;
 			}
 
@@ -82,11 +82,11 @@ namespace big
 				teleport::teleport_player_to_coords(sender, coords_);
 				auto sender_name = sender->get_name();
 				auto target_name = target->get_name();
-				const std::string message = std::vformat("TELEPORT_PLAYER_TO_PLAYER_NOTIFICATION"_T, std::make_format_args(sender_name, target_name));
-				g_notification_service.push(std::string("TELEPORT_PLAYER_TO_PLAYER"_T), message);
+				const std::string message = std::vformat("TELETRANSPORTE_JUGADOR_A_JUGADOR_NOTIFICACION"_T, std::make_format_args(sender_name, target_name));
+				g_notification_service.push(std::string("TELETRANSPORTE_JUGADOR_A_JUGADOR"_T), message);
 			}
 		}
 	};
-
-	tp_to_player tp_to_player_shortcut("tp", "TELEPORT_PLAYER_TO_PLAYER", "TELEPORT_PLAYER_TO_PLAYER_DESC", 1);
+	
+	tp_to_player tp_to_player_shortcut("tp", "TELETRANSPORTE_A_JUGADOR", "TELETRANSPORTE_A_JUGADOR_DESC", 1);
 }

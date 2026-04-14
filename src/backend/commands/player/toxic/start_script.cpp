@@ -19,13 +19,13 @@ namespace big
 		}
 	};
 
-	start_script<"fm_intro"_J> g_start_tutorial("tutorial", "BACKEND_START_SCRIPT_START_TUTORIAL", "BACKEND_START_SCRIPT_START_TUTORIAL_DESC", 0);
-	start_script<"golf_mp"_J> g_start_golf("golf", "BACKEND_START_SCRIPT_START_GOLF", "BACKEND_START_SCRIPT_START_GOLF_DESC", 0);
-	start_script<"Pilot_School_MP"_J> g_start_flight_school("flightschool", "BACKEND_START_SCRIPT_START_FLIGHT_SCHOOL", "BACKEND_START_SCRIPT_START_FLIGHT_SCHOOL_DESC", 0);
-	start_script<"AM_Darts"_J> g_start_darts("darts", "BACKEND_START_SCRIPT_START_DARTS", "BACKEND_START_SCRIPT_START_DARTS_DESC", 0);
-	start_script<"gunslinger_arcade"_J> g_start_badlands("badlands", "BACKEND_START_SCRIPT_START_BADLANDS_REVENGE_II", "BACKEND_START_SCRIPT_START_BADLANDS_REVENGE_II_DESC", 0);
-	start_script<"ggsm_arcade"_J> g_start_space_monkey("spacemonkey", "BACKEND_START_SCRIPT_START_SPACE_MONKEY", "BACKEND_START_SCRIPT_START_SPACE_MONKEY_DESC", 0);
-	start_script<"wizard_arcade"_J> g_start_wizards_ruin("wizard", "BACKEND_START_SCRIPT_START_WIZARD", "BACKEND_START_SCRIPT_START_WIZARD_DESC", 0);
-	start_script<"puzzle"_J> g_start_qub3d("qub3d", "BACKEND_START_SCRIPT_START_QUB3D", "BACKEND_START_SCRIPT_START_QUB3D_DESC", 0);
-	start_script<"camhedz_arcade"_J> g_start_camhedz("camhedz", "BACKEND_START_SCRIPT_START_CAMHEDZ", "BACKEND_START_SCRIPT_START_CAMHEDZ_DESC", 0);
+	start_script<"fm_intro"_J> g_start_tutorial("tutorial", "INICIAR_TUTORIAL", "INICIAR_TUTORIAL_DESC", 0);
+	start_script<"golf_mp"_J> g_start_golf("golf", "INICIAR_GOLF", "INICIAR_GOLF_DESC", 0);
+	start_script<"Pilot_School_MP"_J> g_start_flight_school("flightschool", "INICIAR_ESCUELA_DE_VUELO", "INICIAR_ESCUELA_DE_VUELO_DESC", 0);
+	start_script<"AM_Darts"_J> g_start_darts("darts", "INICIAR_DARDOS", "INICIAR_DARDOS_DESC", 0);
+	start_script<"gunslinger_arcade"_J> g_start_badlands("badlands", "INICIAR_BADLANDS_REVENGE_II", "INICIAR_BADLANDS_REVENGE_II_DESC", 0);
+	start_script<"ggsm_arcade"_J> g_start_space_monkey("spacemonkey", "INICIAR_SPACE_MONKEY", "INICIAR_SPACE_MONKEY_DESC", 0);
+	start_script<"wizard_arcade"_J> g_start_wizards_ruin("wizard", "INICIAR_WIZARD", "INICIAR_WIZARD_DESC", 0);
+	start_script<"puzzle"_J> g_start_qub3d("qub3d", "INICIAR_QUB3D", "INICIAR_QUB3D_DESC", 0);
+	start_script<"camhedz_arcade"_J> g_start_camhedz("camhedz", "INICIAR_CAMHEDZ", "INICIAR_CAMHEDZ_DESC", 0);
 }

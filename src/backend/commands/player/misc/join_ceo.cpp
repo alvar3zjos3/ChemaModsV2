@@ -13,5 +13,5 @@ namespace big
 		}
 	};
 
-	join_ceo g_join_ceo("joinceo", "JOIN_CEO", "JOIN_CEO_DESC", 0, false);
+	join_ceo g_join_ceo("joinceo", "UNIRSE_A_CEO", "UNIRSE_A_CEO_DESC", 0, false);
 }

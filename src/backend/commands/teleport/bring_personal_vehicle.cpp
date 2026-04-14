@@ -16,5 +16,5 @@ namespace big
 		}
 	};
 
-	bring_personal_vehicle g_bring_personal_vehicle("bringpv", "BRING_PV", "BACKEND_BRING_PERSONAL_VEHICLE_DESC", 0);
+	bring_personal_vehicle g_bring_personal_vehicle("bringpv", "TRAER_VEHICULO_PERSONAL", "BACKEND_BRING_PERSONAL_VEHICLE_DESC", 0);
 }

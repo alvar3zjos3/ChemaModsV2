@@ -21,5 +21,5 @@ namespace big
 		}
 	};
 
-	trigger_ceo_raid g_trigger_ceo_raid("ceoraid", "TRIGGER_CEO_RAID", "TRIGGER_CEO_RAID_DESC", 0);
+	trigger_ceo_raid g_trigger_ceo_raid("ceoraid", "INICIAR_REDADA_CEO", "INICIAR_REDADA_CEO_DESC", 0);
 }

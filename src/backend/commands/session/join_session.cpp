@@ -71,7 +71,7 @@ namespace big
 			auto sessionType = static_cast<eSessionType>(std::atoi(args[0].c_str()));
 			if (m_session_types.find(sessionType) == m_session_types.end())
 			{
-                ctx->report_error(std::format("ID de tipo de sesión inválido \"{}\", las entradas válidas son [{}].", args[0], valid_args()));
+				ctx->report_error(std::format("ID de tipo de sesión inválido \"{}\", las entradas válidas son [{}].", args[0], valid_args()));
 
 				return std::nullopt;
 			}
@@ -83,7 +83,7 @@ namespace big
 				});
 				if (it == m_session_types.end())
 				{
-                    ctx->report_error(std::format("Tipo de sesión desconocido \"{}\", las entradas válidas son [{}].", args[0], valid_args(true)));
+					ctx->report_error(std::format("Tipo de sesión desconocido \"{}\", las entradas válidas son [{}].", args[0], valid_args(true)));
 
 					return std::nullopt;
 				}
@@ -100,5 +100,6 @@ namespace big
 			session::join_type(args.shift<eSessionType>());
 		}
 	};
-	switch_session g_switch_session("joinsession", "JOIN_SESSION", "BACKEND_SESSION_JOIN_SESSION_DESC", 1);
+
+	switch_session g_switch_session("joinsession", "UNIRSE_A_SESION", "BACKEND_SESSION_JOIN_SESSION_DESC", 1);
 }

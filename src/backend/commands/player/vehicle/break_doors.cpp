@@ -41,5 +41,5 @@ namespace big
 		}
 	};
 
-	break_doors g_break_doors("breakdoors", "BACKEND_BREAK_VEHICLE_DOORS", "BACKEND_BREAK_VEHICLE_DOORS_DESC", 0);
+	break_doors g_break_doors("breakdoors", "ROMPER_PUERTAS_DEL_VEHICULO", "BACKEND_BREAK_VEHICLE_DOORS_DESC", 0);
 }

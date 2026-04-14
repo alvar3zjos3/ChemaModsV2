@@ -31,5 +31,5 @@ namespace big
 		}
 	};
 
-	smart_kick g_smart_kick("smartkick", "SMART_KICK", "SMART_KICK_DESC", 0, false);
+	smart_kick g_smart_kick("smartkick", "EXPULSION_INTELIGENTE", "EXPULSION_INTELIGENTE_DESC", 0, false);
 }

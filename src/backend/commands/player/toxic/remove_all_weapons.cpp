@@ -20,5 +20,5 @@ namespace big
 		}
 	};
 
-	remove_all_weapons g_remove_all_weapons("remweaps", "REMOVE_ALL_WEAPONS", "REMOVE_ALL_WEAPONS_DESC", 0);
+	remove_all_weapons g_remove_all_weapons("remweaps", "ELIMINAR_TODAS_LAS_ARMAS", "ELIMINAR_TODAS_LAS_ARMAS_DESC", 0);
 }

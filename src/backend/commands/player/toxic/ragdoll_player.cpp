@@ -20,5 +20,5 @@ namespace big
 		}
 	};
 
-	ragdoll_player g_ragdoll_player("ragdoll", "RAGDOLL_PLAYER", "RAGDOLL_PLAYER_DESC", 0);
+	ragdoll_player g_ragdoll_player("ragdoll", "HACER_CAER_AL_JUGADOR", "HACER_CAER_AL_JUGADOR_DESC", 0);
 }

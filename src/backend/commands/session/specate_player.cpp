@@ -27,6 +27,6 @@ namespace big
 		}
 	};
 
-	spectate_player g_spectate_player("spectate", "SPECTATE", "SPECTATE_DESC", 0);
-	spectate_player g_spectate_player_shortcut("spec", "SPECTATE", "SPECTATE_DESC", 0);
+	spectate_player g_spectate_player("spectate", "ESPECTAR", "ESPECTAR_DESC", 0);
+	spectate_player g_spectate_player_shortcut("spec", "ESPECTAR", "ESPECTAR_DESC", 0);
 }

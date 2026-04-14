@@ -18,5 +18,5 @@ namespace big
 		}
 	};
 
-	give_health g_give_health("givehealth", "GIVE_HEALTH", "GIVE_HEALTH_DESC", 0);
+	give_health g_give_health("givehealth", "DAR_VIDA", "DAR_VIDA_DESC", 0);
 }

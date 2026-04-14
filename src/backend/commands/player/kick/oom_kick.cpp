@@ -10,7 +10,7 @@ namespace big
 		using player_command::player_command;
 
 		virtual CommandAccessLevel get_access_level() override
-		{ 
+		{
 			return CommandAccessLevel::TOXIC;
 		}
 
@@ -30,5 +30,5 @@ namespace big
 		}
 	};
 
-	oom_kick g_oom_kick("oomkick", "OOM_KICK_CMD", "OOM_KICK_CMD_DESC", 0, false);
+	oom_kick g_oom_kick("oomkick", "EXPULSION_OOM", "EXPULSION_OOM_DESC", 0, false);
 }

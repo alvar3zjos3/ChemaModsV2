@@ -78,5 +78,5 @@ namespace big
 		}
 	};
 
-	teleport_to_location g_teleport_to_location("location", "Teleport To Location", "TELEPORT_TO_LOCATION_DESC", 1);
+	teleport_to_location g_teleport_to_location("location", "TELETRANSPORTE_A_UBICACION", "TELEPORT_TO_LOCATION_DESC", 1);
 }

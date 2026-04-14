@@ -17,5 +17,5 @@ namespace big
 		}
 	};
 
-	teleport_into_vehicle g_teleport_into_vehicle("playervehtp", "TELEPORT_INTO_VEHICLE", "TELEPORT_INTO_VEHICLE_DESC", 0, false);
+	teleport_into_vehicle g_teleport_into_vehicle("playervehtp", "TELETRANSPORTE_DENTRO_DEL_VEHICULO", "TELETRANSPORTE_DENTRO_DEL_VEHICULO_DESC", 0, false);
 }
