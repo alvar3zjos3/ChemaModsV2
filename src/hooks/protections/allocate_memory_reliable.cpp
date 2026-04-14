@@ -32,8 +32,8 @@ namespace big
 		if (memory) [[likely]]
 			return memory;
 
-		LOG(WARNING) << "Failed to allocate " << required_memory << " bytes for reliable message, free space: "
-		             << reinterpret_cast<rage::sysMemAllocator*>(cxn->m_allocator)->GetMemoryAvailable() << ". Trying to free some memory";
+		LOG(WARNING) << "No se pudo asignar " << required_memory << " bytes para mensaje confiable, espacio libre: "
+					 << reinterpret_cast<rage::sysMemAllocator*>(cxn->m_allocator)->GetMemoryAvailable() << ". Intentando liberar algo de memoria";
 
 		g_pointers->m_gta.m_connection_manager_try_free_memory(cxn->m_net_connection_mgr);
 
@@ -42,8 +42,8 @@ namespace big
 		if (memory)
 			return memory;
 
-		LOG(WARNING) << "Failed to allocate " << required_memory << " bytes for reliable message, free space: "
-		             << reinterpret_cast<rage::sysMemAllocator*>(cxn->m_allocator)->GetMemoryAvailable() << ". Failed to free some memory, clearing all messages (including reliables) for connection";
+		LOG(WARNING) << "No se pudo asignar " << required_memory << " bytes para mensaje confiable, espacio libre: "
+					 << reinterpret_cast<rage::sysMemAllocator*>(cxn->m_allocator)->GetMemoryAvailable() << ". No se pudo liberar algo de memoria, borrando todos los mensajes (incluyendo confiables) para la conexión";
 
 		while (cxn->m_normal_message_queue.m_count)
 		{
@@ -73,7 +73,7 @@ namespace big
 		if (memory)
 			return memory;
 
-		g_notification_service.push_error("Protections", "The network message allocator is out of memory"); // this never reaches here but why not
+		g_notification_service.push_error("Protections", "El asignador de mensajes de red se quedó sin memoria"); // this never reaches here but why not
 
 		return nullptr;
 	}
