@@ -55,20 +55,20 @@ namespace big
 	{
 		if (m_num_args.has_value() && args.size() != m_num_args.value())
 		{
-			ctx->report_error(std::format("Command {} called with the wrong number of arguments. Expected {}, got {}",
-			    m_name,
-			    m_num_args.value(),
-			    args.size()));
-			return;
-		}
+			ctx->report_error(std::format("El comando {} fue llamado con un número incorrecto de argumentos. Se esperaban {}, se recibieron {}",
+				m_name,
+				m_num_args.value(),
+				args.size()));
+				return;
+			}
 
-		if (ctx->get_access_level() < get_access_level())
-		{
-			ctx->report_error(std::format("You do not have sufficient permissions to call command {}", m_name));
-			return;
-		}
+			if (ctx->get_access_level() < get_access_level())
+			{
+				ctx->report_error(std::format("No tienes permisos suficientes para llamar al comando {}", m_name));
+				return;
+			}
 
-		args.reset_idx();
+			args.reset_idx();
 		if (m_fiber_pool)
 			g_fiber_pool->queue_job([this, args, ctx] {
 				execute(args, ctx);
@@ -81,20 +81,20 @@ namespace big
 	{
 		if (m_num_args.has_value() && args.size() != m_num_args.value())
 		{
-			ctx->report_error(std::format("Command {} called with the wrong number of arguments. Expected {}, got {}",
-			    m_name,
-			    m_num_args.value(),
-			    args.size()));
-			return;
-		}
+			ctx->report_error(std::format("El comando {} fue llamado con un número incorrecto de argumentos. Se esperaban {}, se recibieron {}",
+				m_name,
+				m_num_args.value(),
+				args.size()));
+				return;
+			}
 
-		if (ctx->get_access_level() < get_access_level())
-		{
-			ctx->report_error(std::format("You do not have sufficient permissions to call command {}", m_name));
-			return;
-		}
+			if (ctx->get_access_level() < get_access_level())
+			{
+				ctx->report_error(std::format("No tienes permisos suficientes para llamar al comando {}", m_name));
+				return;
+			}
 
-		auto parsed = parse_args(args, ctx);
+			auto parsed = parse_args(args, ctx);
 		if (parsed.has_value())
 			call(parsed.value(), ctx);
 	}
@@ -184,7 +184,7 @@ namespace big
 			auto args = split(cmd, ' ');
 			if (args.size() == 0 || args[0].empty())
 			{
-				ctx->report_error("No command to call");
+				ctx->report_error("No hay comando para llamar");
 				success = false;
 				continue;
 			}
@@ -201,7 +201,7 @@ namespace big
 				}
 				else
 				{
-					ctx->report_error(std::format("Command {} does not exist", args[0]));
+					ctx->report_error(std::format("El comando {} no existe", args[0]));
 					success = false;
 					continue;
 				}
@@ -211,7 +211,7 @@ namespace big
 			uint32_t hash = rage::joaat(args[0]);
 			if (!g_commands.contains(hash))
 			{
-				ctx->report_error(std::format("Command {} does not exist", args[0]));
+				ctx->report_error(std::format("El comando {} no existe", args[0]));
 				success = false;
 				continue;
 			}
