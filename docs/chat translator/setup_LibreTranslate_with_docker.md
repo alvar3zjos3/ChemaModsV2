@@ -30,7 +30,7 @@ Mac: [Install Docker on Mac](https://docs.docker.com/desktop/install/mac-install
 
 For Windows users, after running the Docker Desktop installer, simply click OK, and the installer will automatically complete all steps. If you haven't enabled WSL in control panel, restart Windows as prompted after installation to use Docker.
 
-![docker_setup](https://github.com/sch-lda/ChemaModsV2/assets/54973190/96b42f4e-dedc-4ba8-96af-496490325f0a)
+![docker_setup](https://github.com/sch-lda/YimMenu/assets/54973190/96b42f4e-dedc-4ba8-96af-496490325f0a)
 ![docker_setup_restart](https://github.com/sch-lda/YimMenu/assets/54973190/728842f0-b364-4ad6-ab24-302967fbc4db)
 
 ### 2. Run Docker Desktop
