@@ -111,12 +111,12 @@ namespace big
 
 		if (!is_valid_weapon(weaponType))
 		{
-			notify::crash_blocked(player, "invalid weapon type");
+			notify::crash_blocked(player, "tipo de arma inválido");
 			LOGF(stream::net_events,
-			    WARNING,
-			    "Blocked WEAPON_DAMAGE_EVENT from {} with invalid weapon hash {:X}",
-			    player->get_name(),
-			    weaponType);
+				WARNING,
+				"Bloqueado WEAPON_DAMAGE_EVENT de {} con hash de arma inválido {:X}",
+				player->get_name(),
+				weaponType);
 			return true;
 		}
 
@@ -384,7 +384,7 @@ namespace big
 
 		if (*(int16_t*)&interiorIndex < -1)
 		{
-			notify::crash_blocked(player, "invalid interior");
+			notify::crash_blocked(player, "interior inválido");
 			return true;
 		}
 
@@ -404,7 +404,7 @@ namespace big
 					std::make_format_args(p_name,
 						reinterpret_cast<CPed*>(entity)->m_player_info->m_net_player_data.m_name)));
 			session::add_infraction(g_player_service->get_by_id(player->m_player_id), Infraction::BLAME_EXPLOSION_DETECTED);
-			LOGF(stream::net_events, WARNING, "{} sent an EXPLOSION_EVENT with addOwnedExplosion enabled and with the wrong owner", player->get_name());
+			LOGF(stream::net_events, WARNING, "{} envió un EXPLOSION_EVENT con addOwnedExplosion habilitado y con el dueño incorrecto", player->get_name());
 			return true;
 		}
 
@@ -516,7 +516,7 @@ namespace big
 
 		if (should_block)
 		{
-			LOGF(stream::net_events, WARNING, "Blocked NETWORK_PLAY_SOUND_EVENT from {} with is_entity: {}, ref_hash: {:X}, sound_hash: {:X}, sound_id: {}, script_hash: {:X}", plyr->get_name(), is_entity ? "T" : "F", ref_hash, sound_hash, sound_id, script_hash);
+			LOGF(stream::net_events, WARNING, "Bloqueado NETWORK_PLAY_SOUND_EVENT de {} con is_entity: {}, ref_hash: {:X}, sound_hash: {:X}, sound_id: {}, script_hash: {:X}", plyr->get_name(), is_entity ? "T" : "F", ref_hash, sound_hash, sound_id, script_hash);
 		}
 
 		buffer.Seek(0);
@@ -571,8 +571,8 @@ namespace big
 				if ((action >= 15 && action <= 18) || action == 33)
 				{
 					g_pointers->m_gta.m_send_event_ack(event_manager, source_player, target_player, event_index, event_handled_bitset);
-					notify::crash_blocked(source_player, "vehicle temp action");
-					LOGF(stream::net_events, WARNING, "Blocked SCRIPT_ENTITY_STATE_CHANGE_EVENT of type SettingOfTaskVehicleTempAction with action {} that would crash the game", plyr->get_name(), action);
+					notify::crash_blocked(source_player, "acción temporal del vehículo");
+					LOGF(stream::net_events, WARNING, "Bloqueado SCRIPT_ENTITY_STATE_CHANGE_EVENT de tipo SettingOfTaskVehicleTempAction con acción {} que bloquearía el juego", plyr->get_name(), action);
 					return;
 				}
 			}
@@ -582,7 +582,7 @@ namespace big
 				    && g_local_player->m_vehicle->m_net_object->m_object_id == entity)
 				{
 					g_pointers->m_gta.m_send_event_ack(event_manager, source_player, target_player, event_index, event_handled_bitset);
-					LOGF(stream::net_events, WARNING, "Blocked SCRIPT_ENTITY_STATE_CHANGE_EVENT of type SetVehicleLockState from {} on our local vehicle", plyr->get_name());
+					LOGF(stream::net_events, WARNING, "Bloqueado SCRIPT_ENTITY_STATE_CHANGE_EVENT de tipo SetVehicleLockState de {} en nuestro vehículo local", plyr->get_name());
 					return;
 				}
 			}
@@ -592,7 +592,7 @@ namespace big
 				    && g_local_player->m_vehicle->m_net_object->m_object_id == entity)
 				{
 					g_pointers->m_gta.m_send_event_ack(event_manager, source_player, target_player, event_index, event_handled_bitset);
-					LOGF(stream::net_events, WARNING, "Blocked SCRIPT_ENTITY_STATE_CHANGE_EVENT of type SetVehicleExclusiveDriver from {} on our local vehicle", plyr->get_name());
+					LOGF(stream::net_events, WARNING, "Bloqueado SCRIPT_ENTITY_STATE_CHANGE_EVENT de tipo SetVehicleExclusiveDriver de {} en nuestro vehículo local", plyr->get_name());
 					g.reactions.vehicle_kick.process(plyr);
 					return;
 				}
@@ -602,13 +602,13 @@ namespace big
 				if (g_local_player && g_local_player->m_net_object && g_local_player->m_net_object->m_object_id)
 				{
 					g_pointers->m_gta.m_send_event_ack(event_manager, source_player, target_player, event_index, event_handled_bitset);
-					LOGF(stream::net_events, WARNING, "Blocked SCRIPT_ENTITY_STATE_CHANGE_EVENT of type SetPedFacialIdleAnimOverride from {} on our local player", plyr->get_name());
+					LOGF(stream::net_events, WARNING, "Bloqueado SCRIPT_ENTITY_STATE_CHANGE_EVENT de tipo SetPedFacialIdleAnimOverride de {} en nuestro jugador local", plyr->get_name());
 					return;
 				}
 			}
 			else if (type > ScriptEntityChangeType::SetVehicleExclusiveDriver || type < ScriptEntityChangeType::BlockingOfNonTemporaryEvents)
 			{
-				notify::crash_blocked(source_player, "invalid script entity change type");
+				notify::crash_blocked(source_player, "tipo de cambio de entidad de script inválido");
 				g_pointers->m_gta.m_send_event_ack(event_manager, source_player, target_player, event_index, event_handled_bitset);
 				return;
 			}
@@ -688,7 +688,7 @@ namespace big
 			auto p1 = buffer->Read<int>(32);
 			auto p2 = buffer->Read<int>(32);
 
-			LOGF(stream::net_events, VERBOSE, "Received REPORT_MYSELF_EVENT from {} with parameters ({}, {})", plyr->get_name(), p1, p2);
+			LOGF(stream::net_events, VERBOSE, "Recibido REPORT_MYSELF_EVENT de {} con parámetros ({}, {})", plyr->get_name(), p1, p2);
 
 			if (p1 != 6) // false positives when telemetry endpoint is unreachable
 			{
@@ -752,8 +752,8 @@ namespace big
 
 				if (type == 0 || initial_length < min_length || max_length < min_length || max_length < 0.0f)
 				{
-					LOGF(stream::net_events, WARNING, "{} sent a SCRIPT_WORLD_STATE_EVENT of type Rope that would crash the game. Script Hash: {:X}, Type: {}, Initial Length: {}, Min Length: {}, Max Length: {}", plyr->get_name(), id.m_hash, type, initial_length, min_length, max_length);
-					notify::crash_blocked(source_player, "rope");
+					LOGF(stream::net_events, WARNING, "{} envió un SCRIPT_WORLD_STATE_EVENT de tipo Rope que bloquearía el juego. Hash de Script: {:X}, Tipo: {}, Longitud Inicial: {}, Longitud Mínima: {}, Longitud Máxima: {}", plyr->get_name(), id.m_hash, type, initial_length, min_length, max_length);
+					notify::crash_blocked(source_player, "cuerda");
 					g_pointers->m_gta.m_send_event_ack(event_manager, source_player, target_player, event_index, event_handled_bitset);
 					return;
 				}
@@ -766,21 +766,21 @@ namespace big
 
 				if (pop_group == 0 && (percentage == 0 || percentage == 103))
 				{
-					notify::crash_blocked(source_player, "pop group override");
-					LOGF(stream::net_events, WARNING, "{} sent a SCRIPT_WORLD_STATE_EVENT of type PopGroupOverride that would crash the game. Pop schedule: {}, Pop group: {}, Percentage: {}, Script Hash: {:X}", plyr->get_name(), pop_schedule, pop_group, percentage, id.m_hash);
+					notify::crash_blocked(source_player, "anulación de grupo de población");
+					LOGF(stream::net_events, WARNING, "{} envió un SCRIPT_WORLD_STATE_EVENT de tipo PopGroupOverride que bloquearía el juego. Planificación de población: {}, Grupo de población: {}, Porcentaje: {}, Hash de Script: {:X}", plyr->get_name(), pop_schedule, pop_group, percentage, id.m_hash);
 					g_pointers->m_gta.m_send_event_ack(event_manager, source_player, target_player, event_index, event_handled_bitset);
 					return;
 				}
 			}
 			else if (type > WorldStateDataType::VehiclePlayerLocking || type < WorldStateDataType::CarGen)
 			{
-				notify::crash_blocked(source_player, "invalid world state type");
+				notify::crash_blocked(source_player, "tipo de estado del mundo inválido");
 				g_pointers->m_gta.m_send_event_ack(event_manager, source_player, target_player, event_index, event_handled_bitset);
 				return;
 			}
 			else if (type == WorldStateDataType::PopMultiplierArea && g.protections.stop_traffic && !NETWORK::NETWORK_IS_ACTIVITY_SESSION())
 			{
-				LOGF(stream::net_events, WARNING, "Blocked a SCRIPT_WORLD_STATE_EVENT of type PopMultiplierArea from {}", plyr->get_name());
+				LOGF(stream::net_events, WARNING, "Bloqueado un SCRIPT_WORLD_STATE_EVENT de tipo PopMultiplierArea de {}", plyr->get_name());
 				g_pointers->m_gta.m_send_event_ack(event_manager, source_player, target_player, event_index, event_handled_bitset);
 				return;
 			}
@@ -795,8 +795,8 @@ namespace big
 
 			if (hash == "WEAPON_UNARMED"_J)
 			{
-				LOGF(stream::net_events, WARNING, "{} sent a REMOVED_WEAPON_EVENT with weapon hash == WEAPON_UNARMED", plyr->get_name());
-				notify::crash_blocked(source_player, "remove unarmed");
+				LOGF(stream::net_events, WARNING, "{} envió un REMOVED_WEAPON_EVENT con weapon hash == WEAPON_UNARMED", plyr->get_name());
+				notify::crash_blocked(source_player, "eliminar desarmado");
 				g_pointers->m_gta.m_send_event_ack(event_manager, source_player, target_player, event_index, event_handled_bitset);
 				return;
 			}
@@ -850,7 +850,7 @@ namespace big
 
 				if (object_type < eNetObjType::NET_OBJ_TYPE_AUTOMOBILE || object_type > eNetObjType::NET_OBJ_TYPE_TRAIN)
 				{
-					notify::crash_blocked(source_player, "out of bounds give control type");
+					notify::crash_blocked(source_player, "tipo de control de concesión fuera de rango");
 					g_pointers->m_gta.m_send_event_ack(event_manager, source_player, target_player, event_index, event_handled_bitset);
 					return;
 				}
