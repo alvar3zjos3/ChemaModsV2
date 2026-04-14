@@ -50,7 +50,7 @@ namespace big
 
 	void backend::self_loop()
 	{
-		LOG(INFO) << "Starting script: Self";
+		LOG(INFO) << "Iniciando script: Self";
 
 		while (g_running)
 		{
@@ -74,7 +74,7 @@ namespace big
 
 	void backend::weapons_loop()
 	{
-		LOG(INFO) << "Starting script: Weapons";
+		LOG(INFO) << "Iniciando script: Weapons";
 
 		while (g_running)
 		{
@@ -97,7 +97,7 @@ namespace big
 
 	void backend::vehicles_loop()
 	{
-		LOG(INFO) << "Starting script: Vehicles";
+		LOG(INFO) << "Iniciando script: Vehicles";
 
 		while (g_running)
 		{
@@ -113,7 +113,7 @@ namespace big
 
 	void backend::misc_loop()
 	{
-		LOG(INFO) << "Starting script: Miscellaneous";
+		LOG(INFO) << "Iniciando script: Miscellaneous";
 
 		while (g_running)
 		{
@@ -137,7 +137,7 @@ namespace big
 
 	void backend::remote_loop()
 	{
-		LOG(INFO) << "Starting script: Remote";
+		LOG(INFO) << "Iniciando script: Remote";
 
 		while (g_running)
 		{
@@ -152,7 +152,7 @@ namespace big
 
 	void backend::rainbowpaint_loop()
 	{
-		LOG(INFO) << "Starting script: Rainbow Paint";
+		LOG(INFO) << "Iniciando script: Rainbow Paint";
 
 		while (g_running)
 		{
@@ -164,7 +164,7 @@ namespace big
 
 	void backend::disable_control_action_loop()
 	{
-		LOG(INFO) << "Starting script: Disable Control Action";
+		LOG(INFO) << "Iniciando script: Disable Control Action";
 
 		while (g_running)
 		{
@@ -177,7 +177,7 @@ namespace big
 
 	void backend::world_loop()
 	{
-		LOG(INFO) << "Starting script: World";
+		LOG(INFO) << "Iniciando script: World";
 
 		while (g_running)
 		{
