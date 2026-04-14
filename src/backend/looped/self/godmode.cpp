@@ -11,9 +11,7 @@ namespace big
 		virtual void on_tick() override
 		{
 			if (g_local_player == nullptr) [[unlikely]]
-			{
 				return;
-			}
 
 			uint32_t bits                    = g.self.proof_mask;
 			uint32_t changed_bits            = bits ^ last_bits;
@@ -35,5 +33,5 @@ namespace big
 
 	static bool true_ref = true;
 	godmode_internal g_godmode_internal("$$godmode", "", "", true_ref);
-	bool_command g_godmode("godmode", "GODMODE", "GODMODE_DESC", g.self.god_mode);
+	bool_command g_godmode("godmode", "MODO_DIOS", "GODMODE_DESC", g.self.god_mode);
 }

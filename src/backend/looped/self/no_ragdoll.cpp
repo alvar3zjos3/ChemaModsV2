@@ -18,5 +18,5 @@ namespace big
 		}
 	};
 
-	no_ragdoll g_no_ragdoll("noragdoll", "NO_RAGDOLL", "NO_RAGDOLL_DESC", g.self.no_ragdoll);
+	no_ragdoll g_no_ragdoll("noragdoll", "SIN_CAIDA", "NO_RAGDOLL_DESC", g.self.no_ragdoll);
 }

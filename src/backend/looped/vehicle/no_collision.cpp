@@ -18,5 +18,5 @@ namespace big
 			vehicle::disable_collisions::m_patch->restore();
 		}
 	};
-	veh_no_collision g_veh_no_collision("vehnocollision", "NO_COLLISION_VEHICLE", "NO_COLLISION_VEHICLE_DESC", g.vehicle.no_collision);
+	veh_no_collision g_veh_no_collision("vehnocollision", "SIN_COLISION_VEHICULO", "NO_COLLISION_VEHICLE_DESC", g.vehicle.no_collision);
 }

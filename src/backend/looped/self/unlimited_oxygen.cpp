@@ -15,5 +15,5 @@ namespace big
 		}
 	};
 
-	unlimited_oxygen g_unlimited_oxygen("infoxy", "UNLIMITED_OXYGEN", "UNLIMITED_OXYGEN_DESC", g.self.unlimited_oxygen);
+	unlimited_oxygen g_unlimited_oxygen("infoxy", "OXIGENO_ILIMITADO", "UNLIMITED_OXYGEN_DESC", g.self.unlimited_oxygen);
 }

@@ -28,5 +28,5 @@ namespace big
 		}
 	};
 
-	increase_player_limit g_increase_player_limit("32players", "INCREASE_PLAYER_LIMIT", "INCREASE_PLAYER_LIMIT_DESC", g.spoofing.increase_player_limit);
+	increase_player_limit g_increase_player_limit("32players", "AUMENTAR_LIMITE_DE_JUGADORES", "INCREASE_PLAYER_LIMIT_DESC", g.spoofing.increase_player_limit);
 }

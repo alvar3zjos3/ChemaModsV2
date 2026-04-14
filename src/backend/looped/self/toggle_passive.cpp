@@ -12,17 +12,16 @@ namespace big
 	{
 		using looped_command::looped_command;
 
-
 		virtual void on_tick() override
 		{
 			if (scr_globals::gpbd_fm_3.as<GPBD_FM_3*>()->Entries[self::id].BossGoon.Boss != -1 || gta_util::find_script_thread("fm_mission_controller"_J) || gta_util::find_script_thread("fm_mission_controller_2020"_J)) [[unlikely]]
 			{
 				on_disable();
 				g.self.passive = false;
-				g_notification_service.push_warning("PASSIVE"_T.data(), "BACKEND_LOOPED_SELF_TOGGLE_PASSIVE_DISABLED_PASSIVE_MODE_MESSAGE"_T.data());
+				g_notification_service.push_warning("MODO_PASIVO"_T.data(), "El modo pasivo se desactivó automáticamente porque estás en una misión o eres CEO.");
 				return;
 			}
-			*g_tunables_service->get_tunable<int*>("VC_PASSIVE_TIME_AFTER_DISABLE"_J) = 0; // End Passive Time = 0s
+			*g_tunables_service->get_tunable<int*>("VC_PASSIVE_TIME_AFTER_DISABLE"_J) = 0;
 			*scr_globals::passive.as<PBOOL>() = TRUE;
 		}
 
@@ -31,12 +30,12 @@ namespace big
 			*scr_globals::passive.as<PBOOL>() = FALSE;
 			NETWORK::SET_LOCAL_PLAYER_AS_GHOST(false, false);
 			*g_tunables_service->get_tunable<int*>("VC_PASSIVE_TIME_AFTER_DISABLE"_J) = 30000;
-			PED::SET_PED_CONFIG_FLAG(self::ped, 342, false); // Disable NotAllowedToJackAnyPlayers
-			PED::SET_PED_CONFIG_FLAG(self::ped, 122, false); // Disable DisableMelee
+			PED::SET_PED_CONFIG_FLAG(self::ped, 342, false);
+			PED::SET_PED_CONFIG_FLAG(self::ped, 122, false);
 			PLAYER::SET_PLAYER_VEHICLE_DEFENSE_MODIFIER(self::ped, 1.f);
 			PED::SET_PED_CAN_BE_DRAGGED_OUT(self::ped, true);
 		}
 	};
 
-	toggle_passive g_toggle_passive("passive", "PASSIVE", "PASSIVE_DESC", g.self.passive);
+	toggle_passive g_toggle_passive("passive", "MODO_PASIVO", "PASSIVE_DESC", g.self.passive);
 }

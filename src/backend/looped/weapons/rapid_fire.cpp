@@ -13,12 +13,6 @@ namespace big
 		const std::size_t m_tick_rate = 5u;
 		std::size_t m_current_tick    = 0;
 
-		/**
-		 * @brief We have to limit the fire rate for some shotguns as they can fill the bullet pool and crash the game.
-		 * 
-		 * @return true 
-		 * @return false 
-		 */
 		inline bool can_shoot()
 		{
 			bool result    = (m_current_tick == 0);
@@ -78,6 +72,5 @@ namespace big
 		}
 	};
 
-	rapid_fire g_rapid_fire("rapidfire", "BACKEND_LOOPED_WEAPONS_RAPID_FIRE", "BACKEND_LOOPED_WEAPONS_RAPID_FIRE_DESC",
-	    g.weapons.rapid_fire);
+	rapid_fire g_rapid_fire("rapidfire", "DISPARO_RAPIDO", "BACKEND_LOOPED_WEAPONS_RAPID_FIRE_DESC", g.weapons.rapid_fire);
 }

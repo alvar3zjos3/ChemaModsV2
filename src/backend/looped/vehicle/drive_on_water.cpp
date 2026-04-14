@@ -95,5 +95,5 @@ namespace big
 		}
 	};
 
-	drive_on_water g_drive_on_water("driveonwater", "DRIVE_ON_WATER", "DRIVE_ON_WATER_DESC", g.vehicle.drive_on_water);
+	drive_on_water g_drive_on_water("driveonwater", "CONDUCIR_SOBRE_AGUA", "DRIVE_ON_WATER_DESC", g.vehicle.drive_on_water);
 }

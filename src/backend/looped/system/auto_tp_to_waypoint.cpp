@@ -14,5 +14,5 @@ namespace big
 		}
 	};
 
-	auto_tp_to_waypoint g_auto_tp_to_waypoint("autotptowp", "BACKEND_LOOPED_AUTO_TP_TO_WAYPOINT", "BACKEND_LOOPED_AUTO_TP_TO_WAYPOINT_DESC", g.self.auto_tp);
+	auto_tp_to_waypoint g_auto_tp_to_waypoint("autotptowp", "TELETRANSPORTE_AUTOMATICO_A_MARCADOR", "BACKEND_LOOPED_AUTO_TP_TO_WAYPOINT_DESC", g.self.auto_tp);
 }

@@ -25,5 +25,5 @@ namespace big
 				    ->m_bounding_box_max_xyz_margin_w.w = 0.25;
 		}
 	};
-	no_collision g_no_collision("nocollision", "NO_COLLISION", "NO_COLLISION_DESC", g.self.no_collision);
+	no_collision g_no_collision("nocollision", "SIN_COLISION", "NO_COLLISION_DESC", g.self.no_collision);
 }

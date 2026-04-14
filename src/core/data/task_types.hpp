@@ -433,5 +433,5 @@ const inline static std::vector<std::pair<int, const char*>> task_type_names = {
     {528, "CTaskVehiclePullAlongside"},
     {529, "CTaskVehicleTransformToSubmarine"},
     {530, "CTaskAnimatedFallback"},
-    {531, "None"},
+    {531, "Ninguno"},
 };

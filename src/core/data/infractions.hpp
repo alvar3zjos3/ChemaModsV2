@@ -2,19 +2,19 @@
 
 namespace big
 {
-	// Lua API: Infraction
+	// Lua API: Infracción
 	enum class Infraction
 	{
-		// Add new values to the bottom (for serialization)
+		// Añade nuevos valores al final (para serialización)
 
 		DESYNC_PROTECTION,
-		BREAKUP_KICK_DETECTED,         // do not use
-		LOST_CONNECTION_KICK_DETECTED, // do not use
-		SPOOFED_ROCKSTAR_ID,           // do not use
+		BREAKUP_KICK_DETECTED,         // no usar
+		LOST_CONNECTION_KICK_DETECTED, // no usar
+		SPOOFED_ROCKSTAR_ID,           // no usar
 		TRIGGERED_ANTICHEAT,
 		TRIED_CRASH_PLAYER,
 		TRIED_KICK_PLAYER,
-		BLAME_EXPLOSION_DETECTED, // do not use (for now)
+		BLAME_EXPLOSION_DETECTED, // no usar (por ahora)
 		ATTACKING_WITH_GODMODE,
 		ATTACKING_WITH_INVISIBILITY,
 		ATTACKING_WHEN_HIDDEN_FROM_PLAYER_LIST,
@@ -23,7 +23,7 @@ namespace big
 		INVALID_PLAYER_MODEL,
 		SUPER_JUMP,
 		UNDEAD_OTR,
-		// So that lua scripts can add a custom runtime reason.
+		// Para que los scripts de lua puedan añadir una razón personalizada en tiempo de ejecución.
 		CUSTOM_REASON,
 		CHAT_SPAM,
 		SENT_MODDER_BEACONS

@@ -20,7 +20,6 @@ namespace big
 				for (int i = 0; i < 3; i++)
 					color[i] = (int)(255 * g.world.waypoint_n_objective.waypoint_beacon_color[i]);
 
-				// no need to bool check this, z-coord just have to be under/on the ground it doesn't really matter
 				MISC::GET_GROUND_Z_FOR_3D_COORD(location.x, location.y, location.z, &location.z, 1, 0);
 
 				GRAPHICS::DRAW_MARKER_EX(1,
@@ -35,7 +34,7 @@ namespace big
 				    0.f,
 				    7.5f,
 				    7.f,
-				    location.z + 1500.f, // the beam's end
+				    location.z + 1500.f,
 				    color[0],
 				    color[1],
 				    color[2],
@@ -68,7 +67,6 @@ namespace big
 				for (int i = 0; i < 3; i++)
 					color[i] = (int)(255 * g.world.waypoint_n_objective.objective_beacon_color[i]);
 
-				// no need to bool check this, z-coord just have to be under/on the ground it doesn't really matter
 				MISC::GET_GROUND_Z_FOR_3D_COORD(location.x, location.y, location.z, &location.z, 1, 0);
 
 				GRAPHICS::DRAW_MARKER_EX(1,
@@ -83,7 +81,7 @@ namespace big
 				    0.f,
 				    7.5f,
 				    7.f,
-				    location.z + 1500.f, // the beam's end
+				    location.z + 1500.f,
 				    color[0],
 				    color[1],
 				    color[2],
@@ -101,6 +99,6 @@ namespace big
 		}
 	};
 
-	waypoint_beacon g_waypoint_beacon("waypointbeacon", "BACKEND_LOOPED_WORLD_BEACON_WAYPOINT", "BACKEND_LOOPED_WORLD_BEACON_WAYPOINT_DESC", g.world.waypoint_n_objective.waypoint_beacon);
-	objective_beacon g_objective_beacon("objectivebeacon", "BACKEND_LOOPED_WORLD_BEACON_OBJECTIVE", "BACKEND_LOOPED_WORLD_BEACON_OBJECTIVE_DESC", g.world.waypoint_n_objective.objective_beacon);
+	waypoint_beacon g_waypoint_beacon("balizawp", "BALIZA_DE_MARCADOR", "BACKEND_LOOPED_WORLD_BEACON_WAYPOINT_DESC", g.world.waypoint_n_objective.waypoint_beacon);
+	objective_beacon g_objective_beacon("balizaobjetivo", "BALIZA_DE_OBJETIVO", "BACKEND_LOOPED_WORLD_BEACON_OBJECTIVE_DESC", g.world.waypoint_n_objective.objective_beacon);
 }

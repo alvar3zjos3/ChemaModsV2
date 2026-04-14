@@ -17,6 +17,5 @@ namespace big
 		}
 	};
 
-	keep_vehicle_clean
-	    g_keep_vehicle_clean("keepvehicleclean", "KEEP_VEHICLE_CLEAN_CMD", "KEEP_VEHICLE_CLEAN_CMD_DESC", g.vehicle.keep_vehicle_clean);
+	keep_vehicle_clean g_keep_vehicle_clean("keepvehicleclean", "MANTENER_VEHICULO_LIMPIO", "KEEP_VEHICLE_CLEAN_CMD_DESC", g.vehicle.keep_vehicle_clean);
 }

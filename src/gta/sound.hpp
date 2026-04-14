@@ -62,12 +62,12 @@ class IDirectSoundCaptureBuffer
 	{
 		if (dwOffset > read_position && audio_page != 0)
 		{
-			dwOffset -= 32000;// fix page offset if we have to read back
+			dwOffset -= 32000;// corregir desplazamiento de página si hay que leer hacia atrás
 		}
 
-		dwOffset += (audio_page * 32000);// add our page offset to get the actual position
+		dwOffset += (audio_page * 32000);// añadir el desplazamiento de página para obtener la posición real
 
-		// fix artifacts after audio ends
+		// corregir artefactos después de que termine el audio
 		if (dwBytes > 1280)
 			dwOffset = 0;
 
@@ -99,11 +99,11 @@ class IDirectSoundCaptureBuffer
 			int header_size = 0;
 			int data_size   = 0;
 			wave_stream.seekg(4, std::ios_base::cur);          // RIFF
-			wave_stream.seekg(4, std::ios_base::cur);          // chunk size
+			wave_stream.seekg(4, std::ios_base::cur);          // tamaño del chunk
 			wave_stream.seekg(4, std::ios_base::cur);          // Wave ID
 			wave_stream.seekg(4, std::ios_base::cur);          // ckID "fmt "
 			wave_stream.read((char*)&header_size, 4);          // cksize "fmt "
-			wave_stream.seekg(header_size, std::ios_base::cur);// format
+			wave_stream.seekg(header_size, std::ios_base::cur);// formato
 			wave_stream.seekg(4, std::ios_base::cur);          // ckID "data"
 			wave_stream.read((char*)&data_size, 4);            // cksize "data"
 
@@ -130,20 +130,20 @@ class IDirectSoundCaptureBuffer
 			{
 				std::this_thread::yield();
 
-				// the buffer can only support up to 32000 bytes of data at once, so we have to page it instead
+				// el buffer solo puede soportar hasta 32000 bytes de datos a la vez, por lo que tenemos que paginarlo
 				if (std::chrono::high_resolution_clock::now() - last_read >= 1ms)
 				{
 					last_read = std::chrono::high_resolution_clock::now();
 					read_position += ((2 * 16000) / 1000);// F*M*Nc/1000
 
-					// reset page idx after audio playback completes
+					// reiniciar índice de página después de que termine la reproducción del audio
 					if (GetActualReadPos() > audio_size)
 					{
 						read_position = 0;
 						audio_page    = 0;
 					}
 
-					// use next page if we go beyond 32000
+					// usar la siguiente página si superamos los 32000
 					if (read_position > 32000)
 					{
 						read_position = read_position % 32000;
@@ -198,6 +198,6 @@ class IDirectSoundCapture
 		return (HRESULT)0L;// DS_OK
 	}
 
-	// we shouldn't need the rest
+	// no necesitamos el resto
 };
 inline IDirectSoundCapture g_direct_sound_capture{};

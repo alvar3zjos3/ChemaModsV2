@@ -8,11 +8,11 @@ struct SpecialAmmo
 };
 
 constexpr std::array<SpecialAmmo, 7> SPECIAL_AMMOS = {{
-    {"No Special Ammo", eAmmoSpecialType::None},
-    {"Armor Piercing Ammo", eAmmoSpecialType::ArmorPiercing},
-    {"Explosive Ammo", eAmmoSpecialType::Explosive},
-    {"Full Metal Jacket Ammo", eAmmoSpecialType::FMJ},
-    {"Hollow Point Ammo", eAmmoSpecialType::HollowPoint},
-    {"Incendiary Ammo", eAmmoSpecialType::Incendiary},
-    {"Tracer Ammo", eAmmoSpecialType::Tracer},
+    {"Sin Munición Especial", eAmmoSpecialType::None},
+    {"Munición Perforante", eAmmoSpecialType::ArmorPiercing},
+    {"Munición Explosiva", eAmmoSpecialType::Explosive},
+    {"Munición Full Metal Jacket", eAmmoSpecialType::FMJ},
+    {"Munición Punta Hueca", eAmmoSpecialType::HollowPoint},
+    {"Munición Incendiaria", eAmmoSpecialType::Incendiary},
+    {"Munición Trazadora", eAmmoSpecialType::Tracer},
 }};

@@ -13,5 +13,5 @@ namespace big
 		}
 	};
 
-	clean_player_looped g_clean_player_looped("cleanloop", "KEEP_PLAYER_CLEAN", "KEEP_PLAYER_CLEAN_DESC", g.self.clean_player);
+	clean_player_looped g_clean_player_looped("cleanloop", "MANTENER_JUGADOR_LIMPIO", "KEEP_PLAYER_CLEAN_DESC", g.self.clean_player);
 }

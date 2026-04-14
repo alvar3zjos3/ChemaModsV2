@@ -24,5 +24,5 @@ namespace big
 		}
 	};
 
-	blackout g_blackout("blackout", "BACKEND_LOOPED_WORLD_BLACKOUT", "BACKEND_LOOPED_WORLD_BLACKOUT_DESC", g.world.blackout);
+	blackout g_blackout("apagon", "APAGÓN", "BACKEND_LOOPED_WORLD_BLACKOUT_DESC", g.world.blackout);
 }

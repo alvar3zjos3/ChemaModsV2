@@ -244,5 +244,5 @@ namespace big
 			}
 		}
 	};
-	custom_vehicle_weapon g_custom_vehicle_weapon("customvehweaps", "CUSTOM_VEH_WEAPONS", "CUSTOM_VEH_WEAPONS_DESC", g.vehicle.vehicle_ammo_special.enabled);
+custom_vehicle_weapon g_custom_vehicle_weapon("customvehweaps", "ARMAS_PERSONALIZADAS_VEHICULO", "DESCRIPCION_ARMAS_PERSONALIZADAS_VEHICULO", g.vehicle.vehicle_ammo_special.enabled);
 }

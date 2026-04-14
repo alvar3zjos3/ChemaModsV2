@@ -100,7 +100,6 @@ namespace big
 		{
 			if (!ENTITY::DOES_ENTITY_EXIST(entity_axe))
 			{
-				// games spam axes fix
 				if (spawning_axe_delay.updated())
 				{
 					Vector3 coordinates_to_spawn = ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(self::ped, 0.f, 0.f, 6.5f);
@@ -120,11 +119,9 @@ namespace big
 						    true,
 						    false);
 
-					// not sure if needed
 					auto axe_net_id = NETWORK::OBJ_TO_NET(entity_axe);
 					NETWORK::NETWORK_REGISTER_ENTITY_AS_NETWORKED(entity_axe);
 					NETWORK::SET_NETWORK_ID_EXISTS_ON_ALL_MACHINES(axe_net_id, true);
-					//add
 					Blip blip = HUD::ADD_BLIP_FOR_ENTITY(entity_axe);
 					HUD::SET_BLIP_DISPLAY(blip, 8);
 					HUD::SET_BLIP_SPRITE(blip, 154);
@@ -214,7 +211,6 @@ namespace big
 						float distance        = 150.f;
 						Vector3 multiply = cam_direction * distance;
 						new_axe_flying_coords = cam_coords + multiply;
-						// only for controller
 						PAD::SET_CONTROL_SHAKE(0, 1, 5);
 					}
 				}
@@ -228,7 +224,6 @@ namespace big
 				if (NETWORK::NETWORK_HAS_CONTROL_OF_ENTITY(entity_axe))
 				{
 					float speed = axe_on_idle ? 1.0f : 2.6f;
-					//YES OMG
 
 					ENTITY::APPLY_FORCE_TO_ENTITY(entity_axe,
 					    3,
@@ -260,5 +255,5 @@ namespace big
 	};
 
 	flying_axe
-	    g_flying_axe("flyingaxe", "BACKEND_LOOPED_FLYING_AXE", "BACKEND_LOOPED_FLYING_AXE_DESC", g.weapons.flying_axe.enable);
+	    g_flying_axe("flyingaxe", "HACHA_VOLADORA", "BACKEND_LOOPED_FLYING_AXE_DESC", g.weapons.flying_axe.enable);
 }

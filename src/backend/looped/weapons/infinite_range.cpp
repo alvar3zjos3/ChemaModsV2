@@ -3,7 +3,6 @@
 
 namespace big
 {
-
 	class infinite_range : looped_command
 	{
 		using looped_command::looped_command;
@@ -46,5 +45,5 @@ namespace big
 		}
 	};
 
-	infinite_range g_infinite_range("infrange", "BACKEND_LOOPED_WEAPONS_INFINITE_RANGE", "BACKEND_LOOPED_WEAPONS_INFINITE_RANGE_DESC", g.weapons.infinite_range);
+	infinite_range g_infinite_range("infrange", "RANGO_INFINITO", "BACKEND_LOOPED_WEAPONS_INFINITE_RANGE_DESC", g.weapons.infinite_range);
 }

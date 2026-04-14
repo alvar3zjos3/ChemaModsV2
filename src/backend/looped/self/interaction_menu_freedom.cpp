@@ -9,9 +9,9 @@ namespace big
 
 		virtual void on_tick() override
 		{
-			*scr_globals::interaction_menu_access.as<int*>() = 1; // sets itself to the original value every frame while you're in the interaction menu, so no need for a reset
+			*scr_globals::interaction_menu_access.as<int*>() = 1;
 		}
 	};
 
-	interaction_menu_freedom g_interaction_menu_freedom("interactionmenufreedom", "INTERACTION_MENU_FREEDOM", "INTERACTION_MENU_FREEDOM_DESC", g.self.interaction_menu_freedom);
+	interaction_menu_freedom g_interaction_menu_freedom("interactionmenufreedom", "MENU_DE_INTERACCION_LIBRE", "INTERACTION_MENU_FREEDOM_DESC", g.self.interaction_menu_freedom);
 }

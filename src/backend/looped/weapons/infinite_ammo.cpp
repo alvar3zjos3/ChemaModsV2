@@ -18,5 +18,5 @@ namespace big
 		}
 	};
 
-	infinite_ammo g_infinite_ammo("infammo", "VIEW_OVERLAY_INFINITE_AMMO", "", g.weapons.infinite_ammo);
+	infinite_ammo g_infinite_ammo("infammo", "MUNICION_INFINITA", "", g.weapons.infinite_ammo);
 }

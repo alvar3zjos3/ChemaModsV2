@@ -51,22 +51,16 @@ namespace big
 
 			if (can_update_location())
 			{
-				// Left Shift
 				if (PAD::IS_DISABLED_CONTROL_PRESSED(0, (int)ControllerInputs::INPUT_SPRINT))
 					vecChange.z += speed / 2;
-				// Left Control
 				if (PAD::IS_DISABLED_CONTROL_PRESSED(0, (int)ControllerInputs::INPUT_DUCK))
 					vecChange.z -= speed / 2;
-				// Forward
 				if (PAD::IS_DISABLED_CONTROL_PRESSED(0, (int)ControllerInputs::INPUT_MOVE_UP_ONLY))
 					vecChange.y += speed;
-				// Backward
 				if (PAD::IS_DISABLED_CONTROL_PRESSED(0, (int)ControllerInputs::INPUT_MOVE_DOWN_ONLY))
 					vecChange.y -= speed;
-				// Left
 				if (PAD::IS_DISABLED_CONTROL_PRESSED(0, (int)ControllerInputs::INPUT_MOVE_LEFT_ONLY))
 					vecChange.x -= speed;
-				// Right
 				if (PAD::IS_DISABLED_CONTROL_PRESSED(0, (int)ControllerInputs::INPUT_MOVE_RIGHT_ONLY))
 					vecChange.x += speed;
 			}
@@ -77,9 +71,7 @@ namespace big
 				mult += 0.15f;
 
 			Vector3 rot = CAM::GET_CAM_ROT(camera, 2);
-			//float pitch = math::deg_to_rad(rot.x); // vertical
-			//float roll = rot.y;
-			float yaw = math::deg_to_rad(rot.z); // horizontal
+			float yaw = math::deg_to_rad(rot.z);
 
 			position.x += (vecChange.x * cos(yaw) - vecChange.y * sin(yaw)) * mult;
 			position.y += (vecChange.x * sin(yaw) + vecChange.y * cos(yaw)) * mult;
@@ -103,5 +95,5 @@ namespace big
 		}
 	};
 
-	free_cam g_free_cam("freecam", "FREECAM", "FREECAM_DESC", g.self.free_cam);
+	free_cam g_free_cam("freecam", "CAMARA_LIBRE", "FREECAM_DESC", g.self.free_cam);
 }

@@ -121,6 +121,5 @@ namespace big
 
 	static bool true_ref = true;
 	vehicle_godmode_internal g_vehicle_godmode_internal("$$vehgodmode", "", "", true_ref);
-	bool_command g_vehicle_godmode("vehgodmode", "VEHICLE_GOD", "VEHICLE_GOD_DESC",
-	    g.vehicle.god_mode);
+	bool_command g_vehicle_godmode("vehgodmode", "MODO_DIOS_VEHICULO", "VEHICLE_GOD_DESC", g.vehicle.god_mode);
 }

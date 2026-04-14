@@ -39,7 +39,7 @@ namespace big
 						}
 
 						auto weapon_info = g_local_player->m_weapon_manager->m_weapon_info;
-						if (PED::GET_PED_CONFIG_FLAG(ped, 9, TRUE) || !g_pointers->m_gta.m_can_do_damage_to_ped(g_local_player, weapon_info, ped_ptr)) //Can't do damage to them, skip.
+						if (PED::GET_PED_CONFIG_FLAG(ped, 9, TRUE) || !g_pointers->m_gta.m_can_do_damage_to_ped(g_local_player, weapon_info, ped_ptr))
 							return;
 
 						if (g.weapons.aimbot.exclude_friends && ped_ptr->m_player_info)
@@ -109,8 +109,6 @@ namespace big
 							return;
 						}
 
-						//Vector3 coords = ENTITY::GET_ENTITY_BONE_POSTION(crosshair_catch, 0x796E); //SKEL_Head (This will fix the edge case of peds in cars)
-						//PED::SET_PED_SHOOTS_AT_COORD(self::ped, coords.x, coords.y, coords.z, true);
 						PED::SET_PED_RESET_FLAG(self::ped, 65, TRUE);
 					}
 				}
@@ -118,5 +116,5 @@ namespace big
 		}
 	};
 
-	triggerbot g_triggerbot("triggerbot", "VIEW_OVERLAY_TRIGGERBOT", "BACKEND_LOOPED_WEAPONS_TRIGGERBOT_DESC", g.weapons.triggerbot);
+	triggerbot g_triggerbot("triggerbot", "TRIGGERBOT", "BACKEND_LOOPED_WEAPONS_TRIGGERBOT_DESC", g.weapons.triggerbot);
 }

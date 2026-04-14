@@ -34,5 +34,5 @@ namespace big
 	};
 
 	increased_damage
-	    g_increased_damage("incrdamage", "BACKEND_LOOPED_WEAPONS_INCREASE_DAMAGE", "BACKEND_LOOPED_WEAPONS_INCREASE_DAMAGE_DESC", g.weapons.increase_damage);
+	    g_increased_damage("incrdamage", "AUMENTAR_DAÑO", "BACKEND_LOOPED_WEAPONS_INCREASE_DAMAGE_DESC", g.weapons.increase_damage);
 }

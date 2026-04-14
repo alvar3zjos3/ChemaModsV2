@@ -15,6 +15,6 @@ namespace big
 	};
 
 	bool_command
-	    g_spoof_dlc_hash("spoofdlchash", "SPOOF_DLC_HASH", "SPOOF_DLC_HASH_DESC", g.spoofing.spoof_dlc_hash);
-	copy_current_dlc_hash g_copy_current_dlc_hash("storedlchash", "COPY_CURRENT_DLC_HASH", "COPY_CURRENT_DLC_HASH_DESC", 0);
+	    g_spoof_dlc_hash("spoofdlchash", "FALSEAR_HASH_DLC", "SPOOF_DLC_HASH_DESC", g.spoofing.spoof_dlc_hash);
+	copy_current_dlc_hash g_copy_current_dlc_hash("storedlchash", "COPIAR_HASH_DLC_ACTUAL", "COPY_CURRENT_DLC_HASH_DESC", 0);
 }

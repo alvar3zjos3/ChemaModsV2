@@ -18,5 +18,5 @@ namespace big
 	};
 
 	bool always_on = true;
-	bypass_dupe_detector g_bypass_dupe_detector("dupedetector", "DUPE_DETECTOR", "", always_on);
+	bypass_dupe_detector g_bypass_dupe_detector("dupedetector", "EVITAR_DETECTOR_DE_DUPLICADOS", "", always_on);
 }

@@ -20,5 +20,5 @@ namespace big
 		}
 	};
 
-	mobile_radio g_mobile_radio("mobileradio", "MOBILE_RADIO", "MOBILE_RADIO_DESC", g.self.mobile_radio);
+	mobile_radio g_mobile_radio("mobileradio", "RADIO_MOVIL", "MOBILE_RADIO_DESC", g.self.mobile_radio);
 }

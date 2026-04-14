@@ -16,6 +16,5 @@ namespace big
 		}
 	};
 
-	keep_on_ground g_keep_on_ground("keeponground", "KEEP_ON_GROUND", "KEEP_ON_GROUND_DESC",
-	    g.vehicle.keep_on_ground);
+	keep_on_ground g_keep_on_ground("keeponground", "MANTENER_EN_EL_SUELO", "KEEP_ON_GROUND_DESC", g.vehicle.keep_on_ground);
 }

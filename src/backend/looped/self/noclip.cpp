@@ -33,7 +33,6 @@ namespace big
 			const auto location = self::pos;
 			const Entity ent = (self::veh != 0 && g_local_player->m_ped_task_flag & (int)ePedTask::TASK_DRIVING) ? self::veh : self::ped;
 
-			// cleanup when changing entities
 			if (m_entity != ent)
 			{
 				ENTITY::FREEZE_ENTITY_POSITION(m_entity, false);
@@ -46,22 +45,16 @@ namespace big
 
 			if (can_update_location())
 			{
-				// Left Shift
 				if (PAD::IS_DISABLED_CONTROL_PRESSED(0, (int)ControllerInputs::INPUT_SPRINT))
 					vel.z += speed / 2;
-				// Left Control
 				if (PAD::IS_DISABLED_CONTROL_PRESSED(0, (int)ControllerInputs::INPUT_DUCK))
 					vel.z -= speed / 2;
-				// Forward
 				if (PAD::IS_DISABLED_CONTROL_PRESSED(0, (int)ControllerInputs::INPUT_MOVE_UP_ONLY))
 					vel.y += speed;
-				// Backward
 				if (PAD::IS_DISABLED_CONTROL_PRESSED(0, (int)ControllerInputs::INPUT_MOVE_DOWN_ONLY))
 					vel.y -= speed;
-				// Left
 				if (PAD::IS_DISABLED_CONTROL_PRESSED(0, (int)ControllerInputs::INPUT_MOVE_LEFT_ONLY))
 					vel.x -= speed;
-				// Right
 				if (PAD::IS_DISABLED_CONTROL_PRESSED(0, (int)ControllerInputs::INPUT_MOVE_RIGHT_ONLY))
 					vel.x += speed;
 			}
@@ -69,9 +62,9 @@ namespace big
 			auto rot = CAM::GET_GAMEPLAY_CAM_ROT(2);
 			ENTITY::SET_ENTITY_ROTATION(ent, 0.f, rot.y, rot.z, 2, 0);
 			ENTITY::SET_ENTITY_COLLISION(ent, false, false);
+
 			if (vel.x == 0.f && vel.y == 0.f && vel.z == 0.f)
 			{
-				// freeze entity to prevent drifting when standing still
 				ENTITY::FREEZE_ENTITY_POSITION(ent, true);
 				m_speed_multiplier = 0.f;
 			}
@@ -116,5 +109,5 @@ namespace big
 		}
 	};
 
-	noclip g_noclip("noclip", "NO_CLIP", "NO_CLIP_DESC", g.self.noclip);
+	noclip g_noclip("noclip", "SIN_COLISION", "NO_CLIP_DESC", g.self.noclip);
 }

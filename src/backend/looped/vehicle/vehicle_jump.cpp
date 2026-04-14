@@ -18,6 +18,5 @@ namespace big
 		}
 	};
 
-	vehicle_jump
-	    g_vehicle_jump("vehjump", "VEHICLE_JUMP", "VEHICLE_JUMP_DESC", g.vehicle.vehicle_jump);
+	vehicle_jump g_vehicle_jump("vehjump", "SALTO_VEHICULO", "VEHICLE_JUMP_DESC", g.vehicle.vehicle_jump);
 }

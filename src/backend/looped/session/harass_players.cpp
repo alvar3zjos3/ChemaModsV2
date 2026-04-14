@@ -11,7 +11,7 @@ namespace big
 		virtual void on_enable() override
 		{
 			for (auto& player : g_player_service->players())
-				NETWORK::NETWORK_CONCEAL_PLAYER(player.second->id(), false, false); // disable interior instance separation
+				NETWORK::NETWORK_CONCEAL_PLAYER(player.second->id(), false, false);
 		}
 
 		virtual void on_tick() override
@@ -19,5 +19,5 @@ namespace big
 		}
 	};
 
-	harass_players g_harass_players("harass", "HARASS_PLAYERS", "HARASS_PLAYERS_DESC", g.session.harass_players);
+	harass_players g_harass_players("harass", "MOLESTAR_JUGADORES", "HARASS_PLAYERS_DESC", g.session.harass_players);
 }

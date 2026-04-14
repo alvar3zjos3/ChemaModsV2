@@ -18,5 +18,5 @@ namespace big
 		}
 	};
 
-	combative g_combative("riotmode", "BACKEND_LOOPED_WORLD_NEARBY_RIOT_MODE", "BACKEND_LOOPED_WORLD_NEARBY_RIOT_MODE_DESC", g.world.nearby.combative);
+	combative g_combative("modoriot", "MODO_ALBOROTO_CERCANO", "BACKEND_LOOPED_WORLD_NEARBY_RIOT_MODE_DESC", g.world.nearby.combative);
 }

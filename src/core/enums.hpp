@@ -9,7 +9,7 @@ namespace big
 		INFINITE_BOOST,
 		HOLD_FOR_INFINITE
 	};
-	NLOHMANN_JSON_SERIALIZE_ENUM(eBoostBehaviors, {{eBoostBehaviors::DEFAULT, "default"}, {eBoostBehaviors::INSTANT_REFIL, "instant"}, {eBoostBehaviors::INFINITE_BOOST, "infinite"}, {eBoostBehaviors::HOLD_FOR_INFINITE, "hold"}})
+	NLOHMANN_JSON_SERIALIZE_ENUM(eBoostBehaviors, {{eBoostBehaviors::DEFAULT, "predeterminado"}, {eBoostBehaviors::INSTANT_REFIL, "recarga_instantanea"}, {eBoostBehaviors::INFINITE_BOOST, "infinito"}, {eBoostBehaviors::HOLD_FOR_INFINITE, "mantener_infinito"}})
 
 	enum class CustomWeapon
 	{
@@ -25,15 +25,15 @@ namespace big
 	};
 	NLOHMANN_JSON_SERIALIZE_ENUM(CustomWeapon,
 	    {
-	        {CustomWeapon::NONE, "none"},
-	        {CustomWeapon::CAGE_GUN, "cage"},
-	        {CustomWeapon::DELETE_GUN, "delete"},
-	        {CustomWeapon::GRAVITY_GUN, "gravity"},
-	        {CustomWeapon::STEAL_VEHICLE_GUN, "steal"},
-	        {CustomWeapon::REPAIR_GUN, "repair"},
-	        {CustomWeapon::VEHICLE_GUN, "vehicle"},
+	        {CustomWeapon::NONE, "ninguno"},
+	        {CustomWeapon::CAGE_GUN, "jaula"},
+	        {CustomWeapon::DELETE_GUN, "borrar"},
+	        {CustomWeapon::GRAVITY_GUN, "gravedad"},
+	        {CustomWeapon::STEAL_VEHICLE_GUN, "robar_vehiculo"},
+	        {CustomWeapon::REPAIR_GUN, "reparar"},
+	        {CustomWeapon::VEHICLE_GUN, "vehiculo"},
 	        {CustomWeapon::TP_GUN, "tp"},
-	        {CustomWeapon::PAINT_GUN, "paint"},
+	        {CustomWeapon::PAINT_GUN, "pintura"},
 	    })
 
 	enum class ContextEntityType : uint8_t
@@ -153,49 +153,49 @@ namespace big
 
 	enum class eRemoteEvent
 	{
-		Bounty   = 1517551547, // (137, "FM_TXT_BNTY0", iVar1, PLAYER::GET_PLAYER_NAME(Var2.f_1), "", 5000, Var2.f_6);
-		CeoBan   = 1531565154, // mpply_vipgameplaydisabledtimer
+		Bounty   = 1517551547,
+		CeoBan   = 1531565154,
 		CeoKick  = -11681548,
-		CeoMoney = -337848027, // Goon_Paid_Large
+		CeoMoney = -337848027,
 		ClearWantedLevel = -1704545346,
-		ForceMission     = 259469385,  // ), Var0.f_2, 1))
-		GiveCollectible  = 968269233,  // DLC_SUM20_HIDDEN_COLLECTIBLES xref
-		GtaBanner        = -330501227, // NETWORK::NETWORK_IS_SCRIPT_ACTIVE("BUSINESS_BATTLES", -1, true, 0) second one
-		NetworkBail      = -901348601, // NETWORK::NETWORK_BAIL(16, 0, 0); xref func
-		PersonalVehicleDestroyed = 1655503526,  // PLYVEH_INS_DES1
-		RemoteOffradar           = 57493695,    // NETWORK::GET_TIME_DIFFERENCE(NETWORK::GET_NETWORK_TIME(), Var0.f_2)
-		SendToCutscene           = -1951335381, // (bVar3, bVar4, 125f, 1)
-		SendToCayoPerico         = 373376135,   // CELL_HI_INV
-		SendToLocation           = 1669592503,  // &Var222, 11);
-		SoundSpam                = 996099702,   // CELL_APTINVYACHT
-		Spectate                 = 1840946429,  // SPEC_TCK1
-		Teleport                 = -1321657966, // Mission_Pass_Notify
-		TeleportToWarehouse      = -1253241415, // .f_4 == 50
-		TransactionError         = -830063381,  // NETWORK_RECEIVE_PLAYER_JOBSHARE_CASH
-		VehicleKick              = -503325966,  // PIM_RFMOC
-		MCTeleport    = 1103127469, // NETWORK::NETWORK_HASH_FROM_PLAYER_HANDLE(PLAYER::PLAYER_ID()) == (first one)
-		StartActivity = 1450115979, // (Var0.f_2, -1); first match
-		MarkPlayerAsBeast = 1649541577, // GB_BOSSBST xref == PLAYER... global (sadly doesn't actually turn people into the beast)
-		KickFromInterior = -1496371358, // ENTITY::SET_ENTITY_HEALTH(PLAYER::PLAYER_PED_ID(), PED::GET_PED_MAX_HEALTH(PLAYER::PLAYER_PED_ID()), false)
-		InteriorControl  = -1638522928, // eventData.f_3 != _INVALID_PLAYER_INDEX_0()
+		ForceMission     = 259469385,
+		GiveCollectible  = 968269233,
+		GtaBanner        = -330501227,
+		NetworkBail      = -901348601,
+		PersonalVehicleDestroyed = 1655503526,
+		RemoteOffradar           = 57493695,
+		SendToCutscene           = -1951335381,
+		SendToCayoPerico         = 373376135,
+		SendToLocation           = 1669592503,
+		SoundSpam                = 996099702,
+		Spectate                 = 1840946429,
+		Teleport                 = -1321657966,
+		TeleportToWarehouse      = -1253241415,
+		TransactionError         = -830063381,
+		VehicleKick              = -503325966,
+		MCTeleport    = 1103127469,
+		StartActivity = 1450115979,
+		MarkPlayerAsBeast = 1649541577,
+		KickFromInterior = -1496371358,
+		InteriorControl  = -1638522928,
 		SendTextLabelSMS = -1773335296,
 
-		Crash  = -1604421397, // SET_NO_LOADING_SCREEN, xref it
+		Crash  = -1604421397,
 		Crash2 = -375628860,
 		Crash3 = 323285304,
 
-		TSECommand          = 800157557, // CnCTG_IN_BF
-		TSECommandRotateCam = 225624744, // != 29) && f
+		TSECommand          = 800157557,
+		TSECommandRotateCam = 225624744,
 		TSECommandSound     = 385726943,
 
 		Notification             = -642704387,
-		NotificationMoneyBanked  = 94410750,   // TICK_TC_BANK
-		NotificationMoneyRemoved = -242911964, // TICK_TC_REMO
-		NotificationMoneyStolen  = -295926414, // TICK_TC_STOL
-		NotificationCrash1       = -994541138, // AMCH_ATTEMPT2
-		NotificationCrash2       = 782258655,  // GBSAL_COLL
+		NotificationMoneyBanked  = 94410750,
+		NotificationMoneyRemoved = -242911964,
+		NotificationMoneyStolen  = -295926414,
+		NotificationCrash1       = -994541138,
+		NotificationCrash2       = 782258655,
 
-		DestroyPersonalVehicle = 109434679, // CnC_PV_THEFT
+		DestroyPersonalVehicle = 109434679,
 		TriggerCEORaid         = -1906536929,
 
 		StartScriptBegin   = -366707054,
@@ -239,7 +239,7 @@ namespace big
 	};
 	NLOHMANN_JSON_SERIALIZE_ENUM(SpeedUnit,
 	    {
-	        {SpeedUnit::KMPH, "kmph"},
+	        {SpeedUnit::KMPH, "kmh"},
 	        {SpeedUnit::MIPH, "mph"},
 	        {SpeedUnit::MPS, "mps"},
 	    })
@@ -252,9 +252,9 @@ namespace big
 	};
 	NLOHMANN_JSON_SERIALIZE_ENUM(RainbowPaintType,
 	    {
-	        {RainbowPaintType::Off, "off"},
-	        {RainbowPaintType::Fade, "fade"},
-	        {RainbowPaintType::Spasm, "spasm"},
+	        {RainbowPaintType::Off, "apagado"},
+	        {RainbowPaintType::Fade, "desvanecer"},
+	        {RainbowPaintType::Spasm, "espasmo"},
 	    })
 
 	enum class AutoDriveDestination
@@ -267,11 +267,11 @@ namespace big
 	};
 	NLOHMANN_JSON_SERIALIZE_ENUM(AutoDriveDestination,
 	    {
-	        {AutoDriveDestination::STOPPED, "stopped"},
-	        {AutoDriveDestination::OBJECTITVE, "objective"},
-	        {AutoDriveDestination::WAYPOINT, "waypoint"},
-	        {AutoDriveDestination::WANDER, "wander"},
-	        {AutoDriveDestination::EMERGENCY_STOP, "emergency_stop"},
+	        {AutoDriveDestination::STOPPED, "detenido"},
+	        {AutoDriveDestination::OBJECTITVE, "objetivo"},
+	        {AutoDriveDestination::WAYPOINT, "punto_de_control"},
+	        {AutoDriveDestination::WANDER, "deambular"},
+	        {AutoDriveDestination::EMERGENCY_STOP, "parada_emergencia"},
 	    })
 
 	enum class AutoDriveStyle
@@ -281,8 +281,8 @@ namespace big
 	};
 	NLOHMANN_JSON_SERIALIZE_ENUM(AutoDriveStyle,
 	    {
-	        {AutoDriveStyle::LAW_ABIDING, "law_abiding"},
-	        {AutoDriveStyle::THE_ROAD_IS_YOURS, "the_road_is_yours"},
+	        {AutoDriveStyle::LAW_ABIDING, "respetando_leyes"},
+	        {AutoDriveStyle::THE_ROAD_IS_YOURS, "la_carretera_es_tuya"},
 	    })
 
 	enum class eEntityProofs : uint32_t
@@ -394,17 +394,17 @@ namespace big
 	enum class CommandAccessLevel
 	{
 		NONE,
-		FRIENDLY,   // heal, semi godmode...
-		AGGRESSIVE, // kick from vehicle, send to apartment...
-		TOXIC,      // kicks
-		ADMIN       // full access
+		FRIENDLY,
+		AGGRESSIVE,
+		TOXIC,
+		ADMIN
 	};
 	NLOHMANN_JSON_SERIALIZE_ENUM(CommandAccessLevel,
 	    {
-	        {CommandAccessLevel::NONE, "none"},
-	        {CommandAccessLevel::FRIENDLY, "friendly"},
-	        {CommandAccessLevel::AGGRESSIVE, "aggressive"},
-	        {CommandAccessLevel::TOXIC, "toxic"},
+	        {CommandAccessLevel::NONE, "ninguno"},
+	        {CommandAccessLevel::FRIENDLY, "amigable"},
+	        {CommandAccessLevel::AGGRESSIVE, "agresivo"},
+	        {CommandAccessLevel::TOXIC, "toxico"},
 	        {CommandAccessLevel::ADMIN, "admin"},
 	    })
 

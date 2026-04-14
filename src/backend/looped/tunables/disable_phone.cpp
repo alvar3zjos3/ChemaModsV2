@@ -19,5 +19,5 @@ namespace big
 		}
 	};
 
-	disable_phone g_disable_phone("nophone", "DISABLE_PHONE", "DISABLE_PHONE_DESC", g.tunables.disable_phone);
+	disable_phone g_disable_phone("nophone", "DESACTIVAR_TELEFONO", "DISABLE_PHONE_DESC", g.tunables.disable_phone);
 }

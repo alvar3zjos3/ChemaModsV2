@@ -17,7 +17,7 @@ namespace big
 
 		if (vehicle && (is_rocket || is_kers))
 		{
-			if (g.vehicle.boost_behavior == eBoostBehaviors::INSTANT_REFIL) // Instant Refill
+			if (g.vehicle.boost_behavior == eBoostBehaviors::INSTANT_REFIL) // Recarga instantánea
 			{
 				if (is_rocket && (vehicle->m_boost == 0.f || !vehicle->m_boosting))
 				{
@@ -29,13 +29,13 @@ namespace big
 					vehicle->m_kers_boost = vehicle->m_kers_boost_max;
 				}
 			}
-			else if (g.vehicle.boost_behavior == eBoostBehaviors::INFINITE_BOOST) // Infinite
+			else if (g.vehicle.boost_behavior == eBoostBehaviors::INFINITE_BOOST) // Infinito
 			{
 				vehicle->m_boost_allow_recharge = true;
 				vehicle->m_boost                = 10.f;
 				vehicle->m_kers_boost           = vehicle->m_kers_boost_max - 0.01f;
 			}
-			else if (g.vehicle.boost_behavior == eBoostBehaviors::HOLD_FOR_INFINITE) //Hold for Boost
+			else if (g.vehicle.boost_behavior == eBoostBehaviors::HOLD_FOR_INFINITE) // Mantener para boost infinito
 			{
 				if (PAD::IS_CONTROL_PRESSED(0, (int)ControllerInputs::INPUT_VEH_ROCKET_BOOST) || PAD::IS_CONTROL_PRESSED(0, (int)ControllerInputs::INPUT_VEH_FLY_BOOST))
 				{

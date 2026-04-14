@@ -26,5 +26,5 @@ namespace big
 		}
 	};
 
-	ped_rain g_ped_rain("pedrain", "BACKEND_LOOPED_WORLD_RAIN_PEDS", "BACKEND_LOOPED_WORLD_RAIN_PEDS_DESC", g.world.nearby.ped_rain);
+	ped_rain g_ped_rain("lluviapeds", "LLUVIA_DE_PEDS", "BACKEND_LOOPED_WORLD_RAIN_PEDS_DESC", g.world.nearby.ped_rain);
 }

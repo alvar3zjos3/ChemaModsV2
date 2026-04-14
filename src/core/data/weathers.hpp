@@ -2,5 +2,5 @@
 
 namespace big
 {
-	static constexpr inline auto weathers = std::to_array({"EXTRASUNNY", "CLEAR", "CLOUDS", "SMOG", "FOGGY", "OVERCAST", "RAIN", "THUNDER", "CLEARING", "NEUTRAL", "SNOW", "BLIZZARD", "SNOWLIGHT", "XMAS", "HALLOWEEN", "SNOW_HALLOWEEN", "RAIN_HALLOWEEN"});
+	static constexpr inline auto weathers = std::to_array({"EXTRASOLEADO", "DESPEJADO", "NUBLADO", "SMOG", "NIEBLA", "NUBLADO", "LLUVIA", "TORMENTA", "ACLARANDO", "NEUTRO", "NIEVE", "VENTISCA", "NIEVE_LIGERA", "NAVIDAD", "HALLOWEEN", "NIEVE_HALLOWEEN", "LLUVIA_HALLOWEEN"});
 }

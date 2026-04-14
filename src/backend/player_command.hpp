@@ -36,7 +36,7 @@ namespace big
 
 		virtual std::optional<std::vector<std::string>> get_argument_suggestions(int arg) override
 		{
-			if (arg == 1) // First argument of all player commands is the player name
+			if (arg == 1) // El primer argumento de todos los comandos de jugador es el nombre del jugador
 			{
 				std::vector<std::string> suggestions;
 				for (auto& player : g_player_service->players() | std::ranges::views::values)
@@ -58,5 +58,4 @@ namespace big
 		void call(player_ptr player, const command_arguments& args, const std::shared_ptr<command_context> ctx = std::make_shared<default_command_context>());
 		player_command(const std::string& name, const std::string& label, const std::string& description, std::optional<uint8_t> num_args, bool make_all_version = true);
 	};
-
 }
