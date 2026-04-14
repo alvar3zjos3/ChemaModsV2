@@ -41,7 +41,7 @@ namespace big
 		{
 			file.close();
 
-			LOG(WARNING) << "Detected corrupt settings, writing default config...";
+			LOG(WARNING) << "Se detectó configuración corrupta, escribiendo configuración predeterminada...";
 
 			write_default_config();
 
@@ -57,7 +57,7 @@ namespace big
 		{
 			file.close();
 
-			LOG(WARNING) << "Detected incompatible settings, writing default config: " << e.what();
+			LOG(WARNING) << "Se detectó configuración incompatible, escribiendo configuración predeterminada: " << e.what();
 
 			write_default_config();
 
@@ -66,7 +66,7 @@ namespace big
 
 		if (should_save)
 		{
-			LOG(INFO) << "Updating settings.";
+			LOG(INFO) << "Actualizando configuración.";
 			save();
 		}
 
