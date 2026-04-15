@@ -43,7 +43,7 @@ namespace big
 		{
 			static command* command = command::get(rage::joaat(cmd_str.value));
 			if (command == nullptr)
-				return ImGui::Text("COMANDO INVÁLIDO");
+				return ImGui::Text("INVALID COMMAND");
 
 			if (ImGui::Button(label_override.value_or(command->get_label()).data()))
 			{
@@ -59,7 +59,7 @@ namespace big
 		{
 			static player_command* command = player_command::get(rage::joaat(cmd_str.value));
 			if (command == nullptr)
-				return ImGui::Text("COMANDO INVÁLIDO");
+				return ImGui::Text("INVALID COMMAND");
 
 			if (ImGui::Button(label_override.value_or(command->get_label()).data()))
 				command->call(player, args);
@@ -73,7 +73,7 @@ namespace big
 			static bool_command* command = static_cast<bool_command*>(command::get(rage::joaat(cmd_str.value)));
 			if (command == nullptr)
 			{
-				ImGui::Text("COMANDO INVÁLIDO");
+				ImGui::Text("INVALID COMMAND");
 				return false;
 			}
 
@@ -91,7 +91,7 @@ namespace big
 		{
 			static int_command* command = (int_command*)command::get(rage::joaat(cmd_str.value));
 			if (command == nullptr)
-				return ImGui::Text("COMANDO INVÁLIDO");
+				return ImGui::Text("INVALID COMMAND");
 
 			ImGui::SliderInt(label_override.value_or(command->get_label()).data(),
 			    &command->get_value(),
@@ -107,7 +107,7 @@ namespace big
 		{
 			static float_command* command = (float_command*)command::get(rage::joaat(cmd_str.value));
 			if (command == nullptr)
-				return ImGui::Text("COMANDO INVÁLIDO");
+				return ImGui::Text("INVALID COMMAND");
 
 			ImGui::SliderFloat(label_override.value_or(command->get_label()).data(),
 			    &command->get_value(),
@@ -123,7 +123,7 @@ namespace big
 		{
 			static float_command* command = (float_command*)command::get(rage::joaat(cmd_str.value));
 			if (command == nullptr)
-				return ImGui::Text("COMANDO INVÁLIDO");
+				return ImGui::Text("INVALID COMMAND");
 
 			ImGui::InputFloat(label_override.value_or(command->get_label()).data(),
 			    &command->get_value(),
