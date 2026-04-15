@@ -65,7 +65,7 @@ namespace big
 
 				if (!fetched || rid == 0)
 				{
-                ctx->report_error("No se pudo obtener el ID de Rockstar del jugador desde la API.");
+					ctx->report_error("Failed to fetch player's Rockstar ID from the API.");
 					return std::nullopt;
 				}
 			}
