@@ -15,7 +15,7 @@ namespace big
 
 			if (!PED::IS_PED_IN_ANY_VEHICLE(ped, true))
 			{
-				g_notification_service.push_warning("TOXICO"_T.data(), "ERROR_PLAYER_IS_NOT_IN_VEHICLE"_T.data());
+				g_notification_service.push_warning("TOXIC"_T.data(), "ERROR_PLAYER_IS_NOT_IN_VEHICLE"_T.data());
 			}
 			else
 			{
@@ -24,5 +24,5 @@ namespace big
 		}
 	};
 
-	upgrade_vehicle g_upgrade_vehicle("upgradeveh", "MEJORAR_VEHICULO_AL_MAXIMO", "BACKEND_UPGRADE_VEHICLE_DESC", 0);
+	upgrade_vehicle g_upgrade_vehicle("upgradeveh", "MAX_VEHICLE", "BACKEND_UPGRADE_VEHICLE_DESC", 0);
 }

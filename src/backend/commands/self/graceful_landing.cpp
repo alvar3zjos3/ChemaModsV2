@@ -2,5 +2,5 @@
 
 namespace big
 {
-	bool_command g_graceful_landing("gracefullanding", "ATERRIZAJE_SUAVE", "ATERRIZAJE_SUAVE_DESC", g.self.graceful_landing);
+	bool_command g_graceful_landing("gracefullanding", "GRACEFUL_LANDING", "GRACEFUL_LANDING_DESC", g.self.graceful_landing);
 }

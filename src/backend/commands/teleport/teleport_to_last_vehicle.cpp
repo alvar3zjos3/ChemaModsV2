@@ -18,5 +18,5 @@ namespace big
 		}
 	};
 
-	teleport_to_last_vehicle g_teleport_to_last_vehicle("lastvehtp", "TELETRANSPORTE_A_ULTIMO_VEHICULO", "BACKEND_TELEPORT_TO_LAST_VEHICLE_DESC", 0);
+	teleport_to_last_vehicle g_teleport_to_last_vehicle("lastvehtp", "BACKEND_TELEPORT_TO_LAST_VEHICLE", "BACKEND_TELEPORT_TO_LAST_VEHICLE_DESC", 0);
 }

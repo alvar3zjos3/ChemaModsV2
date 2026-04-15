@@ -45,5 +45,5 @@ namespace big
 		}
 	};
 
-	ceo_kick g_ceo_kick("ceokick", "EXPULSAR_DE_CEO", "EXPULSAR_DE_CEO_DESC", 0);
+	ceo_kick g_ceo_kick("ceokick", "CEO_KICK", "CEO_KICK_DESC", 0);
 }

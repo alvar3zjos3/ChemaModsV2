@@ -13,5 +13,5 @@ namespace big
 		}
 	};
 
-	teleport_to_player g_teleport_to_player("playertp", "TELETRANSPORTE_A_JUGADOR", "TELETRANSPORTE_A_JUGADOR_DESC", 0, false);
+	teleport_to_player g_teleport_to_player("playertp", "TELEPORT", "TELEPORT_DESC", 0, false);
 }

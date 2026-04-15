@@ -18,5 +18,5 @@ namespace big
 		}
 	};
 
-	clear_wanted_level g_clear_wanted_level("clearwanted", "LIMPIAR_NIVEL_DE_BUSQUEDA", "LIMPIAR_NIVEL_DE_BUSQUEDA_DESC", 0);
+	clear_wanted_level g_clear_wanted_level("clearwanted", "CLEAR_WANTED_LEVEL", "CLEAR_WANTED_LEVEL_DESC", 0);
 }

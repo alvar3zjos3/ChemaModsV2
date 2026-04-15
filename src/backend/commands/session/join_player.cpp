@@ -19,7 +19,7 @@ namespace big
 				for (size_t i = 0; i < g_pointers->m_gta.m_friend_registry->m_friend_count; i++)
 				{
 					auto f = g_pointers->m_gta.m_friend_registry->get(i);
-					if (f && f->m_friend_state & (1 << 0 | 1 << 1))
+					if (f && f->m_friend_state & (1 << 0 | 1 << 1)) // Check if online and playing same game
 					{
 						suggestions.push_back(f->m_name);
 					}
@@ -65,7 +65,7 @@ namespace big
 
 				if (!fetched || rid == 0)
 				{
-					ctx->report_error("No se pudo obtener el ID de Rockstar del jugador desde la API.");
+                ctx->report_error("No se pudo obtener el ID de Rockstar del jugador desde la API.");
 					return std::nullopt;
 				}
 			}
@@ -90,5 +90,5 @@ namespace big
 		}
 	};
 
-	join_player g_join_player("joinplayer", "UNIRSE_A_JUGADOR", "UNIRSE_A_JUGADOR_DESC", 1);
+	join_player g_join_player("joinplayer", "JOIN_PLAYER", "JOIN_PLAYER_DESC", 1);
 }

@@ -7,7 +7,7 @@ namespace big
 	{
 		using player_command::player_command;
 
-		virtual CommandAccessLevel get_access_level() override
+		virtual CommandAccessLevel get_access_level() override 
 		{
 			return CommandAccessLevel::TOXIC;
 		}
@@ -18,13 +18,13 @@ namespace big
 				return;
 			if (!g_player_service->get_self()->is_host())
 			{
-				g_notification_service.push_error("EXPULSION_HOST", "No eres el host de la sesión.");
+				g_notification_service.push_error("HOST_KICK"_T.data(), "BACKEND_HOST_KICK_FAILED"_T.data());
 				return;
 			}
 
-			NETWORK::NETWORK_SESSION_KICK_PLAYER(player->id());
+            NETWORK::NETWORK_SESSION_KICK_PLAYER(player->id());
 		}
 	};
 
-	host_kick g_host_kick("hostkick", "EXPULSION_HOST", "EXPULSION_HOST_DESC", 0, false);
+	host_kick g_host_kick("hostkick", "HOST_KICK", "HOST_KICK_DESC", 0, false);
 }

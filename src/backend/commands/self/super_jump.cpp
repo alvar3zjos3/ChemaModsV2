@@ -2,5 +2,5 @@
 
 namespace big
 {
-	bool_command g_super_jump("superjump", "SUPER_SALTO", "SUPER_SALTO_DESC", g.self.super_jump);
+	bool_command g_super_jump("superjump", "SUPER_JUMP", "SUPER_JUMP_DESC", g.self.super_jump);
 }

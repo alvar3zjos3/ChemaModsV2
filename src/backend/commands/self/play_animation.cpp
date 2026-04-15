@@ -45,6 +45,7 @@ namespace big
 				return result;
 			}
 
+
 			int anim_index = 0;
 			for (auto& item : g_ped_animation_service.all_saved_animations | std::views::values | std::views::join)
 			{
@@ -78,7 +79,7 @@ namespace big
 				return;
 			}
 
-			int count = 0;
+			int count             = 0;
 			for (auto& item : g_ped_animation_service.all_saved_animations | std::views::values | std::views::join)
 			{
 				if (count == anim_index)
@@ -86,8 +87,9 @@ namespace big
 
 				count++;
 			}
+
 		}
 	};
 
-	play_animation g_play_animation("anim", "REPRODUCIR_ANIMACION", "REPRODUCIR_ANIMACION_DESC", 1);
+	play_animation g_play_animation("anim", "PLAY_ANIMATION", "PLAY_ANIMATION_DESC", 1);
 }

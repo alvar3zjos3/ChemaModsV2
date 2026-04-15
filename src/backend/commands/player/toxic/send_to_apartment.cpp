@@ -18,7 +18,7 @@ namespace big
 			int64_t args[arg_count] = {(int64_t)eRemoteEvent::Teleport,
 			    self::id,
 			    1 << player->id(),
-			    (int64_t)player->id(),
+				(int64_t) player->id(),
 			    (int64_t)(int)-1,
 			    1,
 			    (int64_t)_args.get<int64_t>(0),
@@ -30,5 +30,5 @@ namespace big
 		}
 	};
 
-	send_to_apartment g_send_to_apartment("apartmenttp", "TELETRANSPORTE_A_APARTAMENTO", "TELETRANSPORTE_A_APARTAMENTO_DESC", 1);
+	send_to_apartment g_send_to_apartment("apartmenttp", "TP_TO_APARTMENT", "TP_TO_APARTMENT_DESC", 1);
 }

@@ -13,5 +13,5 @@ namespace big
 		}
 	};
 
-	suicide g_suicide("suicide", "SUICIDARSE", "SUICIDARSE_DESC", 0);
+	suicide g_suicide("suicide", "SUICIDE", "SUICIDE_DESC", 0);
 }

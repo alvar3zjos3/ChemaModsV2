@@ -14,5 +14,5 @@ namespace big
 		}
 	};
 
-	teleport_to_highlighted_blip g_teleport_to_highlighted_blip("highlighttp", "TELETRANSPORTE_A_BLIP_SELECCIONADO", "BACKEND_TELEPORT_TO_HIGHLIGHTED_BLIP_DESC", 0);
+	teleport_to_highlighted_blip g_teleport_to_highlighted_blip("highlighttp", "VIEW_HOTKEY_SETTINGS_TELEPORT_TO_SELECTED", "BACKEND_TELEPORT_TO_HIGHLIGHTED_BLIP_DESC", 0);
 }

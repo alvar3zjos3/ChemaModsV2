@@ -19,7 +19,7 @@ namespace big
 				return;
 			if (!scripts::force_host("freemode"_J))
 			{
-				g_notification_service.push_error("Expulsión", "No se pudo forzar el host del script.");
+                g_notification_service.push_error("Kick", "No se pudo forzar el host del script.");
 				return;
 			}
 
@@ -27,5 +27,5 @@ namespace big
 		}
 	};
 
-	script_host_kick g_script_host_kick("shkick", "EXPULSION_SCRIPT_HOST", "EXPULSION_SCRIPT_HOST_DESC", 0, false);
+	script_host_kick g_script_host_kick("shkick", "SCRIPT_HOST_KICK", "SCRIPT_HOST_KICK_DESC", 0, false);
 }

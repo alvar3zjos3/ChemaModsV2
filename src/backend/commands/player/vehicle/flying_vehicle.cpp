@@ -14,7 +14,7 @@ namespace big
 
 			if (!PED::IS_PED_IN_ANY_VEHICLE(ent, true))
 			{
-				g_notification_service.push_warning("TOXICO"_T.data(), "ERROR_PLAYER_IS_NOT_IN_VEHICLE"_T.data());
+				g_notification_service.push_warning("TOXIC"_T.data(), "ERROR_PLAYER_IS_NOT_IN_VEHICLE"_T.data());
 			}
 			else
 			{
@@ -28,5 +28,5 @@ namespace big
 		}
 	};
 
-	flying_vehicle g_flying_vehicle("flyingveh", "HACER_VEHICULO_VOLAR", "BACKEND_FLYING_VEHICLE_DESC", 0);
+	flying_vehicle g_flying_vehicle("flyingveh", "BACKEND_FLYING_VEHICLE", "BACKEND_FLYING_VEHICLE_DESC", 0);
 }

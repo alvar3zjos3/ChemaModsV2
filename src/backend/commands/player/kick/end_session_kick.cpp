@@ -19,16 +19,16 @@ namespace big
 				return;
 			if (!scripts::force_host("freemode"_J))
 			{
-				g_notification_service.push_error("EXPULSION_END_SESSION", "No se pudo forzar el host del script.");
+				g_notification_service.push_error("END_KICK"_T.data(), "BACKEND_END_SESSION_KICK_FORCE_SCRIPT_HOST_FAILED"_T.data());
 				return;
 			}
 
 			player->trigger_end_session_kick = true;
-			*scr_globals::gsbd.as<int*>() = (int)(__rdtsc() % 50000) + 6;
+			*scr_globals::gsbd.as<int*>() = (int)(__rdtsc() % 50000) + 6; // making the game trigger the broadcast is a bit difficult and requires a little bit of tampering with the value and some luck
 			script::get_current()->yield(5s);
 			*scr_globals::gsbd.as<int*>() = 4;
 		}
 	};
 
-	end_session_kick g_end_session_kick("endkick", "EXPULSION_FINAL_SESION", "EXPULSION_FINAL_SESION_DESC", 0);
+	end_session_kick g_end_session_kick("endkick", "END_KICK", "END_KICK_DESC", 0);
 }

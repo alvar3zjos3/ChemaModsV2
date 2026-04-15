@@ -14,5 +14,5 @@ namespace big
 		}
 	};
 
-	clean_player g_clean_player("clean", "LIMPIAR_JUGADOR", "LIMPIAR_JUGADOR_DESC", 0);
+	clean_player g_clean_player("clean", "CLEAN_PLAYER", "CLEAN_PLAYER_DESC", 0);
 }

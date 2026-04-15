@@ -28,5 +28,5 @@ namespace big
 		}
 	};
 
-	smash_windows g_smash_windows("smashwindows", "ROMPER_VENTANAS", "BACKEND_SMASH_VEHICLE_WINDOWS_DESC", 0);
+	smash_windows g_smash_windows("smashwindows", "BACKEND_SMASH_VEHICLE_WINDOWS", "BACKEND_SMASH_VEHICLE_WINDOWS_DESC", 0);
 }

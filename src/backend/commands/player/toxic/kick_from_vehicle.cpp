@@ -34,5 +34,5 @@ namespace big
 		}
 	};
 
-	kick_from_vehicle g_kick_from_vehicle("vehkick", "EXPULSAR_DEL_VEHICULO", "EXPULSAR_DEL_VEHICULO_DESC", 0);
+	kick_from_vehicle g_kick_from_vehicle("vehkick", "VEHICLE_KICK", "VEHICLE_KICK_DESC", 0);
 }

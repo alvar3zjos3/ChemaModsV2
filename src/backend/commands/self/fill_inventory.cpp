@@ -27,5 +27,5 @@ namespace big
 		}
 	};
 
-	fill_inventory g_fill_inventory("fillsnacks", "LLENAR_INVENTARIO", "LLENAR_INVENTARIO_DESC", 0);
+	fill_inventory g_fill_inventory("fillsnacks", "FILL_INVENTORY", "FILL_INVENTORY_DESC", 0);
 }

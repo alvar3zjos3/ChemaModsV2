@@ -23,5 +23,5 @@ namespace big
 		}
 	};
 
-	send_fake_ban_message g_send_fake_ban_message("fakeban", "MENSAJE_FALSO_DE_BAN", "MENSAJE_FALSO_DE_BAN_DESC", 0);
+	send_fake_ban_message g_send_fake_ban_message("fakeban", "FAKE_BAN_MESSAGE", "FAKE_BAN_MESSAGE_DESC", 0);
 }

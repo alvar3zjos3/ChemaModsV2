@@ -40,6 +40,6 @@ namespace big
 		}
 	};
 
-	give_all_weapons g_give_all_weapons("giveweaps", "DAR_TODAS_LAS_ARMAS", "DAR_TODAS_LAS_ARMAS_DESC", 0, false);
-	give_all_weapons_all g_give_all_weapons_all("giveweapsall", "DAR_TODAS_LAS_ARMAS", "DAR_TODAS_LAS_ARMAS_A_TODOS_DESC", 0);
+	give_all_weapons g_give_all_weapons("giveweaps", "GIVE_WEAPONS", "GIVE_WEAPONS_DESC", 0, false);
+	give_all_weapons_all g_give_all_weapons_all("giveweapsall", "GIVE_WEAPONS", "GIVE_WEAPONS_ALL_DESC", 0);
 }

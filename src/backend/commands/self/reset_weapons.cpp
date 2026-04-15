@@ -17,5 +17,5 @@ namespace big
 		}
 	};
 
-	reset_weapons g_reset_weapons("resetweaps", "REINICIAR_ARMAS", "REINICIAR_ARMAS_DESC", 0);
+	reset_weapons g_reset_weapons("resetweaps", "RESET_WEAPONS", "RESET_WEAPONS_DESC", 0);
 }

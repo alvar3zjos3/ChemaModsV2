@@ -2,5 +2,5 @@
 
 namespace big
 {
-	bool_command g_enable_mk1_variants("enablemk1variants", "HABILITAR_VARIANTES_MK1_Y_MK2", "HABILITAR_VARIANTES_MK1_Y_MK2_DESC", g.weapons.enable_mk1_variants);
+	bool_command g_enable_mk1_variants("enablemk1variants", "ENABLE_BOTH_MK1_AND_MK2_VARIANTS", "ENABLE_BOTH_MK1_AND_MK2_VARIANTS_DESC", g.weapons.enable_mk1_variants);
 }

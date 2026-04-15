@@ -17,7 +17,7 @@ namespace big
 
 			if (!PED::IS_PED_IN_ANY_VEHICLE(player_ped, true))
 			{
-				g_notification_service.push_warning("TOXICO"_T.data(), "ERROR_PLAYER_IS_NOT_IN_VEHICLE"_T.data());
+				g_notification_service.push_warning("TOXIC"_T.data(), "ERROR_PLAYER_IS_NOT_IN_VEHICLE"_T.data());
 			}
 			else
 			{
@@ -39,5 +39,5 @@ namespace big
 		}
 	};
 
-	flip_180 g_flip_180("flip180", "GIRAR_180_GRADOS", "BACKEND_FLIP_DESC", 0);
+	flip_180 g_flip_180("flip180", "BACKEND_FLIP", "BACKEND_FLIP_DESC", 0);
 }

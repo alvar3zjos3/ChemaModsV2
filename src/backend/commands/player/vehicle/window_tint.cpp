@@ -23,5 +23,5 @@ namespace big
 		}
 	};
 
-	black_tint g_black_tint("blacktint", "TINTADO_NEGRO", "BACKEND_WINDOW_TINT_DESC", 0);
+	black_tint g_black_tint("blacktint", "WINDOW_TINT", "BACKEND_WINDOW_TINT_DESC", 0);
 }

@@ -18,5 +18,5 @@ namespace big
 		}
 	};
 
-	explode_player g_explode_player("explode", "EXPLOTAR_JUGADOR", "EXPLOTAR_JUGADOR_DESC", 0);
+	explode_player g_explode_player("explode", "EXPLODE_PLAYER", "EXPLODE_PLAYER_DESC", 0);
 }

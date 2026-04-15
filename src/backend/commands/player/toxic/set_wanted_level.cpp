@@ -16,7 +16,7 @@ namespace big
 
 			if (level < 0 || level > 5)
 			{
-				ctx->report_error(std::format("{}: '{}' {} [0 - 5]", "NIVEL_DE_BUSQUEDA"_T, level, "INDICE_INVALIDO"_T));
+				ctx->report_error(std::format("{}: '{}' {} [0 - 5]", "WANTED_LEVEL"_T, level, "VIEW_MODEL_SWAPPER_INVALID_INDEX"_T));
 				return std::nullopt;
 			}
 
@@ -43,6 +43,7 @@ namespace big
 
 				if (PLAYER::GET_PLAYER_WANTED_LEVEL(id) > wanted_level)
 				{
+					// clear existing wanted
 					globals::clear_wanted_player(id);
 
 					for (int i = 0; PLAYER::GET_PLAYER_WANTED_LEVEL(id) > wanted_level && i < 3600; i++)
@@ -61,5 +62,5 @@ namespace big
 		}
 	};
 
-	set_wanted_level g_set_wanted_level("wanted", "ESTABLECER_NIVEL_DE_BUSQUEDA", "ESTABLECER_NIVEL_DE_BUSQUEDA_DESC", 1, false);
+	set_wanted_level g_set_wanted_level("wanted", "SET_WANTED_LEVEL", "SET_WANTED_LEVEL_DESC", 1, false);
 }

@@ -14,5 +14,5 @@ namespace big
 		}
 	};
 
-	steal_outfit g_steal_outfit("copyoutfit", "COPIAR_ROPA", "COPIAR_ROPA_DESC", 0, false);
+	steal_outfit g_steal_outfit("copyoutfit", "STEAL_OUTFIT", "STEAL_OUTFIT_DESC", 0, false);
 }

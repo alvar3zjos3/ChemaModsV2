@@ -18,7 +18,7 @@ namespace big
 			int64_t args[arg_count] = {(int64_t)eRemoteEvent::TeleportToWarehouse,
 			    self::id,
 			    1 << player->id(),
-			    (int64_t)player->id(),
+				(int64_t) player->id(),
 			    1,
 			    (int64_t)_args.get<int>(0)};
 
@@ -26,5 +26,5 @@ namespace big
 		}
 	};
 
-	send_to_warehouse g_send_to_warehouse("warehousetp", "TELETRANSPORTE_A_ALMACEN", "TELETRANSPORTE_A_ALMACEN_DESC", 1);
+	send_to_warehouse g_send_to_warehouse("warehousetp", "TP_TO_WAREHOUSE", "TP_TO_WAREHOUSE_DESC", 1);
 }

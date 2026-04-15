@@ -29,5 +29,5 @@ namespace big
 		}
 	};
 
-	breakup_kick g_breakup_kick("breakup", "EXPULSION_TOTAL", "EXPULSION_TOTAL_DESC", 0, false);
+	breakup_kick g_breakup_kick("breakup", "BREAKUP_KICK", "BREAKUP_KICK_DESC", 0, false);
 }

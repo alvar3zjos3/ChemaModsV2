@@ -2,5 +2,6 @@
 
 namespace big
 {
-	bool_command g_beastjump("beastjump", "SALTO_DE_BESTIA", "SALTO_DE_BESTIA_DESC", g.self.beast_jump);
+	bool_command g_beastjump("beastjump", "BEAST_JUMP", "BEAST_JUMP_DESC",
+	    g.self.beast_jump);
 }

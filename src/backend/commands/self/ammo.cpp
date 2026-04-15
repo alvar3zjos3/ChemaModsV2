@@ -18,6 +18,5 @@ namespace big
 			}
 		}
 	};
-
-	fill_ammo g_fill_ammo("fillammo", "LLENAR_MUNICION", "LLENAR_MUNICION_DESC", 0);
+	fill_ammo g_fill_ammo("fillammo", "FILL_AMMO", "FILL_AMMO_DESC", 0);
 }

@@ -22,11 +22,11 @@ namespace big
 			{
 				if (!NETWORK::NETWORK_IS_PLAYER_A_PARTICIPANT_ON_SCRIPT(id, "am_launcher", -1))
 				{
-					g_notification_service.push_error("CONVERTIR_EN_BESTIA"_T.data(), "No se puede iniciar el launcher del script.");
+					g_notification_service.push_error("TURN_INTO_BEAST"_T.data(), "BACKEND_TURN_INTO_BEAST_CANNOT_START_AM_LAUNCHER"_T.data());
 					return;
 				}
 
-				g_notification_service.push("CONVERTIR_EN_BESTIA"_T.data(), "Iniciando script Hunt the Beast...");
+				g_notification_service.push("TURN_INTO_BEAST"_T.data(), "BACKEND_TURN_INTO_BEAST_STARTING"_T.data());
 
 				scripts::start_launcher_script("AM_HUNT_THE_BEAST"_J);
 
@@ -34,7 +34,7 @@ namespace big
 				{
 					if (i >= 1000)
 					{
-						g_notification_service.push_error("CONVERTIR_EN_BESTIA"_T.data(), "No se pudo iniciar el script.");
+						g_notification_service.push_error("TURN_INTO_BEAST"_T.data(), "BACKEND_TURN_INTO_BEAST_FAILED"_T.data());
 						return;
 					}
 
@@ -47,7 +47,7 @@ namespace big
 
 			if (!scripts::force_host("am_hunt_the_beast"_J))
 			{
-				g_notification_service.push_error("CONVERTIR_EN_BESTIA"_T.data(), "No se pudo tomar el control del script.");
+				g_notification_service.push_error("TURN_INTO_BEAST"_T.data(), "BACKEND_TURN_INTO_BEAST_FAILED_CONTROL"_T.data());
 				return;
 			}
 
@@ -88,7 +88,7 @@ namespace big
 			{
 				if (i >= 7000)
 				{
-					g_notification_service.push_error("CONVERTIR_EN_BESTIA"_T.data(), "No se pudo iniciar el script.");
+					g_notification_service.push_error("TURN_INTO_BEAST"_T.data(), "BACKEND_TURN_INTO_BEAST_FAILED"_T.data());
 					return;
 				}
 
@@ -99,7 +99,7 @@ namespace big
 
 			if (!scripts::force_host("am_hunt_the_beast"_J))
 			{
-				g_notification_service.push_error("CONVERTIR_EN_BESTIA"_T.data(), "No se pudo tomar el control del script.");
+				g_notification_service.push_error("TURN_INTO_BEAST"_T.data(), "BACKEND_TURN_INTO_BEAST_FAILED_CONTROL"_T.data());
 				return;
 			}
 
@@ -134,7 +134,8 @@ namespace big
 				script::get_current()->yield(350ms);
 			}
 
-			// Desafortunadamente también debemos convertirnos en la bestia para evitar que el script se cierre
+			// unfortunately we must also turn ourselves into the beast to prevent the script from exiting due to a "missing player"
+
 			*script_local(stack, idx).at(1).at(6).as<int*>() = net_component->m_local_participant_index; // participant idx
 			*script_local(stack, idx).at(1).at(7).as<Player*>() = self::id; // beast player idx
 			*script_local(stack, idx).at(1).at(2).as<int*>()    = INT_MAX;  // stopwatch time
@@ -144,6 +145,6 @@ namespace big
 		}
 	};
 
-	turn_into_beast g_turn_into_beast("beast", "CONVERTIR_EN_BESTIA", "CONVERTIR_EN_BESTIA_DESC", 0, false);
-	turn_into_beast_all g_turn_into_beast_all("beastall", "CONVERTIR_TODOS_EN_BESTIA", "CONVERTIR_TODOS_EN_BESTIA_DESC", 0);
+	turn_into_beast g_turn_into_beast("beast", "TURN_INTO_BEAST", "TURN_INTO_BEAST_DESC", 0, false);
+	turn_into_beast_all g_turn_into_beast_all("beastall", "TURN_INTO_BEAST_ALL", "TURN_INTO_BEAST_ALL_DESC", 0);
 }

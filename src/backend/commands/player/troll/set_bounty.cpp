@@ -14,6 +14,6 @@ namespace big
 		}
 	};
 
-	set_bounty g_bounty("bounty", "PONER_RECOMPENSA", "PONER_RECOMPENSA_DESC", 0);
-	bool_command g_anonymous_bounty("anonbounty", "RECOMPENSA_ANONIMA", "RECOMPENSA_ANONIMA_DESC", g.session.anonymous_bounty);
+	set_bounty g_bounty("bounty", "BOUNTY", "BOUNTY_DESC", 0);
+	bool_command g_anonymous_bounty("anonbounty", "BOUNTY_ANON", "BOUNTY_ANON_DESC", g.session.anonymous_bounty);
 }

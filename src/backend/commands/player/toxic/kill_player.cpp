@@ -13,7 +13,7 @@ namespace big
 		}
 
 		virtual void execute(player_ptr player, const command_arguments& _args, const std::shared_ptr<command_context> ctx) override
-		{ 
+		{
 			if (!player->get_ped())
 				return;
 
@@ -39,5 +39,5 @@ namespace big
 		}
 	};
 
-	kill_player g_kill_player("kill", "MATAR_JUGADOR", "MATAR_JUGADOR_DESC", 0);
+	kill_player g_kill_player("kill", "KILL_PLAYER", "KILL_PLAYER_DESC", 0);
 }

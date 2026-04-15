@@ -77,7 +77,7 @@ namespace big
 
 			if (veh == 0)
 			{
-				g_notification_service.push_error("SPAWN_VEHICULO"_T.data(), "UNABLE_TO_SPAWN_VEHICLE"_T.data());
+				g_notification_service.push_error("GUI_TAB_SPAWN_VEHICLE"_T.data(), "UNABLE_TO_SPAWN_VEHICLE"_T.data());
 			}
 			else
 			{
@@ -95,7 +95,7 @@ namespace big
 		}
 	};
 
-	spawn_vehicle g_spawn_vehicle("spawn", "SPAWN_VEHICULO", "BACKEND_SPAWN_VEHICLE_DESC", 1);
-	bool_command g_spawn_maxed("spawnmaxed", "SPAWN_MEJORADO_AL_MAXIMO", "SPAWN_MEJORADO_AL_MAXIMO_DESC", g.spawn_vehicle.spawn_maxed);
-	bool_command g_spawn_inside("spawnin", "SPAWN_DENTRO_DEL_VEHICULO", "SPAWN_DENTRO_DEL_VEHICULO_DESC", g.spawn_vehicle.spawn_inside);
+	spawn_vehicle g_spawn_vehicle("spawn", "GUI_TAB_SPAWN_VEHICLE", "BACKEND_SPAWN_VEHICLE_DESC", 1);
+	bool_command g_spawn_maxed("spawnmaxed", "SPAWN_MAXED", "SPAWN_MAXED_DESC", g.spawn_vehicle.spawn_maxed);
+	bool_command g_spawn_inside("spawnin", "SPAWN_IN", "SPAWN_IN_DESC", g.spawn_vehicle.spawn_inside);
 }

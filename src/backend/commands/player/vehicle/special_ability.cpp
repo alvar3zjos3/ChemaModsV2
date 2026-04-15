@@ -14,7 +14,7 @@ namespace big
 			Ped ped = PLAYER::GET_PLAYER_PED_SCRIPT_INDEX(player->id());
 			if (!PED::IS_PED_IN_ANY_VEHICLE(ped, true))
 			{
-				g_notification_service.push_warning("TOXICO"_T.data(), "ERROR_PLAYER_IS_NOT_IN_VEHICLE"_T.data());
+				g_notification_service.push_warning("TOXIC"_T.data(), "ERROR_PLAYER_IS_NOT_IN_VEHICLE"_T.data());
 			}
 			else
 			{
@@ -23,8 +23,8 @@ namespace big
 		}
 	};
 
-	vehicle_special_ability<0> g_special_jump_vehicle("svehjump", "HABILIDAD_ESPECIAL_SALTO", "BACKEND_SPECIAL_ABILITY_JUMP_DESC", 0);
-	vehicle_special_ability<1> g_special_boost_vehicle("svehboost", "HABILIDAD_ESPECIAL_IMPULSO", "BACKEND_SPECIAL_ABILITY_BOOST_DESC", 0);
-	vehicle_special_ability<3> g_special_shunt_left("sshuntleft", "HABILIDAD_ESPECIAL_IZQUIERDA", "BACKEND_SPECIAL_ABILITY_LEFT_DESC", 0);
-	vehicle_special_ability<2> g_special_shunt_right("sshuntright", "HABILIDAD_ESPECIAL_DERECHA", "BACKEND_SPECIAL_ABILITY_RIGHT_DESC", 0);
+	vehicle_special_ability<0> g_special_jump_vehicle("svehjump", "BACKEND_SPECIAL_ABILITY_JUMP", "BACKEND_SPECIAL_ABILITY_JUMP_DESC", 0);
+	vehicle_special_ability<1> g_special_boost_vehicle("svehboost", "BACKEND_SPECIAL_ABILITY_BOOST", "BACKEND_SPECIAL_ABILITY_BOOST_DESC", 0);
+	vehicle_special_ability<3> g_special_shunt_left("sshuntleft", "BACKEND_SPECIAL_ABILITY_LEFT", "BACKEND_SPECIAL_ABILITY_LEFT_DESC", 0);
+	vehicle_special_ability<2> g_special_shunt_right("sshuntright", "BACKEND_SPECIAL_ABILITY_RIGHT", "BACKEND_SPECIAL_ABILITY_RIGHT_DESC", 0);
 }

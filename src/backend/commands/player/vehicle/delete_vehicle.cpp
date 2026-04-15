@@ -14,12 +14,12 @@ namespace big
 				entity::force_remove_network_entity(object);
 			else if (player->get_ped())
 			{
-				auto net_id = *(int16_t*)(((__int64)player->get_ped()->m_net_object) + 0x3D8);
+				auto net_id = *(int16_t*)(((__int64)player->get_ped()->m_net_object) + 0x3D8); // TODO: extract offset
 				if (net_id)
 					entity::force_remove_network_entity(net_id);
 			}
 		}
 	};
 
-	delete_vehicle g_delete_vehicle("deleteveh", "ELIMINAR_VEHICULO", "BACKEND_DELETE_VEHICLE_DESC", 0);
+	delete_vehicle g_delete_vehicle("deleteveh", "BACKEND_DELETE_VEHICLE", "BACKEND_DELETE_VEHICLE_DESC", 0);
 }

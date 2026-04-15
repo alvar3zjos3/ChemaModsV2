@@ -66,5 +66,5 @@ namespace big
 		}
 	};
 
-	spawn_personal_vehicle g_spawn_personal_vehicle("spawnpv", "SPAWN_VEHICULO_PERSONAL", "BACKEND_SPAWN_VEHICLE_DESC", 1);
+	spawn_personal_vehicle g_spawn_personal_vehicle("spawnpv", "GUI_TAB_SPAWN_VEHICLE", "BACKEND_SPAWN_VEHICLE_DESC", 1);
 }

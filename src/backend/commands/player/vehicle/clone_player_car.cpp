@@ -15,7 +15,7 @@ namespace big
 			Ped ped          = PLAYER::GET_PLAYER_PED_SCRIPT_INDEX(player_id);
 			if (!PED::IS_PED_IN_ANY_VEHICLE(ped, true))
 			{
-				g_notification_service.push_warning("TOXICO"_T.data(), "ERROR_PLAYER_IS_NOT_IN_VEHICLE"_T.data());
+				g_notification_service.push_warning("TOXIC"_T.data(), "ERROR_PLAYER_IS_NOT_IN_VEHICLE"_T.data());
 			}
 			else
 			{
@@ -25,5 +25,5 @@ namespace big
 		}
 	};
 
-	clone_player_car g_clone_player_car("cloneplayercar", "CLONAR_VEHICULO_DEL_JUGADOR", "CLONAR_VEHICULO_DEL_JUGADOR_DESC", 0);
+	clone_player_car g_clone_player_car("cloneplayercar", "SPAWN_CLONE", "", 0);
 }

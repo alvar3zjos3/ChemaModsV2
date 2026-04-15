@@ -23,5 +23,5 @@ namespace big
 		}
 	};
 
-	break_game g_break_game("breakgame", "ROMPER_JUEGO", "ROMPER_JUEGO_DESC", 0);
+	break_game g_break_game("breakgame", "BREAK_GAME", "BREAK_GAME_DESC", 0);
 }

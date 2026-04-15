@@ -47,5 +47,5 @@ namespace big
 		}
 	};
 
-	enter_interior g_enter_interior("enterint", "ENTRAR_EN_INTERIOR", "ENTRAR_EN_INTERIOR_DESC", 0, false);
+	enter_interior g_enter_interior("enterint", "ENTER_INTERIOR", "ENTER_INTERIOR_DESC", 0, false);
 }

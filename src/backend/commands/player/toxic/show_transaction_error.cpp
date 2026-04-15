@@ -32,5 +32,5 @@ namespace big
 		}
 	};
 
-	show_transaction_error g_show_transaction_error("error", "MOSTRAR_ERROR_DE_TRANSACCION", "MOSTRAR_ERROR_DE_TRANSACCION_DESC", 0);
+	show_transaction_error g_show_transaction_error("error", "SHOW_TRANSACTION_ERROR", "SHOW_TRANSACTION_ERROR_DESC", 0);
 }

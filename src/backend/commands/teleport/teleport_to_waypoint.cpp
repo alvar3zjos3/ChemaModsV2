@@ -14,5 +14,5 @@ namespace big
 		}
 	};
 
-	teleport_to_waypoint g_teleport_to_waypoint("waypointtp", "TELETRANSPORTE_A_MARCADOR", "BACKEND_TELEPORT_TO_WAYPOINT_DESC", 0);
+	teleport_to_waypoint g_teleport_to_waypoint("waypointtp", "VIEW_HOTKEY_SETTINGS_TELEPORT_TO_WAYPOINT", "BACKEND_TELEPORT_TO_WAYPOINT_DESC", 0);
 }

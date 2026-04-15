@@ -104,14 +104,14 @@ namespace big
 		}
 	};
 
-	boat_pickup g_boat_pickup("boatpickup", "SOLICITAR_BOTE", "SOLICITAR_BOTE_DESC", 0);
-	ballistic_armor g_ballistic_armor("ballisticarmor", "SOLICITAR_ARMADURA_BALISTICA", "SOLICITAR_ARMADURA_BALISTICA_DESC", 0);
-	request_avenger g_request_avenger("avenger", "SOLICITAR_AVENGER", "SOLICITAR_AVENGER_DESC", 0);
-	request_kosatka g_request_kosatka("kosatka", "SOLICITAR_KOSATKA", "SOLICITAR_KOSATKA_DESC", 0);
-	request_moc g_request_moc("moc", "SOLICITAR_MOC", "SOLICITAR_MOC_DESC", 0);
-	request_terrorbyte g_request_terrorbyte("terrorbyte", "SOLICITAR_TERRORBYTE", "SOLICITAR_TERRORBYTE_DESC", 0);
-	request_acidlab g_request_acidlab("acidlab", "SOLICITAR_ACID_LAB", "SOLICITAR_ACID_LAB_DESC", 0);
-	request_acidlab_bike g_request_acidlab_bike("acidbike", "SOLICITAR_BICI_ACID", "SOLICITAR_BICI_ACID_DESC", 0);
-	request_taxi g_request_taxi("taxi", "SOLICITAR_TAXI", "SOLICITAR_TAXI_DESC", 0);
-	request_gun_van g_request_gun_van("gunvan", "SOLICITAR_GUN_VAN", "SOLICITAR_GUN_VAN_DESC", 0);
+	boat_pickup g_boat_pickup("boatpickup", "REQUEST_BOAT", "REQUEST_BOAT_DESC", 0);
+	ballistic_armor g_ballistic_armor("ballisticarmor", "REQUEST_BALLISTIC", "REQUEST_BALLISTIC_DESC", 0);
+	request_avenger g_request_avenger("avenger", "REQUEST_AVENGER", "REQUEST_AVENGER_DESC", 0);
+	request_kosatka g_request_kosatka("kosatka", "REQUEST_KOSATKA", "REQUEST_KOSATKA_DESC", 0);
+	request_moc g_request_moc("moc", "REQUEST_MOC", "REQUEST_MOC_DESC", 0);
+	request_terrorbyte g_request_terrorbyte("terrorbyte", "REQUEST_TERRORBYTE", "REQUEST_TERRORBYTE_DESC", 0);
+	request_acidlab g_request_acidlab("acidlab", "REQUEST_ACIDLAB", "REQUEST_ACIDLAB_DESC", 0);
+	request_acidlab_bike g_request_acidlab_bike("acidbike", "REQUEST_ACIDBIKE", "REQUEST_ACIDBIKE_DESC", 0);
+	request_taxi g_request_taxi("taxi", "REQUEST_TAXI", "REQUEST_TAXI_DESC", 0);
+	request_gun_van g_request_gun_van("gunvan", "REQUEST_GUN_VAN", "REQUEST_GUN_VAN_DESC", 0);
 }
