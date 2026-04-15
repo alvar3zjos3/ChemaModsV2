@@ -18,8 +18,8 @@ namespace big
 			LOG(WARNING) << "BLOCKED_SCRIPT_EVENT From: " << player_name << " Event Type: " << protection_type;
 
 		if (should_notify)
-			g_notification_service.push_warning("Protección de Evento de Script",
-				std::format("De: {}\nTipo de Evento: {}", player_name.data(), protection_type.data()));
+			g_notification_service.push_warning("Script Event Protection",
+			    std::format("From: {}\nEvent Type: {}", player_name.data(), protection_type.data()));
 	}
 
 	inline bool is_player_driver_of_local_vehicle(Player sender)
@@ -444,13 +444,13 @@ namespace big
 
 			if (!protection::should_allow_script_launch(script_id))
 			{
-				LOGF(stream::script_events, WARNING, "Bloqueado StartScriptBegin de {} con ID de script {}", plyr->get_name(), script_id);
+				LOGF(stream::script_events, WARNING, "Blocked StartScriptBegin from {} with script ID {}", plyr->get_name(), script_id);
 				g.reactions.start_script.process(plyr);
 				return true;
 			}
 			else
 			{
-				LOGF(stream::script_events, INFO, "Permitido StartScriptBegin de {} con ID de script {}", plyr->get_name(), script_id);
+				LOGF(stream::script_events, INFO, "Allowed StartScriptBegin from {} with script ID {}", plyr->get_name(), script_id);
 			}
 		}
 		}
@@ -459,7 +459,7 @@ namespace big
 		if (*(int*)&args[1] != player->m_player_id && player->m_player_id != -1) [[unlikely]]
 		{
 			LOG(INFO) << "Hash = " << (int)args[0];
-			LOG(INFO) << "Remitente = " << args[1];
+			LOG(INFO) << "Sender = " << args[1];
 			g.reactions.tse_sender_mismatch.process(plyr);
 			return true;
 		}
@@ -468,7 +468,7 @@ namespace big
 		    && (!g.debug.logs.script_event.filter_player || g.debug.logs.script_event.player_id == player->m_player_id)) [[unlikely]]
 		{
 			std::stringstream output;
-			output << "Evento de Script De: " << player->get_name() << " (" << plyr->get_rockstar_id() << ") Args: { ";
+			output << "Script Event From: " << player->get_name() << " (" << plyr->get_rockstar_id() << ") Args: { ";
 			for (int i = 0; i < args_count; i++)
 			{
 				if (i)
