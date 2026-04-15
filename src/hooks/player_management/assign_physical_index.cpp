@@ -35,7 +35,7 @@ namespace big
 				auto rockstar_id = net_player_data->m_gamer_handle.m_rockstar_id;
 
 				if (g.notifications.player_leave.log)
-					LOG(INFO) << "Jugador salió '" << net_player_data->m_name << "' liberando slot #" << (int)player->m_player_id << " con ID de Rockstar: " << rockstar_id;
+					LOG(INFO) << "Player left '" << net_player_data->m_name << "' freeing slot #" << (int)player->m_player_id << " with Rockstar ID: " << rockstar_id;
 
 				if (g.notifications.player_leave.notify)
 				{
@@ -60,7 +60,7 @@ namespace big
 					g_notification_service.push_warning("POTENTIAL_ADMIN_FOUND"_T.data(),
 					    std::format("{} {}", net_player_data->m_name, "PLAYER_DETECTED_AS_ADMIN"_T));
 
-					LOG(WARNING) << net_player_data->m_name << " (" << net_player_data->m_gamer_handle.m_rockstar_id << ") ha sido detectado como administrador";
+					LOG(WARNING) << net_player_data->m_name << " (" << net_player_data->m_gamer_handle.m_rockstar_id << ") has been detected as an admin";
 
 					auto id = player->m_player_id;
 					if (auto plyr = g_player_service->get_by_id(id))
@@ -74,8 +74,8 @@ namespace big
 				notify::player_joined(player);
 
 			if (g.notifications.player_join.log)
-				LOG(INFO) << "Jugador se unió '" << net_player_data->m_name << "' asignando slot #" << (int)player->m_player_id
-						  << " con ID de Rockstar: " << net_player_data->m_gamer_handle.m_rockstar_id;
+				LOG(INFO) << "Player joined '" << net_player_data->m_name << "' allocating slot #" << (int)player->m_player_id
+				          << " with Rockstar ID: " << net_player_data->m_gamer_handle.m_rockstar_id;
 
 			if (g.notifications.player_join.notify)
 			{
