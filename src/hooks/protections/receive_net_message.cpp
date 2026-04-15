@@ -290,7 +290,7 @@ namespace big
 
 		if (!get_msg_type(msgType, buffer))
 		{
-			LOGF(stream::net_messages, WARNING, "Mensaje recibido que no podemos analizar de cxn id {}", event->m_connection_identifier);
+			LOGF(stream::net_messages, WARNING, "Received message that we cannot parse from cxn id {}", event->m_connection_identifier);
 			return g_hooking->get_original<hooks::receive_net_message>()(a1, net_cxn_mgr, event);
 		}
 
@@ -354,7 +354,7 @@ namespace big
 
 			if (player && handle_block_script(player, script, event->m_msg_id))
 			{
-				LOGF(stream::net_messages, WARNING, "Denegando solicitud de script de {} (hash={:X}, instance={})", player->get_name(), script.m_hash, script.m_instance_id);
+				LOGF(stream::net_messages, WARNING, "Denying script request from {} (hash={:X}, instance={})", player->get_name(), script.m_hash, script.m_instance_id);
 				return true;
 			}
 
@@ -376,11 +376,11 @@ namespace big
 
 			if (!is_host_of_session(gta_util::get_network()->m_game_session_ptr, event->m_peer_id))
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgKickPlayer, pero no son el anfitrión", peer->m_info.name);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgKickPlayer, but they are not the host", peer->m_info.name);
 				return true;
 			}
 
-			LOGF(stream::net_messages, VERBOSE, "{} nos envió un MsgKickPlayer, razón = {}", peer->m_info.name, (int)reason);
+			LOGF(stream::net_messages, VERBOSE, "{} sent us a MsgKickPlayer, reason = {}", peer->m_info.name, (int)reason);
 
 			if (reason == KickReason::VOTED_OUT)
 			{
@@ -429,7 +429,7 @@ namespace big
 
 			if (!session || !session->is_host())
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgRadioStationSyncRequest, pero no somos el anfitrión", peer->m_info.name);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgRadioStationSyncRequest, but we are not the host", peer->m_info.name);
 				return true;
 			}
 
@@ -439,7 +439,7 @@ namespace big
 		{
 			if (!session || !is_host_of_session(session, event->m_peer_id))
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgRadioStationSync, pero no es el anfitrión", peer->m_info.name);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgRadioStationSync, but is not the host", peer->m_info.name);
 				return true;
 			}
 
@@ -454,13 +454,13 @@ namespace big
 
 			if (!gta_util::get_net_object_ids())
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgRequestObjectIds, pero no tenemos un CNetworkObjectMgr válido", peer->m_info.name);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgRequestObjectIds, but we don't have a valid CNetworkObjectMgr", peer->m_info.name);
 				return true;
 			}
 
 			if (player->received_object_id_request)
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgRequestObjectIds, pero ya hemos recibido una solicitud de ellos", peer->m_info.name);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgRequestObjectIds, but we've already received a request from them", peer->m_info.name);
 				return true;
 			}
 
@@ -471,19 +471,19 @@ namespace big
 		{
 			if (!player)
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgInformObjectIds, pero no es físico aún", peer->m_info.name);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgInformObjectIds, but is not physical yet", peer->m_info.name);
 				return true;
 			}
 
 			if (!gta_util::get_net_object_ids())
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgInformObjectIds, pero no tenemos un CNetworkObjectMgr válido", peer->m_info.name);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgInformObjectIds, but we don't have a valid CNetworkObjectMgr", peer->m_info.name);
 				return true;
 			}
 
 			if ((gta_util::get_net_object_ids()->m_object_id_response_pending_players & (1 << player->id())) == 0 && player->received_object_id_response)
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgInformObjectIds, pero no les solicitamos", peer->m_info.name);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgInformObjectIds, but we didn't request them for it", peer->m_info.name);
 				return true;
 			}
 
@@ -491,7 +491,7 @@ namespace big
 
 			if (num_objects_in_our_range > 256)
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgInformObjectIds, pero nos han dado una cantidad inusual de IDs de objeto ocupados en nuestro rango de objeto", peer->m_info.name);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgInformObjectIds, but they have given us an unusual amount of occupied object IDs in our object range", peer->m_info.name);
 				gta_util::get_net_object_ids()->m_object_id_response_pending_players &= (1 << player->id());
 				return true;
 			}
@@ -506,7 +506,7 @@ namespace big
 
 				if ((*g_pointers->m_gta.m_network_object_mgr)->find_object_by_id(object_id, true))
 				{
-					LOGF(stream::net_messages, WARNING, "{} envió MsgInformObjectIds, pero nos han dado un ID de objeto que no está realmente libre", peer->m_info.name);
+					LOGF(stream::net_messages, WARNING, "{} sent MsgInformObjectIds, but they have given us an object ID that is not actually free", peer->m_info.name);
 					gta_util::get_net_object_ids()->m_object_id_response_pending_players &= (1 << player->id());
 					return true;
 				}
@@ -522,14 +522,14 @@ namespace big
 
 			if (status == 0 && bubble == 10)
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgRoamingJoinBubbleAck con un id de burbuja nulo", peer->m_info.name);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgRoamingJoinBubbleAck with a null bubble id", peer->m_info.name);
 				if (player)
 					g.reactions.break_game.process(player);
 				return true;
 			}
 			else if (status == 0)
 			{
-				LOGF(stream::net_messages, WARNING, "{} quiere que nos unamos a su burbuja {}, pero esto no es una buena idea", peer->m_info.name, bubble);
+				LOGF(stream::net_messages, WARNING, "{} wants us to join their bubble {}, but this is not a good idea", peer->m_info.name, bubble);
 				return true;
 			}
 
@@ -540,7 +540,7 @@ namespace big
 			// should not get this after the host has joined
 			if (player && g_player_service->get_self()->id() != -1)
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgRoamingInitialBubble, pero el anfitrión ya se ha unido (y nosotros también)", peer->m_info.name);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgRoamingInitialBubble, but the host has already joined (and so have we)", peer->m_info.name);
 				return true;
 			}
 
@@ -551,41 +551,41 @@ namespace big
 
 			if (their_bubble == 10) [[unlikely]]
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgRoamingInitialBubble, pero ¿el anfitrión no tiene una burbuja?", peer->m_info.name);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgRoamingInitialBubble, but the host doesn't have a bubble?", peer->m_info.name);
 				return true;
 			}
 
 			if (my_bubble == 10) [[unlikely]]
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgRoamingInitialBubble, pero el anfitrión no nos dio una burbuja válida realmente", peer->m_info.name);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgRoamingInitialBubble, but the host didn't actually give us a valid bubble", peer->m_info.name);
 				return true;
 			}
 
 			if (my_bubble > 10 || their_bubble > 10) [[unlikely]]
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgRoamingInitialBubble, pero el anfitrión intenta bloquearnos dándonos un id de burbuja fuera de rango", peer->m_info.name);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgRoamingInitialBubble, but the host is trying to crash us by giving us an out of bounds bubble id", peer->m_info.name);
 				return true;
 			}
 
 			if (my_bubble != 0) [[unlikely]]
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgRoamingInitialBubble con un id de burbuja no estándar: {}", peer->m_info.name, my_bubble);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgRoamingInitialBubble with a non-standard bubble id: {}", peer->m_info.name, my_bubble);
 			}
 
 			if (my_bubble != their_bubble) [[unlikely]]
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgRoamingInitialBubble, pero el id de burbuja del anfitrión no coincide con nuestro id de burbuja ({} != {})", peer->m_info.name, their_bubble, my_bubble);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgRoamingInitialBubble, but the host's bubble id doesn't match our bubble id ({} != {})", peer->m_info.name, their_bubble, my_bubble);
 				return true;
 			}
 
 			if (my_pid >= 32 || their_pid >= 32) [[unlikely]]
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgRoamingInitialBubble, pero el anfitrión nos dio ids de jugador inválidos (o nos hizo elegir nuestros propios ids de jugador)", peer->m_info.name);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgRoamingInitialBubble, but the host gave us invalid player ids (or made us pick our own player ids)", peer->m_info.name);
 			}
 
 			if (my_pid == their_pid) [[unlikely]]
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgRoamingInitialBubble, pero el anfitrión tiene el mismo id de jugador que nosotros", peer->m_info.name);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgRoamingInitialBubble, but the host has the same player id as us", peer->m_info.name);
 				return true;
 			}
 
@@ -604,31 +604,31 @@ namespace big
 
 			if (bubble_id == 10) [[unlikely]]
 			{
-				LOGF(stream::net_messages, VERBOSE, "{} envió MsgNonPhysicalData e indicó que no están en una burbuja", peer->m_info.name);
+				LOGF(stream::net_messages, VERBOSE, "{} sent MsgNonPhysicalData and indicated that they are not in a bubble", peer->m_info.name);
 				return true; // might as well drop it
 			}
 
 			if (bubble_id > 10) [[unlikely]]
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgNonPhysicalData, pero intenta bloquearnos dándonos un id de burbuja fuera de rango", peer->m_info.name);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgNonPhysicalData, but are trying to crash us by giving us an out of bounds bubble id", peer->m_info.name);
 				return true;
 			}
 
 			if (bubble_id != 0) [[unlikely]]
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgNonPhysicalData con un id de burbuja no estándar: {}. Esto puede causar problemas durante la unión", peer->m_info.name, bubble_id);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgNonPhysicalData with a non-standard bubble id: {}. This may cause problems during join", peer->m_info.name, bubble_id);
 			}
 
 			if (player_id >= 32) [[unlikely]]
 			{
-				LOG(WARNING) << peer->m_info.name << " envió MsgNonPhysicalData, pero tiene un id de jugador inválido (o intenta que elijamos el nuestro)";
+				LOG(WARNING) << peer->m_info.name << " sent MsgNonPhysicalData, but has an invalid player id (or is trying to make us pick our own)";
 				return true;
 			}
 
 			if (g_player_service->get_self() && g_player_service->get_self()->id() != -1
 				&& g_player_service->get_self()->id() == player_id) [[unlikely]]
 			{
-				LOGF(stream::net_messages, VERBOSE, "{} envió MsgNonPhysicalData, pero intenta reemplazarnos", peer->m_info.name);
+				LOGF(stream::net_messages, VERBOSE, "{} sent MsgNonPhysicalData, but are trying to replace us", peer->m_info.name);
 				return true;
 			}
 
@@ -636,7 +636,7 @@ namespace big
 			{
 				if (player.second->id() == player_id) [[unlikely]]
 				{
-					LOGF(stream::net_messages, VERBOSE, "{} envió MsgNonPhysicalData, pero intenta reemplazar a {}", peer->m_info.name, player.second->get_name());
+					LOGF(stream::net_messages, VERBOSE, "{} sent MsgNonPhysicalData, but are trying to replace {}", peer->m_info.name, player.second->get_name());
 					return true;
 				}
 			}
@@ -645,12 +645,12 @@ namespace big
 		}
 		case rage::eNetMessage::MsgRequestKickFromHost:
 		{
-			LOGF(stream::net_messages, WARNING, "Denegando MsgRequestKickFromHost de {}", peer->m_info.name);
+			LOGF(stream::net_messages, WARNING, "Denying MsgRequestKickFromHost from {}", peer->m_info.name);
 			return true;
 		}
 		case rage::eNetMessage::MsgConfigRequest:
 		{
-			LOGF(stream::net_messages, WARNING, "Denegando MsgConfigRequest de {} ({})", peer->m_info.name, peer->m_info.handle.m_rockstar_id);
+			LOGF(stream::net_messages, WARNING, "Denying MsgConfigRequest from {} ({})", peer->m_info.name, peer->m_info.handle.m_rockstar_id);
 			return true;
 		}
 		case rage::eNetMessage::MsgScriptMigrateHost:
@@ -700,7 +700,7 @@ namespace big
 
 			if (!player)
 			{
-				LOGF(stream::net_messages, WARNING, "{} envió MsgTextMessage, pero no es físico aún. Esto puede indicar spam de chat", peer->m_info.name);
+				LOGF(stream::net_messages, WARNING, "{} sent MsgTextMessage, but is not physical yet. This may indicate chat spam", peer->m_info.name);
 				return true;
 			}
 
@@ -773,7 +773,7 @@ namespace big
 			if ((int)msgType > 0x91) [[unlikely]]
 			{
 				if (peer)
-					LOGF(stream::net_messages, WARNING, "{} envió un mensaje que no existe: {:X}", peer->m_info.name, (int)msgType);
+					LOGF(stream::net_messages, WARNING, "{} sent a message that does not exist: {:X}", peer->m_info.name, (int)msgType);
 
 				// dumb modders
 				if (player)
