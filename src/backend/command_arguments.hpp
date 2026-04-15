@@ -56,7 +56,7 @@ namespace big
         {
             if (m_idx >= m_argument_count)
             {
-                throw std::runtime_error("Se intentó obtener un argumento más allá del tamaño asignado.");
+                throw std::runtime_error("Attempted to shift argument beyond allocated argument size.");
             }
 
             return reinterpret_cast<const T&>(m_argument_data[m_idx++]);
@@ -68,7 +68,7 @@ namespace big
         {
             if (m_idx >= m_argument_count)
             {
-                throw std::runtime_error("Se intentó obtener un argumento más allá del tamaño asignado.");
+                throw std::runtime_error("Attempted to shift argument beyond allocated argument size.");
             }
 
             return static_cast<const T>(m_argument_data[m_idx++]);
@@ -80,7 +80,7 @@ namespace big
         {
             if (m_idx++ >= m_argument_count)
             {
-                throw std::runtime_error("Se intentó agregar un argumento más allá del tamaño asignado.");
+                throw std::runtime_error("Attempted to push argument beyond allocated argument size.");
             }
 
             m_argument_data.push_back(reinterpret_cast<uint64_t&>(arg));
@@ -92,7 +92,7 @@ namespace big
         {
             if (idx >= m_argument_count)
             {
-                throw std::runtime_error("Se intentó establecer un argumento más allá del tamaño asignado.");
+                throw std::runtime_error("Attempted to set argument beyond allocated argument size.");
             }
 
             m_argument_data[idx] = reinterpret_cast<uint64_t&>(arg);
