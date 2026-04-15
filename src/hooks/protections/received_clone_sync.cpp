@@ -8,21 +8,21 @@ namespace big
 	{
 		if (object_type < eNetObjType::NET_OBJ_TYPE_AUTOMOBILE || object_type > eNetObjType::NET_OBJ_TYPE_TRAIN) [[unlikely]]
 		{
-			notify::crash_blocked(src, "tipo de objeto fuera de rango");
+			notify::crash_blocked(src, "out of bounds object type");
 			return eAckCode::ACKCODE_FAIL;
 		}
 
 		if (auto net_obj = g_pointers->m_gta.m_get_net_object(mgr, object_id, true); net_obj && net_obj->m_object_type != (int16_t)object_type) [[unlikely]]
 		{
-			notify::crash_blocked(src, "tipo de objeto incorrecto");
+			notify::crash_blocked(src, "incorrect object type");
 			return eAckCode::ACKCODE_FAIL;
 		}
 
 		// can be used to crash or reverse sync player data
 		if (dst && dst->m_player_info && dst->m_player_info->m_ped && dst->m_player_info->m_ped->m_net_object
-			&& object_id == dst->m_player_info->m_ped->m_net_object->m_object_id) [[unlikely]]
+		    && object_id == dst->m_player_info->m_ped->m_net_object->m_object_id) [[unlikely]]
 		{
-			notify::crash_blocked(src, "sincronización del jugador");
+			notify::crash_blocked(src, "player sync");
 			return eAckCode::ACKCODE_FAIL;
 		}
 
@@ -35,7 +35,7 @@ namespace big
 				if (auto tgt = g_player_service->get_by_id(object->m_owner_id))
 					target = tgt->get_name();
 
-				LOGF(stream::net_sync, WARNING, "Rechazando sincronización de clon de {}, quien intenta sincronizar con el ped del jugador de {}", src->get_name(), target);
+				LOGF(stream::net_sync, WARNING, "Rejecting clone sync from {}, who is trying to sync to {}'s player ped", src->get_name(), target);
 				return eAckCode::ACKCODE_FAIL;
 			}
 		}
