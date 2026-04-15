@@ -19,7 +19,7 @@ namespace big
 				return;
 			if (!scripts::force_host("freemode"_J))
 			{
-                g_notification_service.push_error("Kick", "No se pudo forzar el host del script.");
+				g_notification_service.push_error("Kick", "Force script host failed!");
 				return;
 			}
 
