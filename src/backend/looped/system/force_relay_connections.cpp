@@ -18,5 +18,6 @@ namespace big
 		}
 	};
 
-	force_relay_connections g_force_relay_connections("forcerelays", "FORZAR_CONEXIONES_POR_RELAY", "FORCE_RELAY_CXN_DESC", g.protections.force_relay_connections);
+	force_relay_connections g_force_relay_connections("forcerelays", "FORCE_RELAY_CXN", "FORCE_RELAY_CXN_DESC",
+	    g.protections.force_relay_connections);
 }

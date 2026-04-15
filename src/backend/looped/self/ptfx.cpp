@@ -4,6 +4,7 @@
 
 namespace big
 {
+
 	class ptfx_looped : looped_command
 	{
 		using looped_command::looped_command;
@@ -70,5 +71,5 @@ namespace big
 		}
 	};
 
-	ptfx_looped g_ptfx_looped("ptfx", "EFECTOS_PARTICULAS", "PTFX_CMD_DESC", g.self.ptfx_effects.show);
+	ptfx_looped g_ptfx_looped("ptfx", "PTFX_CMD", "PTFX_CMD_DESC", g.self.ptfx_effects.show);
 }

@@ -39,6 +39,7 @@ namespace big
 		}
 	};
 
-	vehinvisibility g_vehinvisibility("invisveh", "INVISIBILIDAD_VEHICULO", "VEHICLE_INVISIBILITY_DESC", g.vehicle.vehinvisibility);
-	bool_command g_localveh_visibility("localinvisveh", "VISIBILIDAD_LOCAL_VEHICULO", "VEHICLE_LOCAL_VISIBLE_DESC", g.vehicle.localveh_visibility);
+	vehinvisibility g_vehinvisibility("invisveh", "VEHICLE_INVISIBILITY", "VEHICLE_INVISIBILITY_DESC", g.vehicle.vehinvisibility);
+	bool_command g_localveh_visibility("localinvisveh", "VEHICLE_LOCAL_VISIBLE", "VEHICLE_LOCAL_VISIBLE_DESC",
+	    g.vehicle.localveh_visibility);
 }

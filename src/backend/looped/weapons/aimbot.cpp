@@ -10,13 +10,13 @@
 
 namespace big
 {
-	bool_command g_aimbot_only_on_player("aimonlyatplayer", "APUNTAR_SOLO_A_JUGADORES", "BACKEND_LOOPED_WEAPONS_AIM_ONLY_AT_PLAYER_DESC",
+	bool_command g_aimbot_only_on_player("aimonlyatplayer", "BACKEND_LOOPED_WEAPONS_AIM_ONLY_AT_PLAYER", "BACKEND_LOOPED_WEAPONS_AIM_ONLY_AT_PLAYER_DESC",
 	    g.weapons.aimbot.only_on_player);
 
-	bool_command g_aimbot_only_on_enemy("aimonlyatenemy", "APUNTAR_SOLO_A_ENEMIGOS", "BACKEND_LOOPED_WEAPONS_AIM_ONLY_AT_ENEMY_DESC",
+	bool_command g_aimbot_only_on_enemy("aimonlyatenemy", "BACKEND_LOOPED_WEAPONS_AIM_ONLY_AT_ENEMY", "BACKEND_LOOPED_WEAPONS_AIM_ONLY_AT_ENEMY_DESC",
 	    g.weapons.aimbot.only_on_enemy);
 
-	bool_command g_aimbot_only_on_threat("aimonlyatthreats", "APUNTAR_SOLO_A_AMENAZAS", "BACKEND_LOOPED_WEAPONS_AIM_ONLY_AT_THREATS_DESC",
+	bool_command g_aimbot_only_on_threat("aimonlyatthreats", "BACKEND_LOOPED_WEAPONS_AIM_ONLY_AT_THREATS", "BACKEND_LOOPED_WEAPONS_AIM_ONLY_AT_THREATS_DESC",
 	    g.weapons.aimbot.only_on_threats);
 
 	class aimbot : looped_command
@@ -220,6 +220,7 @@ namespace big
 			}
 		}
 
+		// Make aimbot works when driving a vehicle.
 		static void reset_aim_vectors(uintptr_t camera)
 		{
 			uintptr_t camera_params = *(uintptr_t*)(camera + 0x10);
@@ -237,17 +238,17 @@ namespace big
 				{
 					if (*(float*)(camera_params + 0x130) == 8.0f)
 					{
-						*(float*)(camera_params + 0x130) = 111.0f;
-						*(float*)(camera_params + 0x134) = 111.0f;
-						*(float*)(camera_params + 0x4CC) = 0.0f;
+						*(float*)(camera_params + 0x130) = 111.0f; // def 8.0f
+						*(float*)(camera_params + 0x134) = 111.0f; // def 10.0f
+						*(float*)(camera_params + 0x4CC) = 0.0f;   // def 4.0f
 
 						if (*(float*)(camera_params + 0x49C) == 1.0f)
 						{
-							*(float*)(camera_params + 0x49C) = 0.0f;
+							*(float*)(camera_params + 0x49C) = 0.0f; // def 1.0f
 						}
 
-						*(float*)(camera_params + 0x2AC) = 0.0f;
-						*(float*)(camera_params + 0x2B0) = 0.0f;
+						*(float*)(camera_params + 0x2AC) = 0.0f; // def -3.0f
+						*(float*)(camera_params + 0x2B0) = 0.0f; // def -8.0f
 					}
 				}
 			}
@@ -321,7 +322,7 @@ namespace big
 		}
 	};
 
-	aimbot g_aimbot("aimbot", "AIMBOT", "BACKEND_LOOPED_WEAPONS_AIMBOT_DESC", g.weapons.aimbot.enable);
+	aimbot g_aimbot("aimbot", "VIEW_OVERLAY_AIMBOT", "BACKEND_LOOPED_WEAPONS_AIMBOT_DESC", g.weapons.aimbot.enable);
 
 	bool hooks::aimbot_cam_gameplay_director_update(uintptr_t this_)
 	{
@@ -354,6 +355,7 @@ namespace big
 
 		target_bone_position = aimbot::m_target->get_bone_coords((ePedBoneType)g.weapons.aimbot.selected_bone);
 
+		// Take into account the target velocity.
 		aimbot::adjust_position_for_target_velocity(target_bone_position);
 
 		aimbot::compute_aim_direction_and_set_gameplay_cam(target_bone_position);

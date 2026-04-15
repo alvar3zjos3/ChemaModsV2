@@ -3,18 +3,18 @@
 namespace big
 {
 	constexpr const static auto gravity_presets = std::to_array({
-		"Luna", 
-		"Sol", 
-		"Plutón", 
-		"Espacio", 
-		"Mercurio", 
+		"Moon", 
+		"Sun", 
+		"Pluto", 
+		"Space", 
+		"Mercury", 
 		"Venus",
-		"Tierra",
-		"Marte", 
-		"Júpiter", 
-		"Saturno", 
-		"Urano", 
-		"Neptuno"
+		"Earth",
+		"Mars", 
+		"Jupiter", 
+		"Saturn", 
+		"Uranus", 
+		"Neptune"
 		});
 
 	constexpr const static auto gravity_preset_values = std::to_array({

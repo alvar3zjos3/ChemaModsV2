@@ -15,7 +15,7 @@ namespace big
 			if (!g_player_service->get_self()->is_host())
 			{
 				player_ptr host;
-				int players{}; // excepto tú
+				int players{}; // except you
 				int opens{};
 				std::vector<player_ptr> modded{};
 
@@ -35,17 +35,17 @@ namespace big
 					}
 				}
 
-				if (players > 5 && host && host->get_net_data()->m_nat_type != 0)
+				if (players > 5 && host && host->get_net_data()->m_nat_type != 0) // safe threshold
 				{
-					if ((modded.size() / (float)(players - 1)) < 0.5)
+					if ((modded.size() / (float)(players - 1)) < 0.5) // anything higher than this indicates that something fishy went on with the last host
 					{
 						for (auto& player : modded)
 							session::add_infraction(player, Infraction::DESYNC_PROTECTION);
 					}
 
-					if (opens == (players - 1) && host->get_net_data()->m_nat_type > 1)
+					if (opens == (players - 1) && host->get_net_data()->m_nat_type > 1) // some dumb menus actually do this
 					{
-						session::add_infraction(host, Infraction::DESYNC_PROTECTION);
+						session::add_infraction(host, Infraction::DESYNC_PROTECTION); // false positives are possible (like the moment a modder host leaves), but should be hopefully rare
 					}
 				}
 			}

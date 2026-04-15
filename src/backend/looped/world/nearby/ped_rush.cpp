@@ -5,6 +5,7 @@
 
 namespace big
 {
+
 	class ped_rush : looped_command
 	{
 		using looped_command::looped_command;
@@ -17,7 +18,7 @@ namespace big
 			}
 		}
 
-		virtual void on_disable() override //Vuelve los peds a su velocidad normal
+		virtual void on_disable() override //Set the peds back to their normal speed
 		{
 			for (auto ped : entity::get_entities(false, true))
 			{
@@ -26,5 +27,5 @@ namespace big
 		}
 	};
 
-	ped_rush g_ped_rush("aceleracionpeds", "ACELERACION_DE_PEDS", "BACKEND_LOOPED_WORLD_PED_RUSH_DESC", g.world.nearby.ped_rush);
+	ped_rush g_ped_rush("pedrush", "BACKEND_LOOPED_WORLD_PED_RUSH", "BACKEND_LOOPED_WORLD_PED_RUSH_DESC", g.world.nearby.ped_rush);
 }

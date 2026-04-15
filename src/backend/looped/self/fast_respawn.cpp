@@ -10,9 +10,11 @@ namespace big
 
 		virtual void on_tick() override
 		{
+			// disable wasted sound cause it's annoying
 			*scr_globals::disable_wasted_sound.as<bool*>() = true;
 
-			misc::set_bit(&(*scr_globals::freemode_properties.at(1762).at(756).as<int*>()), 1);
+			// triggers respawn instantly upon death, has no effect if not respawning so no need to check if the player's dead
+			misc::set_bit(&(*scr_globals::freemode_properties.at(1762).at(756).as<int*>()), 1); // Update: freemode -> KILL_STRIP_H -> Above that = "!IS_BIT_SET(global, 2)"
 		}
 
 		virtual void on_disable() override
@@ -23,5 +25,5 @@ namespace big
 		}
 	};
 
-	fast_respawn g_fast_respawn("fastrespawn", "RESPAWN_INSTANTANEO", "INSTANT_RESPAWN_DESC", g.self.fast_respawn);
+	fast_respawn g_fast_respawn("fastrespawn", "INSTANT_RESPAWN", "INSTANT_RESPAWN_DESC", g.self.fast_respawn);
 }

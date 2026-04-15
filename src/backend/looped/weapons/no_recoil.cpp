@@ -48,22 +48,25 @@ namespace big
 
 					if (weapon_mgr->m_weapon_info)
 					{
-						og_bullet_speed = weapon_mgr->m_weapon_info->m_speed;
+						// Backup
+						{
+							og_bullet_speed = weapon_mgr->m_weapon_info->m_speed;
 
-						og_recoil_shake_amplitude = weapon_mgr->m_weapon_info->m_recoil_shake_amplitude;
+							og_recoil_shake_amplitude = weapon_mgr->m_weapon_info->m_recoil_shake_amplitude;
 
-						og_recoil_hash    = weapon_mgr->m_weapon_info->m_recoil_shake_hash;
-						og_recoil_hash_fp = weapon_mgr->m_weapon_info->m_recoil_shake_hash_first_person;
-					}
+							og_recoil_hash    = weapon_mgr->m_weapon_info->m_recoil_shake_hash;
+							og_recoil_hash_fp = weapon_mgr->m_weapon_info->m_recoil_shake_hash_first_person;
+						}
 
-					if (weapon_mgr->m_weapon_info)
-					{
-						weapon_mgr->m_weapon_info->m_speed = 9999999999.0f;
+						// Set to the good stuff
+						{
+							weapon_mgr->m_weapon_info->m_speed = 9999999999.0f;
 
-						weapon_mgr->m_weapon_info->m_recoil_shake_amplitude = 0;
+							weapon_mgr->m_weapon_info->m_recoil_shake_amplitude = 0;
 
-						weapon_mgr->m_weapon_info->m_recoil_shake_hash              = 0;
-						weapon_mgr->m_weapon_info->m_recoil_shake_hash_first_person = 0;
+							weapon_mgr->m_weapon_info->m_recoil_shake_hash              = 0;
+							weapon_mgr->m_weapon_info->m_recoil_shake_hash_first_person = 0;
+						}
 					}
 				}
 			}
@@ -81,5 +84,5 @@ namespace big
 	};
 
 	no_recoil
-	    g_no_recoil("norecoil", "SIN_RETROCESO", "BACKEND_LOOPED_WEAPONS_NO_RECOIL_DESC", g.weapons.no_recoil);
+	    g_no_recoil("norecoil", "BACKEND_LOOPED_WEAPONS_NO_RECOIL", "BACKEND_LOOPED_WEAPONS_NO_RECOIL_DESC", g.weapons.no_recoil);
 }

@@ -125,12 +125,13 @@ namespace big
 
 		virtual void on_enable() override
 		{
-			g_notification_service.push("SEÑALES_DE_GIRO"_T.data(), "BACKEND_LOOPED_VEHICLE_TURN_SIGNALS_HELP"_T.data());
+			g_notification_service.push("TURN_SIGNALS"_T.data(), "BACKEND_LOOPED_VEHICLE_TURN_SIGNALS_HELP"_T.data());
 		}
 
 		virtual void on_tick() override
 		{
 			update_key_states();
+
 
 			if (left_signal_key.state == key_state::just_pressed && !left || g.vehicle.auto_turn_signals && PAD::IS_CONTROL_PRESSED(0, (int)ControllerInputs::INPUT_VEH_MOVE_LEFT_ONLY)
 			    || queued_left_turn_signal.has_value() && queued_left_turn_signal.value() - std::chrono::system_clock::now() > 1500ms)
@@ -195,5 +196,5 @@ namespace big
 		}
 	};
 
-	turn_signals g_turn_signals("turnsignals", "SEÑALES_DE_GIRO", "TURN_SIGNALS_DESC", g.vehicle.turn_signals);
+	turn_signals g_turn_signals("turnsignals", "TURN_SIGNALS", "TURN_SIGNALS_DESC", g.vehicle.turn_signals);
 }

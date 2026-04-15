@@ -8,16 +8,16 @@ namespace big
 		{
 			ImGui::Text("HANDLING_INITIAL_DRIVE_GEARS"_T.data());
 			int initial_drive_gears = g_local_player->m_vehicle->m_handling_data->m_initial_drive_gears;
-			if (ImGui::SliderInt("###marchas iniciales", &initial_drive_gears, 1, 16))
+			if (ImGui::SliderInt("###handling_drive_gears", &initial_drive_gears, 1, 16))
 				g_local_player->m_vehicle->m_handling_data->m_initial_drive_gears = initial_drive_gears;
 
 			ImGui::Text("HANDLING_UPSHIFT_MULTIPLIER"_T.data());
-			ImGui::SliderFloat("###multiplicador de subida", &g_local_player->m_vehicle->m_handling_data->m_upshift, .01f, 10.f);
+			ImGui::SliderFloat("###handling_upshift", &g_local_player->m_vehicle->m_handling_data->m_upshift, .01f, 10.f);
 
 			ImGui::Text("HANDLING_DOWNSHIFT_MULTIPLIER"_T.data());
-			ImGui::SliderFloat("###multiplicador de bajada", &g_local_player->m_vehicle->m_handling_data->m_downshift, .01f, 10.f);
+			ImGui::SliderFloat("###handling_downshift", &g_local_player->m_vehicle->m_handling_data->m_downshift, .01f, 10.f);
 
 			ImGui::EndTabItem();
 		}
 	}
-}
+};

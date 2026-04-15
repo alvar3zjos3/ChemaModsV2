@@ -25,8 +25,9 @@ namespace big
 			constexpr int rotation_order = 2;
 
 			Vector3 rot = CAM::GET_GAMEPLAY_CAM_ROT(rotation_order);
-			float pitch = math::deg_to_rad(rot.x);
-			float yaw = math::deg_to_rad(rot.z + 90);
+			float pitch = math::deg_to_rad(rot.x); // vertical
+			//float roll = rot.y;
+			float yaw = math::deg_to_rad(rot.z + 90); // horizontal
 
 			float dist = 10.f;
 			location.x += dist * cos(pitch) * cos(yaw);
@@ -40,9 +41,13 @@ namespace big
 			ENTITY::SET_ENTITY_ROTATION(veh, rot.x, rot.y, rot.z, rotation_order, 1);
 			ENTITY::SET_ENTITY_VELOCITY(veh, velocity.x, velocity.y, velocity.z);
 
+			// flagging the veh as no longer needed so that the game can remove it
+			// when reaching the maximum vehicle limit,
+			// allowing the vehicle gun to keep working
 			ENTITY::SET_VEHICLE_AS_NO_LONGER_NEEDED(&veh);
 
 			last_time = time_now;
 		}
 	}
+
 }

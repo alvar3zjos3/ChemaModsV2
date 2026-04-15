@@ -27,5 +27,5 @@ namespace big
 		}
 	};
 
-	voice_chat_audio g_voice_chat_audio("vcaudio", "AUDIO_CHAT_DE_VOZ", "BACKEND_LOOPED_SYSTEM_VOICE_CHAT_AUDIO_DESC", g.spoofing.voice_chat_audio);
+	voice_chat_audio g_voice_chat_audio("vcaudio", "BACKEND_LOOPED_SYSTEM_VOICE_CHAT_AUDIO", "BACKEND_LOOPED_SYSTEM_VOICE_CHAT_AUDIO_DESC", g.spoofing.voice_chat_audio);
 }

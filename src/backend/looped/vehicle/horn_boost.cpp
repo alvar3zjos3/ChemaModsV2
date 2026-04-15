@@ -39,5 +39,5 @@ namespace big
 		}
 	};
 
-	horn_boost g_horn_boost("hornboost", "IMPULSO_CON_BOCINA", "HORN_BOOST_DESC", g.vehicle.horn_boost);
+	horn_boost g_horn_boost("hornboost", "HORN_BOOST", "HORN_BOOST_DESC", g.vehicle.horn_boost);
 }

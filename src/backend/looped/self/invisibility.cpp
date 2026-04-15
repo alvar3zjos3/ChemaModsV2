@@ -28,6 +28,6 @@ namespace big
 		}
 	};
 
-	invisibility g_invisibility("invis", "INVISIBILIDAD", "INVISIBILITY_DESC", g.self.invisibility);
-	bool_command g_local_visibility("localvis", "VISIBILIDAD_LOCAL", "LOCAL_VISIBILITY_DESC", g.self.local_visibility);
+	invisibility g_invisibility("invis", "INVISIBILITY", "INVISIBILITY_DESC", g.self.invisibility);
+	bool_command g_local_visibility("localvis", "LOCAL_VISIBILITY", "LOCAL_VISIBILITY_DESC", g.self.local_visibility);
 }

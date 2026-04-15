@@ -11,7 +11,7 @@ namespace big
 
 		virtual void on_enable() override
 		{
-			g_notification_service.push("DESARMAR_AUTOMATICO"_T.data(), "VIEW_WORLD_AUTO_DISARM_NOTIFY"_T.data());
+			g_notification_service.push("VIEW_WORLD_AUTO_DISARM"_T.data(), "VIEW_WORLD_AUTO_DISARM_NOTIFY"_T.data());
 		}
 
 		virtual void on_tick() override
@@ -38,5 +38,5 @@ namespace big
 		}
 	};
 
-	auto_disarm g_auto_disarm("desarmarauto", "DESARMAR_AUTOMATICO", "BACKEND_LOOPED_WORLD_NEARBY_AUTO_DISARM_DESC", g.world.nearby.auto_disarm.enable);
+	auto_disarm g_auto_disarm("autodisarm", "BACKEND_LOOPED_WORLD_NEARBY_AUTO_DISARM", "BACKEND_LOOPED_WORLD_NEARBY_AUTO_DISARM_DESC", g.world.nearby.auto_disarm.enable);
 }

@@ -4,18 +4,18 @@
 namespace big
 {
 	const std::map<eGameLanguage, const std::string_view> languages = {
-	    {eGameLanguage::ENGLISH, "Inglés"},
-	    {eGameLanguage::FRENCH, "Francés"},
-	    {eGameLanguage::GERMAN, "Alemán"},
-	    {eGameLanguage::ITALIAN, "Italiano"},
-	    {eGameLanguage::SPANISH, "Español (España)"},
-	    {eGameLanguage::BRAZILIAN_PORTUGUESE, "Portugués (Brasil)"},
-	    {eGameLanguage::POLISH, "Polaco"},
-	    {eGameLanguage::RUSSIAN, "Ruso"},
-	    {eGameLanguage::KOREAN, "Coreano"},
-	    {eGameLanguage::TRADITIONAL_CHINESE, "Chino (Tradicional)"},
-	    {eGameLanguage::JAPANESE, "Japonés"},
-	    {eGameLanguage::MEXICAN_SPANISH, "Español (México)"},
-	    {eGameLanguage::SIMPLIFIED_CHINESE, "Chino (Simplificado)"},
+	    {eGameLanguage::ENGLISH, "English"},
+	    {eGameLanguage::FRENCH, "French"},
+	    {eGameLanguage::GERMAN, "German"},
+	    {eGameLanguage::ITALIAN, "Italian"},
+	    {eGameLanguage::SPANISH, "Spanish (Spain)"},
+	    {eGameLanguage::BRAZILIAN_PORTUGUESE, "Portuguese (Brazil)"},
+	    {eGameLanguage::POLISH, "Polish"},
+	    {eGameLanguage::RUSSIAN, "Russian"},
+	    {eGameLanguage::KOREAN, "Korean"},
+	    {eGameLanguage::TRADITIONAL_CHINESE, "Chinese (Traditional)"},
+	    {eGameLanguage::JAPANESE, "Japanese"},
+	    {eGameLanguage::MEXICAN_SPANISH, "Spanish (Mexico)"},
+	    {eGameLanguage::SIMPLIFIED_CHINESE, "Chinese (Simplified)"},
 	};
 }

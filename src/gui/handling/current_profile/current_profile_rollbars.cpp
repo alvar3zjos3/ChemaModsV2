@@ -7,16 +7,14 @@ namespace big
 		if (ImGui::BeginTabItem("HANDLING_TAB_ROLLBARS"_T.data()))
 		{
 			ImGui::Text("HANDLING_ANTI_ROLL_BAR_FORCE"_T.data());
-			ImGui::SliderFloat("##fuerza de barra estabilizadora", &g_local_player->m_vehicle->m_handling_data->m_anti_rollbar_force, 0.f, 10.f);
+			ImGui::SliderFloat("##anti rollbar force", &g_local_player->m_vehicle->m_handling_data->m_anti_rollbar_force, 0.f, 10.f);
 
 			ImGui::Text("HANDLING_ANTI_ROLL_BAR_BIAS_FRONT"_T.data());
 			float fAntiRollBarBiasFront = g_local_player->m_vehicle->m_handling_data->m_anti_rollbar_bias_front / 2;
-			if (ImGui::SliderFloat("##sesgo de barra estabilizadora", &fAntiRollBarBiasFront, 0.f, 1.f))
-			{
+			if (ImGui::SliderFloat("##anti rollbar bias", &fAntiRollBarBiasFront, 0.f, 1.f))
 				g_local_player->m_vehicle->m_handling_data->m_anti_rollbar_bias_front = fAntiRollBarBiasFront * 2;
-			}
 
 			ImGui::EndTabItem();
 		}
 	}
-}
+};

@@ -11,7 +11,7 @@ namespace big
 		{
 			if (ENTITY::DOES_ENTITY_EXIST(self::veh))
 			{
-				VEHICLE::SET_VEHICLE_HAS_MUTED_SIRENS(self::veh, true);
+				VEHICLE::SET_VEHICLE_HAS_MUTED_SIRENS(self::veh, true); // Enables muted siren state
 			}
 		}
 
@@ -19,10 +19,11 @@ namespace big
 		{
 			if (ENTITY::DOES_ENTITY_EXIST(self::veh))
 			{
-				VEHICLE::SET_VEHICLE_HAS_MUTED_SIRENS(self::veh, false);
+				VEHICLE::SET_VEHICLE_HAS_MUTED_SIRENS(self::veh, false); // Disables muted siren state
 			}
 		}
 	};
 
-	siren_mute g_siren_mute("mutesiren", "SILENCIAR_SIRENA", "MUTE_SIREN_DESC", g.vehicle.siren_mute);
+	siren_mute g_siren_mute("mutesiren", "MUTE_SIREN", "MUTE_SIREN_DESC",
+	    g.vehicle.siren_mute);
 }

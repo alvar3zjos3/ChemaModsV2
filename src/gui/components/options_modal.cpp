@@ -3,7 +3,7 @@
 namespace big
 {
 	/*
-	Proporcionará un botón de opciones al lado del elemento anterior que abre un popup para ejecutar el contenido de 'render_elements'
+	Will provide an options button next to the previous element that opens up a popup to run the content of 'render_elements'
 	*/
 	void components::options_modal(const std::string_view element_name, std::function<void()> render_elements, bool sameline, std::string custom_button_name)
 	{
@@ -19,7 +19,7 @@ namespace big
 		{
 			render_elements();
 			ImGui::Spacing();
-			if (components::button("CERRAR"_T) || ((!ImGui::IsWindowHovered() && !ImGui::IsAnyItemHovered()) && ImGui::IsMouseClicked(ImGuiMouseButton_Left)))
+			if (components::button("CLOSE"_T) || ((!ImGui::IsWindowHovered() && !ImGui::IsAnyItemHovered()) && ImGui::IsMouseClicked(ImGuiMouseButton_Left)))
 				ImGui::CloseCurrentPopup();
 
 			ImGui::EndPopup();

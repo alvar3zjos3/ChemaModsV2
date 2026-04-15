@@ -33,15 +33,17 @@ namespace big
 						}
 						else
 						{
-							g_notification_service.push_warning("ARMAS_PERSONALIZADAS"_T.data(), "VEHICLE_INVALID"_T.data());
+							g_notification_service.push_warning("BACKEND_LOOPED_WEAPONS_STEAL_VEHICLE_GUN"_T.data(), "VEHICLE_INVALID"_T.data());
 						}
 					}
 					else
 					{
-						g_notification_service.push_warning("ARMAS_PERSONALIZADAS"_T.data(), "BACKEND_LOOPED_WEAPONS_CAGE_GUN_NO_ENTITY_FOUND"_T.data());
+						g_notification_service.push_warning("BACKEND_LOOPED_WEAPONS_STEAL_VEHICLE_GUN"_T.data(), "BACKEND_LOOPED_WEAPONS_CAGE_GUN_NO_ENTITY_FOUND"_T.data());
 					}
 				}
 			}
 		}
 	}
+
+
 }

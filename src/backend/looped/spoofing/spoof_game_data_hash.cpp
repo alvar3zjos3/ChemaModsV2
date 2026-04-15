@@ -64,6 +64,6 @@ namespace big
 		}
 	};
 
-	spoof_game_data_hash g_spoof_game_data_hash("spoofdatahash", "FALSEAR_HASH_DE_DATOS_DEL_JUEGO", "SPOOF_GAME_DATA_HASH_DESC", g.spoofing.spoof_game_data_hash);
-	copy_current_game_data_hash g_copy_current_game_data_hash("storecurrenthash", "COPIAR_HASH_DE_DATOS_ACTUAL", "COPY_CURRENT_GAME_DATA_HASH_DESC", 0);
+	spoof_game_data_hash g_spoof_game_data_hash("spoofdatahash", "SPOOF_GAME_DATA_HASH", "SPOOF_GAME_DATA_HASH_DESC", g.spoofing.spoof_game_data_hash);
+	copy_current_game_data_hash g_copy_current_game_data_hash("storecurrenthash", "COPY_CURRENT_GAME_DATA_HASH", "COPY_CURRENT_GAME_DATA_HASH_DESC", 0);
 }

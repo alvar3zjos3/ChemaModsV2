@@ -33,6 +33,7 @@ namespace big
 					VEHICLE::SET_VEHICLE_DIRT_LEVEL(veh, 0.f);
 				}
 
+				// Rear window
 				constexpr int rear_window_index = 7;
 				if (!VEHICLE::IS_VEHICLE_WINDOW_INTACT(veh, rear_window_index))
 				{
@@ -76,5 +77,6 @@ namespace big
 		}
 	};
 
-	keep_vehicle_repaired g_keep_vehicle_repaired("keepfixed", "MANTENER_VEHICULO_REPARADO", "KEEP_VEHICLE_FIXED_DESC", g.vehicle.keep_vehicle_repaired);
+	keep_vehicle_repaired
+	    g_keep_vehicle_repaired("keepfixed", "KEEP_VEHICLE_FIXED", "KEEP_VEHICLE_FIXED_DESC", g.vehicle.keep_vehicle_repaired);
 }

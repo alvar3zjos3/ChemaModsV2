@@ -3,5 +3,6 @@
 
 namespace big
 {
-	bool_command g_veh_unlimited_weapons("vehallweapons", "ARMAS_ILIMITADAS_EN_VEHICULO", "VEHICLE_ALL_WEAPONS_DESC", g.vehicle.unlimited_weapons);
+	bool_command g_veh_unlimited_weapons("vehallweapons", "VEHICLE_ALL_WEAPONS", "VEHICLE_ALL_WEAPONS_DESC",
+	    g.vehicle.unlimited_weapons);
 }

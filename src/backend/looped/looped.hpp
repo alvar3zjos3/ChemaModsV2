@@ -20,52 +20,52 @@ namespace big
 		static void hud_transition_state();
 		static void hud_disable_input();
 
-		static void player_good_options();           // Opciones buenas para jugadores
-		static void player_toxic_options();          // Opciones tóxicas para jugadores
-		static void player_spectate();               // Espectar jugador
-		static void player_remote_control_vehicle(); // Control remoto de vehículo del jugador
+		static void player_good_options();
+		static void player_toxic_options();
+		static void player_spectate();
+		static void player_remote_control_vehicle();
 
-		static void self_wanted();                   // Nivel de búsqueda propio
-		static void self_hud();                      // HUD propio
-		static void self_persist_outfit();           // Guardar atuendo de forma permanente
+		static void self_wanted();
+		static void self_hud();
+		static void self_persist_outfit();
 
-		static void session_pop_multiplier_areas();  // Multiplicador de población en la sesión
-		static void session_force_thunder();         // Forzar truenos
-		static void session_block_jobs();            // Bloquear trabajos
-		static void session_randomize_ceo_colors();  // Colores aleatorios de CEO
-		static void session_auto_kick_host();        // Auto expulsar al host
-		static void session_force_script_host();     // Forzar ser host del script
-		static void session_chat_translator();       // Traductor del chat
-		static void session_modder_detection();      // Detección de modders
+		static void session_pop_multiplier_areas();
+		static void session_force_thunder();
+		static void session_block_jobs();
+		static void session_randomize_ceo_colors();
+		static void session_auto_kick_host();
+		static void session_force_script_host();
+		static void session_chat_translator();
+		static void session_modder_detection();
 
-		static void system_self_globals();           // Globals propios del sistema
-		static void system_update_pointers();        // Actualizar punteros
-		static void system_update_desync_kick();     // Actualizar kick por desincronización
-		static void system_spoofing();               // Spoofing del sistema
-		static void system_mission_creator();        // Creador de misiones
+		static void system_self_globals();
+		static void system_update_pointers();
+		static void system_update_desync_kick();
+		static void system_spoofing();
+		static void system_mission_creator();
 
-		static void vehicle_auto_drive();            // Conducción automática
-		static void vehicle_allow_all_weapons();     // Permitir todas las armas en vehículos
-		static void vehicle_boost_behavior();        // Comportamiento del boost
-		static void vehicle_rainbow_paint();         // Pintura arcoíris
+		static void vehicle_auto_drive();
+		static void vehicle_allow_all_weapons();
+		static void vehicle_boost_behavior();
+		static void vehicle_rainbow_paint();
 
-		static void weapons_tp_gun();                // Arma de teletransporte
-		static void weapons_ammo_special_type();     // Tipo de munición especial
-		static void weapons_cage_gun();              // Arma de jaula
-		static void custom_gun_disable_control_action(); // Desactivar controles de armas personalizadas
-		static void weapons_delete_gun();            // Arma de eliminación
-		static void weapons_gravity_gun();           // Arma de gravedad
-		static void weapons_repair_gun();            // Arma de reparación
-		static void weapons_steal_vehicle_gun();     // Arma de robar vehículo
-		static void weapons_vehicle_gun();           // Arma de spawn de vehículos
-		static void weapons_c4_limit();              // Límite de C4
-		static void weapons_do_persist_weapons();    // Armas persistentes
-		static void weapons_do_weapon_hotkeys();     // Atajos de armas
-		static void weapons_paint_gun();             // Arma de pintura
+		static void weapons_tp_gun();
+		static void weapons_ammo_special_type();
+		static void weapons_cage_gun();
+		static void custom_gun_disable_control_action();
+		static void weapons_delete_gun();
+		static void weapons_gravity_gun();
+		static void weapons_repair_gun();
+		static void weapons_steal_vehicle_gun();
+		static void weapons_vehicle_gun();
+		static void weapons_c4_limit();
+		static void weapons_do_persist_weapons();
+		static void weapons_do_weapon_hotkeys();
+		static void weapons_paint_gun();
 
-		static void drive_train();                   // Conducir tren
-		static void derail_train();                  // Descarrilar tren
+		static void drive_train();
+		static void derail_train();
 
-		static void world_spawn_ped();               // Spawn de peds en el mundo
+		static void world_spawn_ped();
 	};
 }

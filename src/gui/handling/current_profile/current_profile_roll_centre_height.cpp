@@ -11,12 +11,12 @@ namespace big
 			ImGui::Separator();
 
 			ImGui::Text("HANDLING_ROLL_CENTRE_HEIGHT_FRONT"_T.data());
-			ImGui::SliderFloat("##altura centro de balanceo delantero", &g_local_player->m_vehicle->m_handling_data->m_roll_centre_height_front, -1.f, 1.f);
+			ImGui::SliderFloat("##roll centre height front", &g_local_player->m_vehicle->m_handling_data->m_roll_centre_height_front, -1.f, 1.f);
 
 			ImGui::Text("HANDLING_ROLL_CENTRE_HEIGHT_BACK"_T.data());
-			ImGui::SliderFloat("##altura centro de balanceo trasero", &g_local_player->m_vehicle->m_handling_data->m_roll_centre_height_rear, -1.f, 1.f);
+			ImGui::SliderFloat("##roll centre height back", &g_local_player->m_vehicle->m_handling_data->m_roll_centre_height_rear, -1.f, 1.f);
 
 			ImGui::EndTabItem();
 		}
 	}
-}
+};

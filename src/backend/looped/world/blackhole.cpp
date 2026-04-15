@@ -19,12 +19,12 @@ namespace big
 			auto current_time = std::chrono::steady_clock::now();
 			auto elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(current_time - last_call_time).count();
 
-			if (elapsed_time >= 1000)
+			if (elapsed_time >= 1000) // Reduce black hole gather spam so it pulses only every second
 			{
 				entity_list = entity::get_entities(g.world.blackhole.include_vehicles, g.world.blackhole.include_peds);
 				last_call_time = current_time;
 
-				for (int i = 0; i < 30 && i < entity_list.size(); i++)
+				for (int i = 0; i < 30 && i < entity_list.size(); i++) // Only yeet up to 30 entities every second to prevent crashes
 				{
 					auto entity = entity_list[i];
 
@@ -49,6 +49,7 @@ namespace big
 				}
 			}
 
+			//draw blackhole
 			GRAPHICS::DRAW_MARKER(28,
 			    g.world.blackhole.pos.x,
 			    g.world.blackhole.pos.y,
@@ -76,9 +77,9 @@ namespace big
 		}
 	};
 
-	blackhole g_blackhole("agujeron negro", "AGUJERO_NEGRO", "BACKEND_LOOPED_WORLD_BLACKHOLE_DESC", g.world.blackhole.enable);
+	blackhole g_blackhole("blackhole", "GUI_TAB_BLACKHOLE", "BACKEND_LOOPED_WORLD_BLACKHOLE_DESC", g.world.blackhole.enable);
 	bool_command
-	    g_blackhole_peds("agujeronnegropeds", "PEDS", "BACKEND_LOOPED_WORLD_BLACKHOLE_PEDS_DESC", g.world.blackhole.include_peds);
-	bool_command g_blackhole_vehicles("agujeronnegrovehs", "VEHICULOS", "BACKEND_LOOPED_WORLD_BLACKHOLE_VEHS_DESC",
+	    g_blackhole_peds("blackholeincpeds", "PEDS", "BACKEND_LOOPED_WORLD_BLACKHOLE_PEDS_DESC", g.world.blackhole.include_peds);
+	bool_command g_blackhole_vehicles("blackholeincvehs", "VEHICLES", "BACKEND_LOOPED_WORLD_BLACKHOLE_VEHS_DESC",
 	    g.world.blackhole.include_vehicles);
 }

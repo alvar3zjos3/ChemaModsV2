@@ -54,11 +54,13 @@ namespace big
 					const auto index = ocean_quads->m_quad_pool + (i * 0x1C);
 					const auto quad  = reinterpret_cast<ocean_quad*>(index);
 
+					// Disable ocean by lowering its height
 					if (g.world.ocean.disable_ocean)
 						quad->m_height = -10000.f;
 					else
 						quad->m_height = original_heights[i];
 
+					// Change the ocean's opacity (alpha)
 					if (g.world.ocean.ocean_opacity == 100)
 						quad->m_opacity = 0x1A1A1A1A;
 					else if (!g.world.ocean.ocean_opacity)
@@ -87,6 +89,6 @@ namespace big
 		}
 	};
 
-	modify_ocean g_modify_ocean("modificaroceano", "MODIFICAR_OCÉANO", "BACKEND_LOOPED_WORLD_MODIFY_OCEAN_DESC", g.world.ocean.modify_ocean);
-	bool_command g_disable_ocean("desactivaroceano", "DESACTIVAR_OCÉANO", "BACKEND_LOOPED_WORLD_DISABLE_OCEAN_DESC", g.world.ocean.disable_ocean);
+	modify_ocean g_modify_ocean("modifyocean", "BACKEND_LOOPED_WORLD_MODIFY_OCEAN", "BACKEND_LOOPED_WORLD_MODIFY_OCEAN_DESC", g.world.ocean.modify_ocean);
+	bool_command g_disable_ocean("disableocean", "BACKEND_LOOPED_WORLD_DISABLE_OCEAN", "BACKEND_LOOPED_WORLD_DISABLE_OCEAN_DESC", g.world.ocean.disable_ocean);
 }

@@ -22,6 +22,7 @@ namespace big
 			}
 		}
 
+
 		if (gta_util::get_network()->m_game_session_state > 3 && gta_util::get_network()->m_game_session_state < 6
 		    && gta_util::get_network()->m_game_complaint_mgr.m_num_tokens_complained && g_player_service->get_self()->is_valid()
 		    && !g_player_service->get_self()->is_host())

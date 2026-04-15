@@ -25,5 +25,5 @@ namespace big
 		}
 	};
 
-	allow_weapons_in_interiors g_allow_weaps_inside("allowwepsinside", "PERMITIR_ARMAS_EN_INTERIORES", "VIEW_WEAPON_ALLOW_WEAPONS_IN_INTERIORS", g.weapons.interior_weapon);
+	allow_weapons_in_interiors g_allow_weaps_inside("allowwepsinside", "VIEW_WEAPON_ALLOW_WEAPONS_IN_INTERIORS", "", g.weapons.interior_weapon);
 }

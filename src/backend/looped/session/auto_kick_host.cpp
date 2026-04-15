@@ -31,7 +31,7 @@ namespace big
 		if (kick_host && !bLastKickHost && is_next_in_queue()) [[unlikely]]
 		{
 			g_player_service->iterate([](auto& plyr) {
-				// No expulsar jugadores de confianza
+				// Don't kick trusted players
 				if (plyr.second->is_trusted || (g.session.trust_friends && plyr.second->is_friend()) 
 					|| (plyr.second->is_modder && g.session.exclude_modders_from_kick_host))
 						return;

@@ -30,5 +30,5 @@ namespace big
 		}
 	};
 
-	modify_explosion_radius g_modify_explosion_radius("modifyexplosionradius", "MODIFICAR_RADIO_DE_EXPLOSION", "BACKEND_LOOPED_WEAPONS_MODIFY_EXPLOSION_RADIUS_DESC", g.weapons.modify_explosion_radius);
+	modify_explosion_radius g_modify_explosion_radius("modifyexplosionradius", "BACKEND_LOOPED_WEAPONS_MODIFY_EXPLOSION_RADIUS", "BACKEND_LOOPED_WEAPONS_MODIFY_EXPLOSION_RADIUS_DESC", g.weapons.modify_explosion_radius);
 }

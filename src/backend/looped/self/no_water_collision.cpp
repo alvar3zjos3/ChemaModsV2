@@ -19,5 +19,5 @@ namespace big
 		}
 	};
 
-	no_water_collision g_no_water_collision("walkunder", "CAMINAR_DEBAJO_DEL_AGUA", "WALK_UNDERWATER_DESC", g.self.no_water_collision);
+	no_water_collision g_no_water_collision("walkunder", "WALK_UNDERWATER", "WALK_UNDERWATER_DESC", g.self.no_water_collision);
 }

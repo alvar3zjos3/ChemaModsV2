@@ -19,7 +19,7 @@ namespace big
 				offset = 1;
 				break;
 			}
-			default:[[unlikely]] return false;
+			default:[[unlikely]] return false; //For non-normal models
 		}
 
 		return PED::GET_PED_DRAWABLE_VARIATION(self::ped, ComponentId::AUXILIARY) == 15 && PED::GET_PED_DRAWABLE_VARIATION(self::ped, ComponentId::TORSO) == 15 && PED::GET_PED_DRAWABLE_VARIATION(self::ped, ComponentId::LEGS) == (14 + offset);
@@ -27,22 +27,23 @@ namespace big
 
 	void looped::self_persist_outfit()
 	{
+		//Disable clothing validation
 		*scr_globals::reset_clothing.as<PBOOL>() = FALSE;
 		if (auto tunable = g_tunables_service->get_tunable<PBOOL>("DISABLE_CLOTHING_SAVE_SLOT_VALIDATION"_J)) [[likely]]
 			*tunable = TRUE;
 
 		if (g.self.persist_outfit.empty())
-			return;
+			return; //Off
 
 		if (g_local_player == nullptr || PED::IS_PED_DEAD_OR_DYING(self::ped, TRUE) || STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS() || DLC::GET_IS_LOADING_SCREEN_ACTIVE()) [[unlikely]]
-			return;
+			return; //Dead or Loading
 
 		auto model = ENTITY::GET_ENTITY_MODEL(self::ped);
 		if (is_taking_shower(model)) [[unlikely]]
-			return;
+			return; //Showering
 
 		if (g.self.persist_outfits_mis && NETWORK::NETWORK_IS_ACTIVITY_SESSION())
-			return;
+			return; //Missioning it up
 
 		static nlohmann::json outfit{};
 		static std::string persisting_outfit = "";
@@ -65,6 +66,7 @@ namespace big
 					catch (const std::exception& e)
 					{
 						LOG(INFO) << e.what();
+
 						outfit                = {};
 						g.self.persist_outfit = "";
 					}

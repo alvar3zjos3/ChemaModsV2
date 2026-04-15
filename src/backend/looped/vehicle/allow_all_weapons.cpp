@@ -35,7 +35,7 @@ namespace big
 			return;
 		}
 
-		if (seat_info->anim_info == nullptr) [[unlikely]]
+		if (seat_info->anim_info == nullptr) [[unlikely]] //Should only occur in the R-88 and similar formula cars, so assume the user is in the driver's seat. Fix later, if other edge cases occur.
 		{
 			seat_info->anim_info = g_pointers->m_gta.m_vehicle_layout_metadata_mgr->m_drive_by_seat_defaults->m_driveby_standard_front_left;
 		}

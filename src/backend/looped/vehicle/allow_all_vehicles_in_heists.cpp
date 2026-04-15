@@ -25,5 +25,5 @@ namespace big
 		}
 	};
 
-	allvehsinheists g_allvehsinheists("allvehsinheists", "PERMITIR_TODOS_LOS_VEHICULOS_EN_HEISTS", "VEHICLE_ALLOW_ALL_IN_HEISTS_DESC", g.vehicle.all_vehs_in_heists);
+	allvehsinheists g_allvehsinheists("allvehsinheists", "VEHICLE_ALLOW_ALL_IN_HEISTS", "VEHICLE_ALLOW_ALL_IN_HEISTS_DESC", g.vehicle.all_vehs_in_heists);
 }

@@ -54,5 +54,5 @@ namespace big
 		}
 	};
 
-	no_idle_kick g_no_idle_kick("noidlekick", "SIN_EXPULSION_POR_INACTIVIDAD", "NO_IDLE_KICK_DESC", g.tunables.no_idle_kick);
+	no_idle_kick g_no_idle_kick("noidlekick", "NO_IDLE_KICK", "NO_IDLE_KICK_DESC", g.tunables.no_idle_kick);
 }

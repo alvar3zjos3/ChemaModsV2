@@ -13,7 +13,7 @@ namespace big
 		{
 			if (translate_queue.size() >= 3)
 			{
-				LOG(WARNING) << "[Traductor de chat] La cola de mensajes es demasiado grande, limpiándola. Intenta habilitar el temporizador anti-spam.";
+                LOG(WARNING) << "[Traductor de chat] La cola de mensajes es demasiado grande, limpiándola. Intenta habilitar el temporizador anti-spam.";
 				translate_queue.pop();
 				return;
 			}

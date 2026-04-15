@@ -25,7 +25,7 @@ namespace big
 					}
 					else
 					{
-						g_notification_service.push_error("ARMAS_PERSONALIZADAS"_T.data(), "BACKEND_LOOPED_WEAPONS_CAGE_GUN_NO_ENTITY_FOUND"_T.data());
+						g_notification_service.push_error("CUSTOM_WEAPONS"_T.data(), "BACKEND_LOOPED_WEAPONS_CAGE_GUN_NO_ENTITY_FOUND"_T.data());
 					}
 				}
 			}

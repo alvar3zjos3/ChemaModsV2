@@ -21,5 +21,6 @@ namespace big
 		}
 	};
 
-	block_homing g_block_homing("blockhoming", "BLOQUEAR_HOMING", "BLOCK_HOMING_DESC", g.vehicle.block_homing);
+	block_homing g_block_homing("blockhoming", "BLOCK_HOMING", "BLOCK_HOMING_DESC",
+	    g.vehicle.block_homing);
 }

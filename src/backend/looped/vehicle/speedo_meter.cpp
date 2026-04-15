@@ -4,11 +4,12 @@
 #include "natives.hpp"
 #include "util/vehicle.hpp"
 
+
 namespace big
 {
 	class speedo_meter : looped_command
 	{
-		std::array<std::string_view, 3> m_speed_types = {"km/h", "mph", "m/s"};
+		std::array<std::string_view, 3> m_speed_types = {"kmph", "mph", "mps"};
 
 		using looped_command::looped_command;
 
@@ -66,7 +67,9 @@ namespace big
 		}
 	};
 
-	speedo_meter g_speedo_meter("speedometer", "VELOCIMETRO", "SPEEDO_METER_DESC", g.vehicle.speedo_meter.enabled);
-	bool_command g_speedo_meter_gears("speedometergears", "MOSTRAR_MARCHA_ACTUAL", "BACKEND_LOOPED_VEHICLE_SPEEDO_METER_SHOW_CURRENT_GEAR_DESC", g.vehicle.speedo_meter.show_current_gear);
-	bool_command g_speedo_meter_left_side("speedometerleftside", "ALINEAR_A_LA_IZQUIERDA", "BACKEND_LOOPED_VEHICLE_SPEEDO_METER_ALIGN_TO_LEFT_DESC", g.vehicle.speedo_meter.left_side);
+	speedo_meter g_speedo_meter("speedometer", "SPEEDO_METER", "SPEEDO_METER_DESC", g.vehicle.speedo_meter.enabled);
+	bool_command g_speedo_meter_gears("speedometergears", "BACKEND_LOOPED_VEHICLE_SPEEDO_METER_SHOW_CURRENT_GEAR", "BACKEND_LOOPED_VEHICLE_SPEEDO_METER_SHOW_CURRENT_GEAR_DESC",
+	    g.vehicle.speedo_meter.show_current_gear);
+	bool_command g_speedo_meter_left_side("speedometerleftside", "BACKEND_LOOPED_VEHICLE_SPEEDO_METER_ALIGN_TO_LEFT", "BACKEND_LOOPED_VEHICLE_SPEEDO_METER_ALIGN_TO_LEFT_DESC",
+	    g.vehicle.speedo_meter.left_side);
 }

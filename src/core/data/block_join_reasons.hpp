@@ -12,78 +12,78 @@ namespace big
 		UNK_3 = 3,
 		UNK_4 = 4,
 
-		// Ya te han votado para salir de esta sesión de juego.
+		// You have already been voted out of this game session.
 		BeenVotedOut = 5,
 
 		UNK_6 = 6,
 
-		// Error al unirte a la sesión debido a archivos incompatibles.
+		// Failed to join session due to incompatible assets.
 		IncompatibleAssets = 7,
 
-		// La sesión a la que intentas unirte está llena.
+		// The session you're trying to join is currently full.
 		SessionFull = 8,
 
-		// La sesión a la que intentas unirte está llena de jugadores.
+		// The session you're trying to join is currently full of players.
 		SlotFull = 9,
 
-		// Asegúrate de que todos los jugadores tengan la última actualización del título.
+		// Please make sure all players have the latest Title Update.
 		NoTitleUpdate = 10,
 
 		UNK_11 = 11,
 
-		// Las invitaciones están desactivadas en esta sesión.
+		// Invites are currently disabled in the session.
 		InvitesDisabled = 12,
 
-		// La sesión a la que intentas unirte usa una preferencia de apuntado diferente.
+		// The session you are trying to join is using a different targeting preference. You can change your preference in the Settings tab of the Pause Menu in Grand Theft Auto V. Joining a new GTA Online Session.
 		DifferentTargetingMode = 13,
 
-		// Estás clasificado como tramposo y solo puedes jugar con otros tramposos hasta que seas perdonado.
+		// You are classed as a cheat and can only play with other cheats until you are forgiven.
 		Cheater = 14,
 
 		UNK_15 = 15,
 
-		// Contenido descargable incompatible. Todos los jugadores deben tener el último paquete de compatibilidad.
+		// Incompatible downloadable content. All players must have the latest compatibility pack.
 		IncompatibleDLC = 16,
 
-		// Intentas entrar a una sesión solo para miembros de crew.
+		// You are trying to enter a Crew Members only session.
 		CrewOnly = 17,
 
-		// La sesión a la que intentas unirte es para jugadores que no son malos deportistas ni tramposos - tú eres un mal deportista.
+		// The session you are trying to join is for people who are not Bad Sports or cheaters - you are a Bad Sport.
 		BadSport = 18,
 
-		// La sesión a la que intentas unirte es solo para malos deportistas.
+		// The session you are trying to join is for Bad Sports only.
 		BadSportOnly = 19,
 
-		// La sesión a la que intentas unirte es solo para tramposos.
+		// The session you are trying to join is for cheaters only.
 		CheatersOnly = 20,
 
-		// La sesión a la que intentas unirte ya no existe.
+		// The session you are trying to join no longer exists.
 		SessionNoLongerExists = 21,
 
-		// La sesión a la que intentas unirte es privada. Necesitas una invitación para unirte.
+		// The session you are trying to join is private. You will need to be invited to join this session.
 		InviteOnly = 22,
 
-		// La sesión a la que intentas unirte es privada y solo para amigos. Debes ser invitado por un amigo.
+		// The session you are trying to join is private and friends only. You must be invited by a friend to join this session.
 		InviteAndFriendsOnly = 23,
 
-		// La sesión a la que intentas unirte es de un tipo de compilación diferente.
+		// The session you are trying to join is a different build type.
 		DifferentBuildType = 24,
 
 		UNK_25 = 25,
 
-		// La sesión a la que intentas unirte no usa el mismo contenido.
+		// The session you are trying to join is not using the same content.
 		DifferentContent = 26,
 
-		// La sesión a la que intentas unirte es solo para amigos.
+		// The session you are trying to join is friends only.
 		FriendsOnly = 27,
 
-		// No se puede unir. Tu cuenta tiene mala reputación.
+		// Unable to join this session, your account has a bad reputation.
 		BadReputation = 28,
 
-		// No se puede conectar a la sesión. Es posible que la sesión ya no exista.
+		// Unable to connect to session. The session may no longer exist.
 		MayNotExist = 29,
 
-		// No se puede unir. La sesión a la que intentas unirte es una Carrera Premium. Unirse y aceptar invitaciones está desactivado para este modo.
+		// Unable to Join. The session you are trying to join is a Premium Race. Joining and accepting invites is disabled for this mode.
 		PremiumRace = 30
 	};
 
@@ -102,36 +102,36 @@ namespace big
 	}
 
 	inline constexpr auto block_join_reasons = std::to_array({
-	    "",                              // 0
-	    "Ninguno",                       // 1
-	    "",                              // 2
-	    "",                              // 3
-	    "",                              // 4
-	    "Votado para salir",             // 5
-	    "",                              // 6
-	    "Archivos incompatibles",        // 7
-	    "Sesión llena",                  // 8
-	    "Slots llenos",                  // 9
-	    "Sin actualización",             // 10
-	    "",                              // 11
-	    "Invitaciones desactivadas",     // 12
-	    "Modo de apuntado diferente",    // 13
-	    "Tramposo",                      // 14
-	    "",                              // 15
-	    "DLC incompatible",              // 16
-	    "Solo crew",                     // 17
-	    "Mal deportista",                // 18
-	    "Solo malos deportistas",        // 19
-	    "Solo tramposos",                // 20
-	    "Sesión ya no existe",           // 21
-	    "Solo con invitación",           // 22
-	    "Solo amigos e invitación",      // 23
-	    "Tipo de compilación diferente", // 24
-	    "",                              // 25
-	    "Contenido diferente",           // 26
-	    "Solo amigos",                   // 27
-	    "Mala reputación",               // 28
-	    "Puede que no exista",           // 29
-	    "Carrera Premium"                // 30
+	    "",                         // 0
+	    "None",                     // 1
+	    "",                         // 2
+	    "",                         // 3
+	    "",                         // 4
+	    "Been Voted Out",           // 5
+	    "",                         // 6
+	    "Incompatible Assets",      // 7
+	    "Session Full",             // 8
+	    "Slot Full",                // 9
+	    "No Title Update",          // 10
+	    "",                         // 11
+	    "Invites Disabled",         // 12
+	    "Different Targeting Mode", // 13
+	    "Cheater",                  // 14
+	    "",                         // 15
+	    "Incompatible DLC",         // 16
+	    "Crew Only",                // 17
+	    "Bad Sport",                // 18
+	    "Bad Sports Only",          // 19
+	    "Cheaters Only",            // 20
+	    "Session No Longer Exists", // 21
+	    "Invite Only",              // 22
+	    "Invite And Friends Only",  // 23
+	    "Different Build Type",     // 24
+	    "",                         // 25
+	    "Different Content",        // 26
+	    "Friends Only",             // 27
+	    "Bad Reputation",           // 28
+	    "May Not Exist",            // 29
+	    "Premium Race"              // 30
 	});
 }

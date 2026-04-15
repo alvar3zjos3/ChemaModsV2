@@ -47,16 +47,33 @@ namespace big
 				}
 			}
 
+			/**
+			 * @brief Gets the initial ability value of the vehicle.
+			 * 
+			 * @param ability 
+			 * @return true 
+			 * @return false 
+			 */
 			bool get_ability_default(CVehicleModelInfoFlags ability)
 			{
 				return m_stock_abilities.contains(ability);
 			}
 
+			/**
+			 * @brief Checks if the currently bound CVehicle ptr has the flag enabled.
+			 * 
+			 * @param ability 
+			 * @return true 
+			 * @return false 
+			 */
 			bool has_ability(CVehicleModelInfoFlags ability)
 			{
 				return m_vehicle && m_vehicle->m_model_info && reinterpret_cast<CVehicleModelInfo*>(m_vehicle->m_model_info)->get_vehicle_model_flag(ability);
 			}
 
+			/**
+			 * @brief Resets the vehicle to its defaults safely!
+			 */
 			void reset_defaults()
 			{
 				if (m_vehicle && m_vehicle->m_model_info)
@@ -66,6 +83,12 @@ namespace big
 				}
 			}
 
+			/**
+			 * @brief Safely set the ability state of a vehicle.
+			 * 
+			 * @param ability 
+			 * @param toggle 
+			 */
 			void toggle_ability(CVehicleModelInfoFlags ability, bool toggle)
 			{
 				if (m_vehicle && m_vehicle->m_model_info)
@@ -109,7 +132,7 @@ namespace big
 			m_vehicle_ability_helper.toggle_ability(CVehicleModelInfoFlags::HAS_ROCKET_BOOST, g.vehicle.abilities.rocket);
 			m_vehicle_ability_helper.toggle_ability(CVehicleModelInfoFlags::HAS_PARACHUTE, g.vehicle.abilities.parachute);
 			m_vehicle_ability_helper.toggle_ability(CVehicleModelInfoFlags::RAMP, g.vehicle.abilities.ramp);
-			if (VEHICLE::GET_VEHICLE_CLASS(self::veh) == 8 || VEHICLE::GET_VEHICLE_CLASS(self::veh) == 13)
+			if (VEHICLE::GET_VEHICLE_CLASS(self::veh) == 8 || VEHICLE::GET_VEHICLE_CLASS(self::veh) == 13 /*Motorcycles & Bikes*/)
 				m_vehicle_ability_helper.toggle_ability(CVehicleModelInfoFlags::HAS_GLIDER, g.vehicle.abilities.glider);
 		}
 
@@ -131,6 +154,9 @@ namespace big
 			m_vehicle_ability_helper.reset_defaults();
 			m_vehicle_ability_helper = { vehicle };
 
+			// currently I'd keep overwriting the display values for what is default for the current vehicle
+			// should we always persist the user's choice onto the vehicle? or only the ones that are enabled?
+			// doesn't sound like too great of an idea for vehicles that have abilities by default and then suddenly they're disabled
 			g.vehicle.abilities.jump = m_vehicle_ability_helper.get_ability_default(CVehicleModelInfoFlags::JUMPING_CAR);
 			g.vehicle.abilities.rocket = m_vehicle_ability_helper.get_ability_default(CVehicleModelInfoFlags::HAS_ROCKET_BOOST);
 			g.vehicle.abilities.parachute = m_vehicle_ability_helper.get_ability_default(CVehicleModelInfoFlags::HAS_PARACHUTE);
@@ -139,11 +165,11 @@ namespace big
 		}
 	};
 
-	vehicle_ability g_vehicle_ability("modifyvehicleability", "MODIFICAR_HABILIDADES_VEHICULO", "MODIFY_VEHICLE_ABILITY_DESC", g.vehicle.abilities.enabled);
+	vehicle_ability g_vehicle_ability("modifyvehicleability", "MODIFY_VEHICLE_ABILITY", "MODIFY_VEHICLE_ABILITY_DESC", g.vehicle.abilities.enabled);
 
-	bool_command g_jump_ability("jumpability", "SALTO", "BACKEND_LOOPED_VEHICLE_ABILITY_JUMP_DESC", g.vehicle.abilities.jump);
-	bool_command g_rocket_ability("rocketability", "IMPULSO_COHEte", "BACKEND_LOOPED_VEHICLE_ABILITY_ROCKET_DESC", g.vehicle.abilities.rocket);
-	bool_command g_parachute_ability("parachuteability", "PARACAIDAS", "BACKEND_LOOPED_VEHICLE_ABILITY_PARACHUTE_DESC", g.vehicle.abilities.parachute);
-	bool_command g_ramp_ability("rampability", "RAMPA", "BACKEND_LOOPED_VEHICLE_ABILITY_RAMP_DESC", g.vehicle.abilities.ramp);
-	bool_command g_glider_ability("gliderability", "PLANEADOR", "BACKEND_LOOPED_VEHICLE_ABILITY_GLIDER_DESC", g.vehicle.abilities.glider);
+	bool_command g_jump_ability("jumpability", "BACKEND_LOOPED_VEHICLE_ABILITY_JUMP", "BACKEND_LOOPED_VEHICLE_ABILITY_JUMP_DESC", g.vehicle.abilities.jump);
+	bool_command g_rocket_ability("rocketability", "BACKEND_LOOPED_VEHICLE_ABILITY_ROCKET", "BACKEND_LOOPED_VEHICLE_ABILITY_ROCKET_DESC", g.vehicle.abilities.rocket);
+	bool_command g_parachute_ability("parachuteability", "BACKEND_LOOPED_VEHICLE_ABILITY_PARACHUTE", "BACKEND_LOOPED_VEHICLE_ABILITY_PARACHUTE_DESC", g.vehicle.abilities.parachute);
+	bool_command g_ramp_ability("rampability", "BACKEND_LOOPED_VEHICLE_ABILITY_RAMP", "BACKEND_LOOPED_VEHICLE_ABILITY_RAMP_DESC", g.vehicle.abilities.ramp);
+	bool_command g_glider_ability("gliderability", "BACKEND_LOOPED_VEHICLE_ABILITY_GLIDER", "BACKEND_LOOPED_VEHICLE_ABILITY_GLIDER_DESC", g.vehicle.abilities.glider);
 }

@@ -18,5 +18,6 @@ namespace big
 		}
 	};
 
-	instant_brake g_instant_brake("instantbrake", "FRENO_INSTANTANEO", "INSTANT_BRAKE_DESC", g.vehicle.instant_brake);
+	instant_brake g_instant_brake("instantbrake", "INSTANT_BRAKE", "INSTANT_BRAKE_DESC",
+	    g.vehicle.instant_brake);
 }

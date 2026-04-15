@@ -21,5 +21,6 @@ namespace big
 		}
 	};
 
-	seatbelt g_seatbelt("seatbelt", "CINTURON_DE_SEGURIDAD", "SEATBELT_DESC", g.vehicle.seatbelt);
+	seatbelt g_seatbelt("seatbelt", "SEATBELT", "SEATBELT_DESC",
+	    g.vehicle.seatbelt);
 }

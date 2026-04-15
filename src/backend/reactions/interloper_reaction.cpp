@@ -17,7 +17,7 @@ namespace big
 		if ((attacker->is_friend() && g.session.trust_friends) || attacker->is_trusted || g.session.trust_session)
 			return;
 
-		if (log)
+        if (log)
 		{
 			LOGF(WARNING,
 				"Recibido {} de {} ({}), víctima: {}",
@@ -38,7 +38,7 @@ namespace big
 			auto a_name = attacker->get_name();
 			auto v_name = victim->get_name();
 
-			g_notification_service.push_warning("PROTECCIONES"_T.data(),
+			g_notification_service.push_warning("PROTECTIONS"_T.data(),
 			    std::vformat(g_translation_service.get_translation(m_notify_message), std::make_format_args(a_name, v_name)));
 		}
 

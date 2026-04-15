@@ -40,14 +40,17 @@ namespace big
 
 					if (weapon_mgr->m_weapon_info)
 					{
-						og_accuracy_spread      = weapon_mgr->m_weapon_info->m_accuracy_spread;
-						og_accuracy_offset_hash = weapon_mgr->m_weapon_info->m_accuracy_offset_shake_hash;
-					}
+						// Backup
+						{
+							og_accuracy_spread      = weapon_mgr->m_weapon_info->m_accuracy_spread;
+							og_accuracy_offset_hash = weapon_mgr->m_weapon_info->m_accuracy_offset_shake_hash;
+						}
 
-					if (weapon_mgr->m_weapon_info)
-					{
-						weapon_mgr->m_weapon_info->m_accuracy_spread            = 0;
-						weapon_mgr->m_weapon_info->m_accuracy_offset_shake_hash = 0;
+						// Set to the good stuff
+						{
+							weapon_mgr->m_weapon_info->m_accuracy_spread            = 0;
+							weapon_mgr->m_weapon_info->m_accuracy_offset_shake_hash = 0;
+						}
 					}
 				}
 			}
@@ -65,5 +68,5 @@ namespace big
 	};
 
 	no_spread
-	    g_no_spread("nospread", "SIN_DISPERSION", "BACKEND_LOOPED_WEAPONS_NO_SPREAD_DESC", g.weapons.no_spread);
+	    g_no_spread("nospread", "BACKEND_LOOPED_WEAPONS_NO_SPREAD", "BACKEND_LOOPED_WEAPONS_NO_SPREAD_DESC", g.weapons.no_spread);
 }
