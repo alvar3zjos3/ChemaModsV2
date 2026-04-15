@@ -11,7 +11,7 @@ namespace big
 	bool hooks::network_player_mgr_init(CNetworkPlayerMgr* _this, uint64_t a2, uint32_t a3, uint32_t a4[4])
 	{
 		if (g.notifications.network_player_mgr_init.log)
-			LOG(INFO) << "CNetworkPlayerMgr#init fue llamado, probablemente estamos entrando en una sesión.";
+			LOG(INFO) << "CNetworkPlayerMgr#init got called, we're probably entering a session.";
 		if (g.notifications.network_player_mgr_init.notify)
 			g_notification_service.push("NETWORK_PLAYER_MGR"_T.data(), "NETWORK_PLAYER_MGR_INIT"_T.data());
 
@@ -38,7 +38,7 @@ namespace big
 		self::spawned_vehicles.clear();
 
 		if (g.notifications.network_player_mgr_shutdown.log)
-			LOG(INFO) << "CNetworkPlayerMgr#shutdown fue llamado, probablemente estamos saliendo de nuestra sesión.";
+			LOG(INFO) << "CNetworkPlayerMgr#shutdown got called, we're probably leaving our session.";
 		if (g.notifications.network_player_mgr_shutdown.notify)
 			g_notification_service.push("NETWORK_PLAYER_MGR"_T.data(), "NETWORK_PLAYER_MGR_DESTROY"_T.data());
 
