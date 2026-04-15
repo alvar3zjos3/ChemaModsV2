@@ -17,14 +17,14 @@ namespace big
 		if ((attacker->is_friend() && g.session.trust_friends) || attacker->is_trusted || g.session.trust_session)
 			return;
 
-        if (log)
+		if (log)
 		{
 			LOGF(WARNING,
-				"Recibido {} de {} ({}), víctima: {}",
-				m_event_name,
-				attacker->get_name(),
-				attacker->get_rockstar_id(),
-				victim->get_name());
+			    "Received {} from {} ({}), victim is {}",
+			    m_event_name,
+			    attacker->get_name(),
+			    attacker->get_rockstar_id(),
+			    victim->get_name());
 		}
 
 		if (announce_in_chat)
