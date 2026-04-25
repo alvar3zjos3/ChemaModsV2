@@ -26,13 +26,9 @@ namespace big
 	{
 		auto thread = gta_util::find_script_thread("freemode"_J);
 		if (!thread)
-		{
 			thread = gta_util::find_script_thread("main_persistent"_J);
-		}
 		if (thread)
-		{
 			gta_util::execute_as_script(thread, std::mem_fn(&script_mgr::tick_internal), this);
-		}
 	}
 
 	void script_mgr::ensure_main_fiber()
