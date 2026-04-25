@@ -109,24 +109,15 @@ namespace big::scripts
 	{
 		auto script_id = launcher_index_from_hash(script_hash);
 
-		static auto is_participant = [](CGameScriptHandlerNetComponent* nc, CNetGamePlayer* player) -> bool {
-			for (auto* p = nc->m_first_participant; p; p = p->m_next)
-				if (p->m_net_game_player == player)
-					return true;
-			return false;
-		};
-
 		static auto check_players_in_state = [](GtaThread* launcher, int state) -> bool {
 			bool set = false;
 
 			if (!launcher->m_net_component)
 				return false;
 
-			auto* net_component = (CGameScriptHandlerNetComponent*)launcher->m_net_component;
-
 			for (auto& [_, plyr] : g_player_service->players())
 			{
-				if (is_participant(net_component, plyr->get_net_game_player()))
+				if (((CGameScriptHandlerNetComponent*)launcher->m_net_component)->is_player_a_participant(plyr->get_net_game_player()))
 				{
 					if (*script_local(launcher->m_stack, 243).at(plyr->id(), 3).at(2).as<int*>() == state)
 					{
