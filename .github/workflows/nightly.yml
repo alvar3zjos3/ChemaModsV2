@@ -146,8 +146,8 @@ jobs:
             ```
             Para verificar el SHA256 durante la acción, haz clic en el enlace de la compilación, ve a "Create Release", abre el paso **"Mostrar SHA256 de la compilación"** y lee el valor.
 
-           Puedes descargar los artefactos de la compilación, generar un checksum SHA256 y compararlo con el que aparece abajo.
-           **Los artefactos de la compilación NO son automáticamente iguales a los assets de la release**, ya que estos pueden ser modificados después.
+            Puedes descargar los artefactos de la compilación, generar un checksum SHA256 y compararlo con el que aparece abajo.
+            **Los artefactos de la compilación NO son automáticamente iguales a los assets de la release**, ya que estos pueden ser modificados después.
 
             Estas son compilaciones nightly de **ChemaModsV2**, se proporcionan **únicamente con fines de prueba**:
             - Probar si tu entorno de compilación produce un `ChemaModsV2.dll` roto
@@ -155,7 +155,7 @@ jobs:
             
             Si deseas usar este menú tal cual, lo haces **bajo tu propia responsabilidad**, no se ofrece ninguna garantía.
 
-           Hash completo del commit:
+            Hash completo del commit:
             ```
             ${{ needs.build_nightly.outputs.full_sha }}
             ```
