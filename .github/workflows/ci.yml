@@ -19,24 +19,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Check CMake version
+      - name: Verificar versión de CMake
         run: cmake --version
 
-      - name: Setup MSVC environment
+      - name: Configurar entorno MSVC
         uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: amd64
 
-      - name: Generate CMake project
+      - name: Generar proyecto CMake
         run: cmake -D CMAKE_BUILD_TYPE=RelWithDebInfo -D OPTIMIZE=YES -S. -Bbuild -G Ninja
 
-      - name: Build 64bit release DLL
+      - name: Compilar DLL 64-bit Release
         run: cmake --build ./build --config RelWithDebInfo --target ChemaModsV2 --
 
-      - name: Check if DLL got built
+      - name: Verificar si la DLL se compiló correctamente
         run: if (-Not (Test-Path -path "build/ChemaModsV2.dll")) {throw 1}
 
-      - name: Rename DLL to ChemaModsV2-dev-{GITHUB_SHA}.dll
+      - name: Renombrar DLL a ChemaModsV2-dev-{SHA}.dll
         run: |
           del ChemaModsV2-dev-*.dll
           del ChemaModsV2-dev-*.pdb
@@ -44,13 +44,14 @@ jobs:
           ren ChemaModsV2.pdb ChemaModsV2.pdb
         working-directory: build/
 
-      - name: Upload Artifact (dll)
+      - name: Subir Artefacto (DLL)
         uses: actions/upload-artifact@v4
         with:
           name: binary
           path: |
             build/ChemaModsV2-dev-*.dll
-      - name: Upload Artifact (pdb)
+
+      - name: Subir Artefacto (PDB)
         uses: actions/upload-artifact@v4
         with:
           name: pdb

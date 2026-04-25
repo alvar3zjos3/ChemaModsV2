@@ -1,35 +1,35 @@
-name: Feature request
-description: Suggest an idea for this project
+name: Solicitud de Nueva Funcionalidad (Feature Request)
+description: Sugiere una idea para mejorar este proyecto
 title: "[Request]: "
 labels: request
 body:
 - type: textarea
   attributes:
-    label: Problem
-    description: "Is your feature request related to a problem? Please describe."
-    placeholder: "A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]"
+    label: Problema
+    description: "¿Tu solicitud de funcionalidad está relacionada con un problema? Por favor descríbelo."
+    placeholder: "Una descripción clara y concisa del problema. Ej: Siempre me frustra cuando [...]"
   validations:
     required: false
 - type: textarea
   attributes:
-    label: Solution
-    description: "Describe the solution you'd like"
-    placeholder: "A clear and concise description of what you want to happen."
+    label: Solución propuesta
+    description: "Describe la solución que te gustaría implementar"
+    placeholder: "Una descripción clara y concisa de lo que quieres que suceda."
   validations:
     required: true
 - type: textarea
   attributes:
-    label: Reason
-    description: Provide Reasoning
-    placeholder: "Tell us why you'd want for us to add this to ChemaModsV2."
+    label: Razón
+    description: Proporciona el razonamiento
+    placeholder: "Explícanos por qué te gustaría que agregáramos esto a ChemaModsV2."
   validations:
     required: true
 - type: textarea
   attributes:
-    label: Additional context
+    label: Contexto adicional
     description: |
-      Add any other context about the request here.
-      
-      Tip: You can attach images or log files by clicking this area to highlight it and then dragging files in.
+      Agrega cualquier otra información sobre tu solicitud aquí.
+
+      Consejo: Puedes adjuntar imágenes o archivos haciendo clic en esta área para resaltarla y luego arrastrando los archivos.
   validations:
     required: false

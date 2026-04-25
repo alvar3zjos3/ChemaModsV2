@@ -1,53 +1,53 @@
-name: Build issue
-description: Report a problem with building ChemaModsV2
+name: Problema de Compilación (Build)
+description: Reporta un problema al compilar ChemaModsV2
 title: "[Build]: "
 labels: build
 body:
 - type: textarea
   attributes:
-    label: Describe the build issues
-    description: A clear and concise description of what the issue is.
+    label: Descripción del problema de compilación
+    description: Una descripción clara y concisa del problema que estás teniendo.
   validations:
     required: true
 - type: textarea
   attributes:
-    label: Screenshots and/or Logs
-    description: "Tip: You can attach images or log files by clicking this area to highlight it and then dragging files in."
+    label: Capturas de pantalla y/o Logs
+    description: "Consejo: Puedes adjuntar imágenes o archivos de log haciendo clic en esta área para resaltarla y luego arrastrando los archivos."
     value: |
       ```
-      <paste your logs here>
+      <pega tus logs aqui>
       ```
   validations:
-    required: false
+required: false
 - type: dropdown
-  attributes:
-    label: IDE/Compiler
-    description: Which IDE do you use to build ChemaModsV2?
-    multiple: false
-    options:
-      - Visual Studio 2022
-      - Visual Studio Code
-      - Command Line
-      - Other (please mention in "Additional context")
-  validations:
-    required: true
+attributes:
+label: IDE / Compilador
+description: ¿Qué IDE o método usas para compilar ChemaModsV2?
+multiple: false
+options:
+- Visual Studio 2022
+- Visual Studio Code
+- Línea de comandos (Command Line)
+- Otro (por favor indícalo en "Contexto adicional")
+validations:
+required: true
 - type: textarea
-  attributes:
-    label: Additional context
-    description: Add any other context about the problem here.
-  validations:
-    required: false
+attributes:
+label: Contexto adicional
+description: Agrega cualquier otra información sobre el problema aquí.
+validations:
+required: false
 - type: checkboxes
-  attributes:
-    label: Setup Guide
-    description: You confirm that you followed the setup guide for building the menu.
-    options:
-      - label: I confirm that I followed the setup guide correctly.
-        required: true
+attributes:
+label: Guía de configuración
+description: Confirmas que seguiste correctamente la guía de configuración para compilar el menú.
+options:
+- label: Confirmo que seguí correctamente la guía de configuración.
+  required: true
 - type: checkboxes
-  attributes:
-    label: ChemaModsV2 Source Code
-    description: You confirm that you haven't modified ChemaModsV2 and are building the latest version of the source code.
-    options:
-      - label: I've confirmed this is an issue with building unmodified ChemaModsV2.
-        required: true
+attributes:
+label: Código fuente de ChemaModsV2
+description: Confirmas que no has modificado ChemaModsV2 y estás compilando la última versión del código fuente original.
+options:
+- label: He confirmado que este es un problema al compilar ChemaModsV2 sin modificaciones.
+  required: true

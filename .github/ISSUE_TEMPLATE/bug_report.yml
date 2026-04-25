@@ -1,68 +1,74 @@
-name: Bug report
-description: Create a report to help us improve
+name: Reportar un Error (Bug)
+description: Crea un informe para ayudarnos a mejorar
 title: "[Bug]: "
 labels: bug
 body:
 - type: textarea
   attributes:
-    label: Describe the bug
-    description: A clear and concise description of what the bug is.
+    label: Descripción del error
+    description: Una descripción clara y concisa de cuál es el error.
   validations:
     required: true
+
 - type: textarea
   attributes:
-    label: Steps To Reproduce
-    description: Steps to reproduce the behavior.
+    label: Pasos para reproducir
+    description: Pasos para reproducir el comportamiento.
     placeholder: |
-      1. Go to '...'
-      2. Click on '...'
-      3. Scroll down to '...'
-      4. See error
+      1. Ve a '...'
+      2. Haz clic en '...'
+      3. Desplázate hasta '...'
+      4. Observa el error
   validations:
     required: true
+
 - type: textarea
   attributes:
-    label: Expected Behavior
-    description: A clear and concise description of what you expected to happen.
+    label: Comportamiento esperado
+    description: Una descripción clara y concisa de lo que esperabas que sucediera.
   validations:
     required: true
+
 - type: textarea
   attributes:
     label: Logs
     description: |
-      For a bug report to be valid, you need to include the logs for ChemaModsV2.
-      They can be found under `%appdata%/ChemaModsV2/cout.log`, even if you think the log file is useless we'd still like for you to include it here.
-
-      Tip: To easily upload your log file rename the cout.log file to cout.txt, alternatively zip the cout.log file. You can then drag and drop the file here.
+      Para que un reporte de error sea válido, es necesario incluir los logs de ChemaModsV2.
+      Puedes encontrarlos en `%appdata%/ChemaModsV2/cout.log`. Aunque creas que el archivo de logs no es útil, te pedimos que lo incluyas.
+      
+      **Consejo:** Para subir fácilmente el archivo, renómbralo de `cout.log` a `cout.txt`, o comprímelo en un .zip. Luego puedes arrastrar y soltar el archivo aquí.
   validations:
     required: true
+
 - type: textarea
   attributes:
-    label: Screenshots / Video
+    label: Capturas de pantalla / Video
     description: |
-      If you think the issue can be better explained with screenshots or a video then consider adding these here.
-
-      Tip: You can attach images by clicking this area to highlight it and then dragging files in.
+      Si crees que el problema se explica mejor con capturas de pantalla o un video, agrégalos aquí.
+      
+      **Consejo:** Puedes adjuntar imágenes haciendo clic en esta área para resaltarla y luego arrastrando los archivos.
     value: |
-      <!-- drag and drop your images or video(s) here -->
+      <!-- arrastra y suelta tus imágenes o video(s) aquí -->
   validations:
     required: false
+
 - type: dropdown
   attributes:
-    label: Store
-    description: Which launcher/store do you use to launch your game?
+    label: Tienda / Launcher
+    description: ¿Qué launcher o tienda usas para ejecutar el juego?
     multiple: false
     options:
       - Steam
       - Epic Games
       - Rockstar
-      - Other (please mention in "Additional context")
+      - Otro (por favor indícalo en "Contexto adicional")
   validations:
     required: true
+
 - type: dropdown
   attributes:
-    label: Language
-    description: Which language do you have GTA 5 set to?
+    label: Idioma del juego (GTA 5)
+    description: ¿En qué idioma tienes configurado GTA 5?
     multiple: false
     options:
       - English
@@ -80,10 +86,11 @@ body:
       - Korean
   validations:
     required: true
+
 - type: dropdown
   attributes:
-    label: ChemaModsV2 Language
-    description: Which language do you use with ChemaModsV2?
+    label: Idioma de ChemaModsV2
+    description: ¿En qué idioma usas ChemaModsV2?
     multiple: false
     options:
       - English (US)
@@ -97,23 +104,26 @@ body:
       - Korean (KR)
   validations:
     required: true
+
 - type: textarea
   attributes:
-    label: Additional context
-    description: Add any other context about the problem here.
+    label: Contexto adicional
+    description: Agrega cualquier otra información sobre el problema aquí.
   validations:
     required: false
+
 - type: checkboxes
   attributes:
-    label: Build
-    description: We want to confirm that this issue exists on the latest version of ChemaModsV2, not a fork or your own version of ChemaModsV2.
+    label: Versión utilizada
+    description: Queremos confirmar que este problema existe en la última versión oficial de ChemaModsV2, no en un fork ni en tu propia compilación.
     options:
-      - label: I've confirmed the issue exists on the latest version of ChemaModsV2
+      - label: He confirmado que el problema existe en la última versión oficial de ChemaModsV2
         required: true
+
 - type: checkboxes
   attributes:
-    label: Coload
-    description: Make sure you test ChemaModsV2 without co-loading (Menyoo, Stand, ...) first and see if the issue exists, if it doesn't verify if you think the issue lies with us or with the product you're co-loading with.
+    label: Sin co-loading
+    description: Asegúrate de probar ChemaModsV2 sin cargar otros mods (Menyoo, Stand, etc.) primero. Si el problema no aparece sin ellos, verifica si crees que el error es nuestro o del otro producto.
     options:
-      - label: I've tested this without co-loading anything.
+      - label: He probado esto sin cargar ningún otro mod (co-loading).
         required: true
