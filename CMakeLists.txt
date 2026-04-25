@@ -46,7 +46,7 @@ else ()
   add_compile_options(-Wa,-mbig-obj)
 endif ()
 
-add_library(ChemaModsV2 MODULE "${SRC_MAIN}" "src/services/script_function_hook/script_function_hook_service.cpp")
+add_library(ChemaModsV2 MODULE "${SRC_MAIN}")
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set_property(TARGET ChemaModsV2 PROPERTY CXX_STANDARD 23) # 23 Because std::format is not avalible in std:c++20 for some reason. Maybe it's because i use v142 toolset.
